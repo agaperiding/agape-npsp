@@ -1,3 +1,3 @@
 #AGAPE Salesforce NPSP
 
-![schema](schema-screenshots/AGAPE-Goal-Outcome-Schema.png)
+![schema](schema-screenshot/AGAPE-Goal-Outcome-Schema.png)
