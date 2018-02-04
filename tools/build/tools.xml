@@ -1,0 +1,620 @@
+<project name="build configuration" default="" basedir=".">
+
+    <import file="build-tasks.xml" />
+    
+    <property name="toolsext.dir" value="${tools.dir}/java/ext"/>
+    <property name="toolssrc.dir" value="${tools.dir}/java/src"/>
+    <property name="toolsclasses.dir" value="${tools.dir}/java/classes"/>
+
+    <path id="tools.classpath">
+        <pathelement location="${tools.dir}/java/classes"/>
+        <fileset dir="${toolsext.dir}">
+          <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <!-- macros -->
+    <macrodef name="generateMocks">
+      <attribute name="srcdir" />
+      <attribute name="tgtdir" />
+      <attribute name="propertiesFile" />
+      <attribute name="mocksFile" />
+      <sequential>
+        <java jar="target/dependency/fflib-mocks-4.0.1-SNAPSHOT.jar" fork="true">
+          <classpath>
+            <pathelement location=""/>
+          </classpath>
+          <arg value="@{srcdir}"/>
+          <arg value="@{propertiesFile}"/>
+          <arg value="@{mocksFile}"/>
+          <arg value="@{tgtdir}"/>
+        </java>
+      </sequential>
+    </macrodef>
+
+    <macrodef name="createNewUser" description="creates a new user with the current user's email address">
+      <attribute name="username" description="the username used to authenticate the request."/>
+      <attribute name="password" description="the password used to authenticate the request."/>
+      <attribute name="serverurl" description="the endpoint used to authenticate the request."/>
+      <sequential>
+        <executeApex username="@{username}" password="@{password}" authEndpointUrl="@{serverurl}">
+          <![CDATA[
+
+            String userId = UserInfo.getUserId();
+            User currentUser = [
+                SELECT Email 
+                FROM User 
+                WHERE Id = :userId 
+                LIMIT 1
+            ];
+            Profile p = [
+                SELECT Id
+                FROM Profile
+                WHERE Name = 'mktg_Profile'
+                LIMIT 1
+            ];
+
+            User u = new user(
+              LastName = 'mktgOps_User',
+              Email = currentUser.Email,
+              Alias = 'mktg',
+              Username = 'mktg_OpsUser@salesforce.com',
+              CommunityNickname = 'mktg_OpsUser',
+              LocaleSidKey = 'en_US',
+              TimeZoneSidKey = 'GMT',
+              ProfileID = p.Id,
+              LanguageLocaleKey = 'en_US',
+              EmailEncodingKey = 'UTF-8'
+            );
+            insert u;
+            System.resetPassword(u.Id, true);
+            
+          ]]>
+        </executeApex>
+      </sequential>
+    </macrodef>
+    
+    <macrodef name="baseToolsJavacMacro">
+        <attribute name="srcdir" />
+        <attribute name="includes" default="**/*.java" />
+        <attribute name="excludes" default="" />
+        <attribute name="destdir" />
+        <attribute name="fork" default="false" />
+        <attribute name="extdirs" default="${toolsext.dir}" />
+        <attribute name="classpathref" default="tools.classpath" />
+        <attribute name="memorymaximumsize" default="" />
+        <attribute name="javaSourceVersion" default="1.6" />
+        <attribute name="javaTargetVersion" default="1.6" />
+        <sequential>
+            <mkdir dir="@{destdir}" />
+            <javac  srcdir="@{srcdir}"
+                    includes="@{includes}"
+                    excludes="@{excludes}"
+                    destdir="@{destdir}"
+                    deprecation="@{deprecation}"
+                    debug="on"
+                    fork="@{fork}"
+                    memorymaximumsize="@{memorymaximumsize}"
+                    nowarn="${javac.nowarn}"
+                    extdirs="@{extdirs}"
+                    classpathref="@{classpathref}"
+                    source="@{javaSourceVersion}"
+                    target="@{javaTargetVersion}"
+                    encoding="UTF8" />
+        </sequential>
+    </macrodef>
+
+    <presetdef name="baseToolsJavaCall">
+        <java fork="true" failonerror="true" classpathref="tools.classpath">
+            <jvmarg value="-server" />
+            <jvmarg value="-enableassertions" />
+            <jvmarg value="-Xss256k" />
+            <jvmarg value="-Xmx${java.heap}"/>
+            <jvmarg value="-XX:ThreadStackSize=256" />
+            <jvmarg value="-XX:MaxPermSize=128m"/>
+            <jvmarg value="-Duser.timezone=GMT" />
+            <jvmarg value="-Djava.awt.headless=true" />
+<!--            <jvmarg value="-Djava.ext.dirs=${sfdc.ext.dirs}" />  
+            <jvmarg value="-Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl" />
+            <jvmarg value="-Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl" />
+            <jvmarg value="-Djavax.xml.transform.TransformerFactory=com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl" /> -->
+            <syspropertyset id="runProps">
+                <propertyref prefix="runProp."/>
+                <mapper type="glob" from="runProp.*" to="*"/>
+            </syspropertyset>
+        </java>
+    </presetdef>
+	
+	<macrodef name="sourceFilenamesToFile">
+		<attribute name="sourceDirectory" />
+		<attribute name="outputFilename"/>	
+		
+		<sequential>			
+			<for param="file">
+				<path>
+					<fileset dir="@{sourceDirectory}">
+						<include name="**/*"></include>
+					</fileset>
+				</path>
+				<sequential>
+					<local name="filename" />
+					<basename property="filename" file="@{file}"/>
+					<script language="javascript">
+						var name = project.getProperty('filename');
+						project.setProperty('filenameSubstring', name.substring(0,name.indexOf(".")));
+					</script>
+<echo file="@{outputFilename}" append="true">${filenameSubstring}
+</echo>
+				</sequential>
+			</for>
+		</sequential>
+	</macrodef>
+
+
+    <target name="checkApexLoader" description="check to see if apexloader needs to be built">
+        <uptodate property="skipApexLoader" value="true"
+            targetfile="${toolsclasses.dir}/tools/apex/ApexLoader.class">
+            <srcfiles file="${toolssrc.dir}/tools/apex/ApexLoader.java"/>
+            <srcfiles dir="${toolsext.dir}" includes="**/*.jar"/>
+        </uptodate>
+    </target>
+
+    <target name="checkApexRunner" description="check to see if apexrunner needs to be built">
+        <uptodate property="skipApexRunner" value="true" targetfile="${toolsclasses.dir}/tools/apex/ApexRunner.class">
+            <srcfiles file="${toolssrc.dir}/tools/apex/ApexRunner.java"/>
+            <srcfiles dir="${toolsext.dir}" includes="**/*.jar"/>
+        </uptodate>
+    </target>
+
+    <target name="checkApexRunTests" description="check to see if apexloader needs to be built">
+        <uptodate property="skipApexRunTests" value="true" targetfile="${toolsclasses.dir}/tools/apex/ApexRunTests.class">
+            <srcfiles file="${toolssrc.dir}/tools/apex/ApexRunTests.java"/>
+            <srcfiles dir="${toolsext.dir}" includes="**/*.jar"/>
+        </uptodate>
+    </target>
+    <target name="checkApexCodeCovMetrics" description="check to see if apexCodeCov needs to be built">
+        <uptodate property="skipApexRunTestsMetrics" value="true" targetfile="${toolsclasses.dir}/tools/apex/ApexCodeCovMetrics.class">
+            <srcfiles file="${toolssrc.dir}/tools/apex/ApexCodeCovMetrics.java"/>
+            <srcfiles dir="${toolsext.dir}" includes="**/*.jar"/>
+        </uptodate>
+    </target>
+
+    <target name="checkScontrolLoader" description="check to see if
+              Scontrol Loader needs to be built">
+      <uptodate property="skipScontrolLoader" value="true" targetfile="${toolsclasses.dir}/tools/xmlloader/ScontrolLoader.class">
+        <srcfiles file="${toolssrc.dir}/tools/xmlloader/ScontrolLoader.java"/>
+        <srcfiles dir="${toolsext.dir}" includes="**/*.jar"/>
+      </uptodate>
+    </target>
+  
+    <target name="checkMassAccountLink" description="check to see if massAccountLink needs to be built">
+        <uptodate property="skipMassAccountLink" value="true" targetfile="${toolsclasses.dir}/tools/util/MassAccountLink.class">
+            <srcfiles file="${toolssrc.dir}/tools/util/MassAccountLink.java"/>
+            <srcfiles dir="${toolsext.dir}" includes="**/*.jar"/>
+        </uptodate>
+    </target>
+
+    <target name="checkMassEnqueue" description="check to see if massEnqueue needs to be built">
+        <uptodate property="skipMassEnqueue" value="true" targetfile="${toolsclasses.dir}/tools/util/MassEnqueue.class">
+            <srcfiles file="${toolssrc.dir}/tools/util/MassEnqueue.java"/>
+            <srcfiles dir="${toolsext.dir}" includes="**/*.jar"/>
+        </uptodate>
+    </target>
+    
+    <target name="checkGetOrgUsage" description="check to see if GetOrgUsage needs to be built">
+        <uptodate property="skipGetOrgUsage" value="true" targetfile="${toolsclasses.dir}/tools/util/GetOrgUsage.class">
+            <srcfiles file="${toolssrc.dir}/tools/util/GetOrgUsage.java"/>
+            <srcfiles dir="${toolsext.dir}" includes="**/*.jar"/>
+        </uptodate>
+    </target>
+
+    <target name="compileApexLoader" unless="skipApexLoader" depends="checkApexLoader" description="Compile incremental Apex loader">
+        <echo message="Compiling Apex loader"/>
+        <baseToolsJavacMacro srcdir="${toolssrc.dir}"
+                        destdir="${toolsclasses.dir}"
+                        includes="tools/apex/ApexLoader.java"
+                        extdirs="${toolsext.dir}"
+                        classpathref="tools.classpath"/>
+    </target>
+
+    <target name="compileSObjectAggregator" description="Compiles the sObjectAggregator">
+        <echo message="Compiling sObjectAggregator"/>
+        <baseToolsJavacMacro srcdir="${toolssrc.dir}"
+                        destdir="${toolsclasses.dir}"
+                        includes="tools/util/SObjectAggregator.java"
+                        extdirs="${toolsext.dir}"
+                        classpathref="tools.classpath"
+                        javaSourceVersion="1.7"
+                        javaTargetVersion="1.7"/>
+    </target>
+
+    <macrodef name="sObjectAggregatorRunner">
+       <attribute name="perforceBranch"/>
+       <attribute name="objects"/>
+       <attribute name="xslPath" default="tools/template/CustomObjectToXlf.xsl"/>
+       <attribute name="outputDir" default="L10n/translationSources/customObjects/"/>
+       <sequential>
+         <baseToolsJavaCall classname="tools.util.SObjectAggregator">
+            <arg line="-p @{perforceBranch}"/>
+            <arg line="-o @{objects}"/>
+            <arg line="-xsl @{xslPath}"/>
+            <arg line="-dest @{outputDir}"/>
+         </baseToolsJavaCall>
+       </sequential>
+    </macrodef>
+
+    <target name="compileApexRunner" unless="skipApexRunner" depends="checkApexRunner" description="Compile Apex WebMethod Runner">
+        <echo message="Compiling Apex WebMethod Runner"/>
+        <baseToolsJavacMacro srcdir="${toolssrc.dir}"
+                        destdir="${toolsclasses.dir}"
+                        includes="tools/apex/ApexRunner.java"
+                        extdirs="${toolsext.dir}"
+                        classpathref="tools.classpath"/>
+    </target>
+
+    <target name="compileApexRunTests" depends="checkApexRunTests" unless="skipApexRunTests" description="Compile Apex run tests driver">
+        <echo message="Compiling Apex run tests driver"/>
+        <baseToolsJavacMacro srcdir="${toolssrc.dir}"
+                        destdir="${toolsclasses.dir}"
+                        includes="tools/apex/ApexRunTests.java"
+                        extdirs="${toolsext.dir}"
+                        classpathref="tools.classpath"/>
+    </target>
+	<target name="compileApexCodeCovMetrics" depends="checkApexCodeCovMetrics" unless="skipApexRunTestsMetrics" description="Compile Apex Code Cov Metrics">
+        <echo message="compileApexCodeCovMetrics"/>
+        <baseToolsJavacMacro srcdir="${toolssrc.dir}"
+                        destdir="${toolsclasses.dir}"
+                        includes="tools/apex/ApexCodeCovMetrics.java"
+                        extdirs="${toolsext.dir}"
+                        classpathref="tools.classpath"/>
+    </target>
+
+    <target name="compileScontrolLoader" unless="skipScontrolLoader" depends="checkScontrolLoader"
+        description="Compile ScontrolLoader">
+      <echo message="Compiling Scontrol Importer"/>
+      <baseToolsJavacMacro srcdir="${toolssrc.dir}"
+                      destdir="${toolsclasses.dir}"
+                      includes="tools/xmlloader/ScontrolLoader.java"
+                      extdirs="${toolsext.dir}"
+                      classpathref="tools.classpath"/>
+    </target>
+
+  <target name="compileMassAccountLink" unless="skipMassAccountLink" depends="checkMassAccountLink"
+        description="Compile MassAccountLink">
+        <echo message="Compiling Mass Account Link"/>
+        <baseToolsJavacMacro srcdir="${toolssrc.dir}"
+                        destdir="${toolsclasses.dir}"
+                        includes="tools/util/MassAccountLink.java"
+                        extdirs="${toolsext.dir}"
+                        classpathref="tools.classpath"/>
+    </target>
+
+    <target name="compileMassEnqueue" unless="skipMassEnqueue" depends="checkMassEnqueue"
+        description="Compile MassEnqueue">
+        <echo message="Compiling Mass Account Link"/>
+        <baseToolsJavacMacro srcdir="${toolssrc.dir}"
+                        destdir="${toolsclasses.dir}"
+                        includes="tools/util/MassEnqueue.java"
+                        extdirs="${toolsext.dir}"
+                        classpathref="tools.classpath"/>
+    </target>
+
+    <target name="compileGetOrgUsage" unless="skipGetOrgUsage" depends="checkGetOrgUsage"
+        description="Compile GetOrgUsage">
+        <echo message="Compiling Get Org Usage"/>
+        <baseToolsJavacMacro srcdir="${toolssrc.dir}"
+                        destdir="${toolsclasses.dir}"
+                        includes="tools/util/GetOrgUsage.java"
+                        extdirs="${toolsext.dir}"
+                        classpathref="tools.classpath"/>
+    </target>
+
+  <macrodef name="scontrolLoader">
+    <attribute name="user"/>
+    <attribute name="password"/>
+    <attribute name="directory"/>
+    <attribute name="manifestdir"/>
+    <attribute name="manifest" default="manifest.txt"/>
+    <attribute name="server" default="http://localhost"/>
+    <attribute name="namespace" default=""/>
+    <sequential>
+      <echo message="Running SControlLoader from @{directory} to @{server} as @{user}"/>
+      <baseToolsJavaCall classname="tools.xmlloader.ScontrolLoader">
+        <arg value="@{user}"/>
+        <arg value="@{password}"/>
+        <arg value="@{directory}"/>
+        <arg value="@{manifestdir}"/>
+        <arg value="@{manifest}"/>
+        <arg value="@{server}"/>
+        <arg value="@{namespace}"/>
+      </baseToolsJavaCall>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="apexLoader">
+       <attribute name="user"/>
+       <attribute name="password"/>
+       <attribute name="directory"/>
+       <attribute name="manifestdir"/>
+       <attribute name="manifest" default="manifest.txt"/>
+       <attribute name="server" default="http://localhost"/>
+       <attribute name="debugLevel" default="${apex.debug}"/>
+       <attribute name="forceLoad" default="${apex.forceLoad}"/>
+       <sequential>
+          <echo message="Running ApexLoader from @{directory} to @{server} as @{user}"/>
+         <baseToolsJavaCall classname="tools.apex.ApexLoader">
+            <arg value="@{user}"/>
+            <arg value="@{password}"/>
+            <arg value="@{directory}"/>
+            <arg value="@{manifestdir}"/>
+            <arg value="@{manifest}"/>
+            <arg value="@{server}"/>
+            <arg value="@{debuglevel}"/>
+            <arg value="@{forceLoad}"/>
+         </baseToolsJavaCall>
+       </sequential>
+    </macrodef>
+
+    <macrodef name="apexRunner">
+       <attribute name="user"/>
+       <attribute name="password"/>
+       <attribute name="method"/>
+       <attribute name="server" default="http://localhost"/>
+       <attribute name="start" default=""/>
+       <attribute name="debugLevel" default="${apex.debug}"/>
+       <sequential>
+         <baseToolsJavaCall classname="tools.apex.ApexRunner">
+            <arg line="-u @{user}"/>
+            <arg line="-p @{password}"/>
+            <arg line="-m @{method}"/>
+            <arg line="-l @{server}"/>
+            <arg line="-d @{debugLevel}"/>
+            <arg line="-s @{start}"/>
+         </baseToolsJavaCall>
+       </sequential>
+    </macrodef>
+    <macrodef name="apexCodeCovProcessData">
+	<attribute name="dataFileFolderName"/>
+      <attribute name="finalResultsFolderName"/>
+       <sequential>
+		<echo message="Running apexCodeCovProcessData with data folder @{dataFileFolderName} , and final results folder @{finalResultsFolderName}"/>
+         <baseToolsJavaCall classname="tools.apex.ApexCodeCovMetrics">
+       	<arg line="-d @{dataFileFolderName}"/>
+            <arg line="-r @{finalResultsFolderName}"/>
+         </baseToolsJavaCall>
+       </sequential>
+    </macrodef>
+
+    <macrodef name="apexRunTests">
+       <attribute name="user"/>
+       <attribute name="password"/>
+       <attribute name="server" default="http://localhost"/>
+       <attribute name="xmlResults" default="result.xml"/>
+       <attribute name="debugLevel" default="${apex.debug}"/>
+	<attribute name="folderForDataFiles" default="NULL"/>
+       <attribute name="extraArgs" default=""/>
+       <sequential>
+         <baseToolsJavaCall classname="tools.apex.ApexRunTests">
+            <arg line="-u @{user}"/>
+            <arg line="-p @{password}"/>
+            <arg line="-l @{server}"/>
+            <arg line="-o @{xmlResults}"/>
+            <arg line="-d @{debugLevel}"/>
+		<arg line="-x @{folderForDataFiles}"/>
+            <arg line="@{extraArgs}"/>
+         </baseToolsJavaCall>
+       </sequential>
+    </macrodef>
+
+    <macrodef name="linkAccounts">
+       <attribute name="user"/>
+       <attribute name="password"/>
+       <attribute name="server" default="http://localhost"/>
+       <attribute name="file"/>
+       <sequential>
+         <baseToolsJavaCall classname="tools.util.MassAccountLink">
+            <arg line="@{user}"/>
+            <arg line="@{password}"/>
+            <arg line="@{file}"/>
+            <arg line="@{server}"/>
+         </baseToolsJavaCall>
+       </sequential>
+    </macrodef>
+
+    <macrodef name="enqueueAccounts">
+       <attribute name="user"/>
+       <attribute name="password"/>
+       <attribute name="server" default="http://localhost"/>
+       <attribute name="file" default="-"/>
+       <sequential>
+         <baseToolsJavaCall classname="tools.util.MassEnqueue">
+            <arg line="@{user}"/>
+            <arg line="@{password}"/>
+            <arg line="@{file}"/>
+            <arg line="@{server}"/>
+         </baseToolsJavaCall>
+       </sequential>
+    </macrodef>
+
+    <macrodef name="getOrgUsage">
+       <attribute name="user"/>
+       <attribute name="password"/>
+       <attribute name="server" default="http://localhost"/>
+       <attribute name="org" default="00D000000000062"/>
+       <sequential>
+         <baseToolsJavaCall classname="tools.util.GetOrgUsage">
+            <arg line="@{user}"/>
+            <arg line="@{password}"/>
+            <arg line="@{org}"/>
+            <arg line="@{server}"/>
+         </baseToolsJavaCall>
+       </sequential>
+    </macrodef>
+
+    <!-- Definitions and macros to simplify calls to the lexiloader -->
+    <presetdef name="baseLoaderCall">
+        <java fork="true" failonerror="true" classpathref="loader.classpath"
+        classname="com.salesforce.lexiloader.process.ProcessRunner">
+          <jvmarg value="-Djava.library.path=${loader.dir}"/>
+          <jvmarg value="-Dsalesforce.config.dir=${loader.conf.dir}"/>
+          <arg value="sfdc.endpoint=${env.endpoint}"/>
+        </java>
+    </presetdef>
+
+    <presetdef name="baseEncryptPassword">
+        <java fork="true" failonerror="true" classpathref="loader.classpath"
+        classname="com.salesforce.lexiloader.security.EncryptionUtil">
+          <jvmarg value="-Djava.library.path=${loader.dir}"/>
+          <jvmarg value="-Dsalesforce.config.dir=${loader.conf.dir}"/>
+        </java>
+    </presetdef>
+
+    <presetdef name="baseUpsertCall">
+       <baseLoaderCall>
+          <arg value="sfdc.externalIdField=Id"/>
+          <arg value="process.operation=upsert"/>
+          <arg value="dataAccess.type=csvRead"/>
+       </baseLoaderCall>
+    </presetdef>
+
+    <presetdef name="baseInsertCall">
+       <baseLoaderCall>
+          <arg value="process.operation=insert"/>
+          <arg value="dataAccess.type=csvRead"/>
+       </baseLoaderCall>
+    </presetdef>
+
+    <presetdef name="baseQueryCall">
+      <baseLoaderCall>
+          <arg value="dataAccess.type=csvWrite"/>
+          <arg value="process.operation=extract"/>
+          <arg value="dataAccess.writeBatchSize=500"/>
+          <arg value="process.mappingFile="/>
+       </baseLoaderCall>
+    </presetdef>
+
+  <macrodef name="queryCustomObjMacro">
+    <attribute name="fileName"/>
+    <attribute name="entityName"/>
+    <attribute name="fields"/>
+    <attribute name="username"/>
+    <attribute name="encPwd"/>
+    <attribute name="ns"/>
+    <attribute name="dataDir"/>
+    <sequential>
+      <baseQueryCall>
+        <arg value="sfdc.entity=@{ns}@{entityName}__c"/>
+        <arg value="dataAccess.name=@{dataDir}/@{fileName}.csv"/>
+        <arg value="sfdc.extractionSOQL=Select @{fields} FROM @{ns}@{entityName}__c"/>
+        <arg value="sfdc.username=@{username}"/>
+        <arg value="sfdc.password=@{encPwd}"/>
+      </baseQueryCall>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="upsertCustomObjMacro">
+    <attribute name="fileName"/>
+    <attribute name="entityName"/>
+    <attribute name="username"/>
+    <attribute name="encPwd"/>
+    <attribute name="ns"/>
+    <attribute name="dataDir"/>
+    <attribute name="dataMappingDir"/>
+    <sequential>
+      <baseUpsertCall>
+        <arg value="sfdc.entity=@{ns}@{entityName}__c"/>
+        <arg value="dataAccess.name=@{dataDir}/@{fileName}.csv"/>
+        <arg value="process.mappingFile=@{dataMappingDir}/@{fileName}.sdl"/>
+        <arg value="sfdc.externalIdField=@{ns}ExtIdentifier__c"/>
+        <arg value="sfdc.username=@{username}"/>
+        <arg value="sfdc.password=@{encPwd}"/>
+      </baseUpsertCall>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="upsertCustomObjWithCustomExtIdMacro">
+    <attribute name="fileName"/>
+    <attribute name="entityName"/>
+    <attribute name="username"/>
+    <attribute name="encPwd"/>
+    <attribute name="ns"/>
+    <attribute name="dataDir"/>
+    <attribute name="dataMappingDir"/>
+    <attribute name="externalIdFieldName"/>
+    <sequential>
+      <baseUpsertCall>
+        <arg value="sfdc.entity=@{ns}@{entityName}__c"/>
+        <arg value="dataAccess.name=@{dataDir}/@{fileName}.csv"/>
+        <arg value="process.mappingFile=@{dataMappingDir}/@{fileName}.sdl"/>
+        <arg value="sfdc.externalIdField=@{ns}@{externalIdFieldName}"/>
+        <arg value="sfdc.username=@{username}"/>
+        <arg value="sfdc.password=@{encPwd}"/>
+      </baseUpsertCall>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="insertCustomObjMacro">
+    <attribute name="fileName"/>
+    <attribute name="entityName"/>
+    <attribute name="username"/>
+    <attribute name="encPwd"/>
+    <attribute name="ns"/>
+    <attribute name="dataDir"/>
+    <attribute name="dataMappingDir"/>
+    <sequential>
+      <baseInsertCall>
+        <arg value="sfdc.entity=@{ns}@{entityName}__c"/>
+        <arg value="dataAccess.name=@{dataDir}/@{fileName}.csv"/>
+        <arg value="process.mappingFile=@{dataMappingDir}/@{fileName}.sdl"/>
+        <arg value="sfdc.username=@{username}"/>
+        <arg value="sfdc.password=@{encPwd}"/>
+      </baseInsertCall>
+    </sequential>
+  </macrodef>
+
+  <!-- Delete all records for a given entity -->
+  <macrodef name="deleteAllMacro">
+    <attribute name="entityName"/>
+    <attribute name="username"/>
+    <attribute name="encPwd"/>
+    <attribute name="ns"/>
+    <attribute name="dataDir"/>
+    <attribute name="dataMappingDir"/>
+    <sequential>
+      <!-- Auto create the delete mapping file (which is trivial) -->
+      <echo message="ID=Id" file="@{dataMappingDir}/delete.sdl"/>
+      <delete file="@{dataDir}/@{entityName}_del.csv"/>
+      <!-- Extract all objects-->
+      <baseLoaderCall>
+        <arg value="dataAccess.type=csvWrite"/>
+        <arg value="process.operation=extract"/>
+        <arg value="sfdc.entity=@{ns}@{entityName}__c"/>
+        <arg value="dataAccess.name=@{dataDir}/@{entityName}_del.csv"/>
+        <arg value="sfdc.extractionSOQL=Select Id FROM @{ns}@{entityName}__c"/>
+        <arg value="sfdc.username=@{username}"/>
+        <arg value="sfdc.password=@{encPwd}"/>
+      </baseLoaderCall>
+      <!-- Delete the IDs we retrieved -->
+      <baseLoaderCall>
+        <arg value="dataAccess.type=csvRead"/>
+        <arg value="process.operation=delete"/>
+        <arg value="sfdc.entity=@{ns}@{entityName}__c"/>
+        <arg value="dataAccess.name=@{dataDir}/@{entityName}_del.csv"/>
+        <arg value="process.mappingFile=@{dataMappingDir}/delete.sdl"/>
+        <arg value="sfdc.username=@{username}"/>
+        <arg value="sfdc.password=@{encPwd}"/>
+      </baseLoaderCall>
+      <!-- Cleanup after ourselves -->
+      <delete file="@{dataDir}/@{entityName}_del.csv"/>
+      <delete file="@{dataMappingDir}/delete.sdl"/>
+    </sequential>
+  </macrodef>
+  
+	<macrodef name="test-tools" description="test the build - ensures all build dependencies are laoded.">
+		<sequential>
+			<echo>TOOLS LOADED</echo>
+			<echo>************</echo>
+		</sequential>
+	</macrodef>
+
+</project>

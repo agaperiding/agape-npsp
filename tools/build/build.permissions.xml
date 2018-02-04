@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="PermissionsBuild" basedir="." xmlns:sf="antlib:com.salesforce" xmlns:ac="antlib:net.sf.antcontrib">
+	
+	<import file="ant-salesforce.xml" />
+	
+	<macrodef name="createUser" description="creates a sfdc user">
+		<attribute name="sfdc.username" description="the username used to authenticate the request."/>
+		<attribute name="sfdc.password" description="the password used to authenticate the request."/>
+		<attribute name="sfdc.endpointUrl" description="the endpoint used to authenticate the request."/>
+		<attribute name="emailAddress" description="the email address of the user being created."/>
+		<attribute name="username" description="the username of the user being created."/>
+		<attribute name="profileName" description="the profile name to assign to the user being created."/>
+		<attribute name="nickname" description="the nickname of the user being created."/>
+		<attribute name="alias" description="The alias of the user being created."/>
+		<attribute name="firstName" description="the first name of the user being created."/>
+		<attribute name="lastName" description="The last name of the user being created."/>
+		<sequential>
+			<executeApex username="@{sfdc.username}" password="@{sfdc.password}" authEndpointUrl="@{sfdc.endpointUrl}">
+				<![CDATA[
+					List<Profile> profileIDs = [SELECT ID FROM Profile WHERE Name = '@{profileName}'];
+					if(profileIDs.size() == 0)
+						return -1;
+
+					List<UserRole> roleIDs = [SELECT ID FROM UserROle WHERE Name = 'No Role'];
+					If(roleIds.size() == 0)
+						return -2;
+
+					User newUser = new User();
+					newUser.username = '@{username}';
+					newUser.FirstName = '@{firstName}';
+					newUser.LastName = '@{lastName}';
+					newUser.Alias = '@{alias}';
+					newUser.CommunityNickname = '@{nickname}';
+					newUser.Email = '@{emailAddress}';
+					newUser.ProfileID = profileIDs[0].ID;
+					newUser.UserRole = roleIDs[0];
+					newUser.EmailEncodingKey = 'UTF-8';
+					newUser.LocaleSidKey = 'en_US';
+					newUser.TimeZoneSidKey = 'America/Los_Angeles';
+					newUser.LanguageLocaleKey = 'en_US';
+						
+					insert newUser;
+					
+					System.resetPassword(newUser.ID, true);
+
+					return 0;
+				]]>
+			</executeApex>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="updateUsername" description="updates a sfdc username by ID or Username.">
+		<attribute name="sfdc.username" description="the username used to authenticate the request."/>
+		<attribute name="sfdc.password" description="the password used to authenticate the request."/>
+		<attribute name="sfdc.endpointUrl" description="the endpoint used to authenticate the request."/>
+		<attribute name="userId" description="the ID of the user being updated.  This takes precedence over the usernameToUpdate value." default=""/>
+		<attribute name="usernameToUpdate" description="the username of the user being updated. If select by userID fails, this will be used to look up the user's ID" default=""/>
+		<attribute name="newUsername" description="the new username to use."/>
+		<sequential>
+			<executeApex username="@{sfdc.username}" password="@{sfdc.password}" authEndpointUrl="@{sfdc.endpointUrl}">
+				<![CDATA[
+					String username = '@{usernameToUpdate}';
+					String newUsername = '@{newUsername}';
+					String userId = '@{userId}';
+					List<User> users;
+
+					if(userId != '') {
+						users = [SELECT ID FROM User WHERE ID = :userID];
+						if(users.size() < 1) {
+							users = [SELECT ID FROM User WHERE Username = :username];
+						}
+					} else if(username != '') {
+						users = [SELECT ID FROM User WHERE Username = :username];
+					} else {
+						return -1;
+					}
+
+					if(users.size() < 1) {
+						return -2;
+					}
+
+					User u = users[0];
+					u.username = newUsername;
+					update u;
+					return 0;
+				]]>
+			</executeApex>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="unassignAllPermissionSets" description="unassigns all the mktg_ permissionSets assigned to a user">
+		<attribute name="sfdc.username" description="the username used to authenticate the request."/>
+		<attribute name="sfdc.password" description="the password used to authenticate the request."/>
+		<attribute name="sfdc.endpointUrl" description="the endpoint used to authenticate the request."/>
+		<attribute name="username" description="the username of the user from which the permissionSets will be removed" />
+		<sequential>			
+			<echo>Removing all permission sets that begin with "Mktg_" from the following user: @{username}.</echo>
+			<executeApex username="@{sfdc.username}" password="@{sfdc.password}" authEndpointUrl="@{sfdc.endpointUrl}">
+				<![CDATA[		
+						String username = '@{username}';
+						if(!String.IsNotBlank(username)) 
+							return 0;
+
+						List<User> users = [SELECT ID FROM User WHERE username = :username];
+						if(users == null || users.size() < 1)
+							return 0;
+
+						User u = users[0];
+						List<PermissionSetAssignment> assignedPermSets = [SELECT ID FROM PermissionSetAssignment WHERE AssigneeId = :u.ID AND PermissionSet.Name LIKE 'Mktg_%'];
+
+						if(assignedPermSets != null && assignedPermSets.size() > 0)
+							DELETE assignedPermSets;
+
+						return 0;
+					]]>
+			</executeApex>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="unassignPermissionSets" description="removes the specified permissionSets from the specified user">
+		<attribute name="sfdc.username" description="the username used to authenticate the request."/>
+		<attribute name="sfdc.password" description="the password used to authenticate the request."/>
+		<attribute name="sfdc.endpointUrl" description="the endpoint used to authenticate the request."/>
+		<attribute name="username" description="the user to which the permissionSets are assigned." />
+		<attribute name="permSetList" description="the list of permissionSet names to assign as csv." />
+		<sequential>			
+			<echo>Removing the permission sets: @{permSetList} from the following user: @{username}.</echo>
+			<executeApex username="@{sfdc.username}" password="@{sfdc.password}" authEndpointUrl="@{sfdc.endpointUrl}">
+				<![CDATA[
+					String username = '@{username}';
+					if(!String.IsNotBlank(username))
+						return -1;
+
+					List<User> users = [SELECT ID FROM User WHERE username = :username];
+					if(users == null || users.size() < 1)
+						return -1;
+
+					User u = users[0];
+					String permSetCsv = '@{permSetList}';
+					if(!String.IsNotBlank(permSetCsv))
+						return 0;
+
+					List<String> permSetNames = permSetCsv.replace(' ', '').split(',');
+					List<PermissionSetAssignment> assignedPermSets = [SELECT ID FROM PermissionSetAssignment WHERE AssigneeId = :u.ID AND PermissionSet.Name IN :permSetNames];
+
+					if(assignedPermSets != null && assignedPermSets.size() > 0)
+						DELETE assignedPermSets;
+
+					return 0;
+				]]>
+			</executeApex>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="assignPermissionSets" description="adds the specified permissionSets to the specified user">
+		<attribute name="sfdc.username" description="the username used to authenticate the request."/>
+		<attribute name="sfdc.password" description="the password used to authenticate the request."/>
+		<attribute name="sfdc.endpointUrl" description="the endpoint used to authenticate the request."/>
+		<attribute name="username" description="the user to which the permissionSets are assigned." />
+		<attribute name="permSetList" description="the list of permissionSet names to assign as csv." />
+		<sequential>			
+			<echo>Adding the permission sets: @{permSetList} to the following user: @{username}.</echo>
+			<executeApex username="@{sfdc.username}" password="@{sfdc.password}" authEndpointUrl="@{sfdc.endpointUrl}">
+				<![CDATA[
+						String username = '@{username}';
+						if(!String.IsNotBlank(username))
+							return -1;
+						
+						List<User> users = [SELECT ID FROM User WHERE username = :username];
+						if(users == null || users.size() < 1)
+							return -1;
+
+						User u = users[0];
+						String permSetCsv = '@{permSetList}';
+						if(!String.IsNotBlank(permSetCsv))
+							return 0;
+
+						List<String> permSetNames = permSetCsv.replace(' ', '').split(',');
+						List<PermissionSet> permSets = [SELECT ID FROM PermissionSet WHERE Name IN :permSetNames];
+						if(permSets == null || permSets.size() < 1)
+							return 0;
+
+						List<PermissionSetAssignment> permSetAsgmts = new List<PermissionSetAssignment>();
+						for(PermissionSet p : permSets) {
+							List<PermissionSetAssignment> psas = [SELECT ID FROM PermissionSetAssignment WHERE AssigneeId = :u.ID AND PermissionSetId = :p.ID];
+							if(psas == null || psas.size() < 1)               
+							permSetAsgmts.add(new PermissionSetAssignment(AssigneeId = u.ID, PermissionSetId = p.ID));
+						}
+						
+						if(permSetAsgmts.size() > 0)
+							INSERT permSetAsgmts;
+						
+						return 0;
+					]]>
+			</executeApex>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="test-build-permissions" description="test the build - ensures all build dependencies are laoded.">
+		<sequential>
+			<echo>BUILD.PERMISSIONS LOADED</echo>
+			<echo>************************</echo>
+		</sequential>
+	</macrodef>
+</project>

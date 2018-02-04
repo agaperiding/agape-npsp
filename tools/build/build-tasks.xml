@@ -1,0 +1,21 @@
+<project name="build imported tasks" default="" basedir=".">
+    <typedef name="stopfilter"
+             classname="net.sf.antcount.filters.StopFilter"
+             classpath="${antjars.home}/antcount.jar" />
+    <typedef name="echofilter"
+             classname="net.sf.antcount.filters.EchoFilter"
+             classpath="${antjars.home}/antcount.jar" />
+    <typedef name="countfilter"
+             classname="net.sf.antcount.filters.CountFilter"
+             classpath="${antjars.home}/antcount.jar" />
+    <typedef name="parallelfilter"
+             classname="net.sf.antcount.filters.ParallelFilter"
+             classpath="${antjars.home}/antcount.jar" />
+			 
+	<macrodef name="test-build-tasks" description="test the build - ensures all build dependencies are laoded.">
+		<sequential>
+			<echo>BUILD-TASKS LOADED</echo>
+			<echo>******************</echo>
+		</sequential>
+	</macrodef>
+</project>

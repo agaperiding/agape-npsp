@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="RealEstateDeploy" default="deployCodeCheckOnly" basedir="." xmlns:sf="antlib:com.salesforce" xmlns:if="ant:if" xmlns:unless="ant:unless"
+	xmlns:ext="antlib:com.salesforce.ant.ant_migration_ext">
+	<description>
+		Real Estate Build.
+	</description>
+
+	<echo />
+	<echo />
+	<property file='local.build.properties'/>
+	<property file='build.properties'/>
+	<property environment="env"/>
+	<property name="home" value="../.."/>
+
+	<echo message="build dir: ${basedir}"/>
+	<echo message="Ant Home: ${ant.home}"/>
+	<echo message="Connecting to: ${env.endpoint}"/>
+	<echo />
+	<echo />
+
+	<import file="tools.xml"/>
+	<import file="ant-salesforce.xml"/>
+	<import file="build.permissions.xml"/>
+
+	<taskdef name="deploy" classname="com.salesforce.ant.DeployTask" classpath="${antjars.home}/ant-salesforce.jar"/>
+	<taskdef resource="net/sf/antcontrib/antlib.xml" classpath="${antjars.home}/ant-contrib-1.0b3.jar"/>
+	<taskdef resource="net/sf/antcount/antlib.xml" classpath="${antjars.home}/antcount.jar"/>
+	<taskdef uri="antlib:com.salesforce.ant.ant_migration_ext" resource="antlib.xml" classpath="${build.dependencies}/ant-migration-extension.jar" />
+
+	<tstamp>
+		<format property="tempDateTimePattern" pattern="MM_dd_yyyy_hh_mm_aa"/>
+	</tstamp>
+	
+	<!-- create the filterset -->
+	<filterset id="rewsFilters">
+		<filterset>
+			<filtersFile file="env-default.properties"></filtersFile>
+		</filterset>
+		<filterset onmissingfiltersfile="warn">
+			<filtersFile file="env-${env.name}.properties"></filtersFile>
+		</filterset>
+	</filterset>
+
+	<target name="cleanTemp">
+		<echo message="Cleaning temp directory: ${build.temp}" />
+		<delete dir="${build.temp}" />
+		<mkdir dir="${build.temp}" />
+	</target>
+
+	<target name="getSfdcPassword" unless="sfdc.password.enc">
+		<baseEncryptPassword outputProperty="sfdc.password.enc">
+			<arg value="-e"/>
+			<arg value="${sfdc.password}"/>
+		</baseEncryptPassword>
+	</target>
+
+	<!-- Generate Package XML -->
+	<target name="generatePackageXML" depends="cleanTemp">
+		
+	      <copy todir="${build.temp}/applications" flatten = "true">
+            <fileset dir="${home}/src/applications">
+                <include name="**/*.app" />
+            </fileset>
+        </copy>
+
+        <copy todir="${build.temp}/aura" flatten = "false">
+            <fileset dir="${home}/src/aura" />
+        </copy>
+
+        <copy todir="${build.temp}/classes" flatten = "true">
+            <fileset dir="${home}/src/classes">
+                <include name="**/*.cls*" />
+            </fileset>
+        </copy>
+ 		<copy todir="${build.temp}/dashboards" flatten = "false">
+            <fileset dir="${home}/src/dashboards"/>
+        </copy>
+
+		<copy todir="${build.temp}/flexipages" flatten = "false">
+			<fileset dir="${home}/src/flexipages">
+    			<include name="**/*.flexipage" />
+    		</fileset>
+    	</copy>
+
+		<copy todir="${build.temp}/labels" flatten = "true">
+    		<fileset dir="${home}/src/labels">
+    			<include name="**/*.labels" />
+    		</fileset>
+    	</copy>
+   
+
+        <copy todir="${build.temp}/layouts" flatten = "true">
+            <fileset dir="${home}/src/layouts">
+                <include name="**/*.layout" />
+            </fileset>
+        </copy>
+
+		<copy todir="${build.temp}/objects" flatten = "true">
+            <fileset dir="${home}/src/objects" />
+        </copy>
+
+        <copy todir="${build.temp}/permissionsets" flatten = "true">
+            <fileset dir="${home}/src/permissionsets">
+                <include name="**/*.permissionset" />
+            </fileset>
+        </copy>
+
+		<copy todir="${build.temp}/reports" flatten = "false">
+            <fileset dir="${home}/src/reports"/>
+        </copy>
+
+        <copy todir="${build.temp}/staticresources" flatten = "true">
+            <fileset dir="${home}/src/staticresources" />
+        </copy>
+
+        <copy todir="${build.temp}/tabs" flatten = "true">
+            <fileset dir="${home}/src/tabs" />
+        </copy>
+
+        <copy todir="${build.temp}/triggers" flatten = "true">
+            <fileset dir="${home}/src/triggers">
+                <include name="**/*.trigger*" />
+            </fileset>
+        </copy>
+       
+		<copy todir="${build.temp}" flatten = "false">
+            <fileset dir="${home}/src">
+                <include name="package.xml" />
+            </fileset>
+        </copy>
+    </target>
+
+	<target name="retrieve"
+				description="Clean the buildTemp directory and retrieve
+				metadata from org"
+				depends="cleanTemp">
+			<echo>Logging into ${sfsource.serverurl}</echo>
+			<echo>With username: ${sfsource.username}</echo>
+			<sf:retrieve username="${sfdc.login}"
+							password="${sfdc.password}"
+							serverurl="${env.endpoint}"
+					  retrieveTarget="${build.temp}"
+						unpackaged="./package.xml" />
+	</target>
+	
+	<target name="destructiveChangesPre">
+        <!-- Revert Existing Metadata -->
+        <echo message="build dir: ${basedir}/../../revertExistingData"/>
+        <deploy username="${sfdc.login}"
+            password="${sfdc.password}"
+            serverurl="${env.endpoint}" 
+            deployRoot="${basedir}/../../revertExistingData"
+            checkOnly="${build.checkOnly}"
+            maxPoll="1000"
+            pollWaitMillis="1000">
+        </deploy>
+
+        <!-- Destroy Net New Pre -->
+        <echo message="build dir: ${basedir}/../../destructiveChangesPre"/>
+        <deploy username="${sfdc.login}"
+            password="${sfdc.password}"
+            serverurl="${env.endpoint}"
+            deployRoot="${basedir}/../../destructiveChangesPre"
+            checkOnly="${build.checkOnly}"
+            maxPoll="1000"
+            pollWaitMillis="1000">
+        </deploy>
+	</target> 
+
+    <target name="destructiveChangesPost">
+        <!-- Destroy Net New Post -->
+        <echo message="build dir: ${basedir}/../../destructiveChangesPost"/>
+        <deploy username="${sfdc.login}"
+            password="${sfdc.password}"
+            serverurl="${env.endpoint}"
+            deployRoot="${basedir}/../../destructiveChangesPost"
+            checkOnly="${build.checkOnly}"
+            maxPoll="1000"
+            pollWaitMillis="1000">
+        </deploy>
+    </target> 
+
+    <!-- Deploy to Non-Supportforce Devs -->
+    <target name="deployToDev" depends="cleanTemp">
+        <copy todir="${build.temp}/applications" flatten = "true">
+            <fileset dir="${home}/src/applications">
+                <include name="**/*.app" />
+            </fileset>
+        </copy>
+
+        <copy todir="${build.temp}/aura" flatten = "false">
+            <fileset dir="${home}/src/aura" />
+        </copy>
+
+        <copy todir="${build.temp}/classes" flatten = "true">
+            <fileset dir="${home}/src/classes">
+                <include name="**/*.cls*" />
+            </fileset>
+        </copy>
+ 		<copy todir="${build.temp}/dashboards" flatten = "false">
+            <fileset dir="${home}/src/dashboards"/>
+        </copy>
+
+		<copy todir="${build.temp}/flexipages" flatten = "false">
+			<fileset dir="${home}/src/flexipages">
+    			<include name="**/*.flexipage" />
+    		</fileset>
+    	</copy>
+
+		<copy todir="${build.temp}/labels" flatten = "true">
+    		<fileset dir="${home}/src/labels">
+    			<include name="**/*.labels" />
+    		</fileset>
+    	</copy>
+
+        <copy todir="${build.temp}/layouts" flatten = "true">
+            <fileset dir="${home}/src/layouts">
+                <include name="**/*.layout" />
+            </fileset>
+        </copy>
+
+		<copy todir="${build.temp}/objects" flatten = "true">
+            <fileset dir="${home}/src/objects" />
+        </copy>
+
+        <copy todir="${build.temp}/permissionsets" flatten = "true">
+            <fileset dir="${home}/src/permissionsets">
+                <include name="**/*.permissionset" />
+            </fileset>
+        </copy>
+
+		<copy todir="${build.temp}/reports" flatten = "false">
+            <fileset dir="${home}/src/reports"/>
+        </copy>
+
+        <copy todir="${build.temp}/staticresources" flatten = "true">
+            <fileset dir="${home}/src/staticresources" />
+        </copy>
+
+        <copy todir="${build.temp}/tabs" flatten = "true">
+            <fileset dir="${home}/src/tabs" />
+        </copy>
+
+        <copy todir="${build.temp}/triggers" flatten = "true">
+            <fileset dir="${home}/src/triggers">
+                <include name="**/*.trigger*" />
+            </fileset>
+        </copy>
+       
+		<copy todir="${build.temp}" flatten = "false">
+            <fileset dir="${home}/src">
+                <include name="package.xml" />
+            </fileset>
+        </copy>
+
+    <deploy username="${sfdc.login}"
+            password="${sfdc.password}"
+            serverurl="${env.endpoint}"
+            deployRoot="${build.temp}"
+            checkOnly="${build.checkOnly}"
+            maxPoll="1000"
+            pollWaitMillis="1000">
+        </deploy>
+    </target>
+
+</project>
