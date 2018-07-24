@@ -182,13 +182,13 @@
 
     <!-- Deploy to Non-Supportforce Devs -->
     <target name="deployToDev" depends="cleanTemp">
-        <!-- <copy todir="${build.temp}/applications" flatten = "true">
+       <copy todir="${build.temp}/applications" flatten = "true">
             <fileset dir="${home}/src/applications">
                 <include name="**/*.app" />
             </fileset>
         </copy>
 
-        <copy todir="${build.temp}/aura" flatten = "false">
+        <!--  <copy todir="${build.temp}/aura" flatten = "false">
             <fileset dir="${home}/src/aura" />
         </copy>
 
