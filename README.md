@@ -1,7 +1,6 @@
 # AGAPE Salesforce NPSP
 
 ## Custom Objects
-* AGAPE_Participant__c
 * AGAPE_ProgramParticipant__c
 * AGAPE_Program__c
 * AGAPE_Goal__c
