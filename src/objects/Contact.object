@@ -1,0 +1,2654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"> 
+    <!-- Existing Participant Fields -->
+    <fields>
+        <fullName>Agape_Adaptive_Equipment_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Adaptive Equipment Required</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agape_Service_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Agape Service Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cicero</fullName>
+                    <default>true</default>
+                    <label>Cicero</label>
+                </value>
+                <value>
+                    <fullName>Bradford Woods</fullName>
+                    <default>false</default>
+                    <label>Bradford Woods</label>
+                </value>
+                <value>
+                    <fullName>East</fullName>
+                    <default>false</default>
+                    <label>East</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agape_Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>FLOOR((TODAY()- Agape_Birthdate__c )/365.2425)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agape_Ambulatory_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Ambulatory Status</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agape_Behavioral_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Behavioral Status</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agape_Birthdate__c</fullName>
+        <externalId>false</externalId>
+        <label>Birthdate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Bridle_Reins__c</fullName>
+        <externalId>false</externalId>
+        <label>Bridle/Reins</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Reins on Halter</fullName>
+                    <default>false</default>
+                    <label>Reins on Halter</label>
+                </value>
+                <value>
+                    <fullName>Reins on Bridle</fullName>
+                    <default>false</default>
+                    <label>Reins on Bridle</label>
+                </value>
+                <value>
+                    <fullName>No Reins</fullName>
+                    <default>false</default>
+                    <label>No Reins</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agape_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agape_County__c</fullName>
+        <externalId>false</externalId>
+        <label>County</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Allen</fullName>
+                    <default>false</default>
+                    <label>Allen</label>
+                </value>
+                <value>
+                    <fullName>Bartholomew</fullName>
+                    <default>false</default>
+                    <label>Bartholomew</label>
+                </value>
+                <value>
+                    <fullName>Boone</fullName>
+                    <default>false</default>
+                    <label>Boone</label>
+                </value>
+                <value>
+                    <fullName>Brown</fullName>
+                    <default>false</default>
+                    <label>Brown</label>
+                </value>
+                <value>
+                    <fullName>Cass</fullName>
+                    <default>false</default>
+                    <label>Cass</label>
+                </value>
+                <value>
+                    <fullName>Clinton</fullName>
+                    <default>false</default>
+                    <label>Clinton</label>
+                </value>
+                <value>
+                    <fullName>DeKalb</fullName>
+                    <default>false</default>
+                    <label>DeKalb</label>
+                </value>
+                <value>
+                    <fullName>Delaware</fullName>
+                    <default>false</default>
+                    <label>Delaware</label>
+                </value>
+                <value>
+                    <fullName>Fayette</fullName>
+                    <default>false</default>
+                    <label>Fayette</label>
+                </value>
+                <value>
+                    <fullName>Fountain</fullName>
+                    <default>false</default>
+                    <label>Fountain</label>
+                </value>
+                <value>
+                    <fullName>Grant</fullName>
+                    <default>false</default>
+                    <label>Grant</label>
+                </value>
+                <value>
+                    <fullName>Greene</fullName>
+                    <default>false</default>
+                    <label>Greene</label>
+                </value>
+                <value>
+                    <fullName>Hamilton</fullName>
+                    <default>false</default>
+                    <label>Hamilton</label>
+                </value>
+                <value>
+                    <fullName>Hancock</fullName>
+                    <default>false</default>
+                    <label>Hancock</label>
+                </value>
+                <value>
+                    <fullName>Hendricks</fullName>
+                    <default>false</default>
+                    <label>Hendricks</label>
+                </value>
+                <value>
+                    <fullName>Henry</fullName>
+                    <default>false</default>
+                    <label>Henry</label>
+                </value>
+                <value>
+                    <fullName>Howard</fullName>
+                    <default>false</default>
+                    <label>Howard</label>
+                </value>
+                <value>
+                    <fullName>Jackson</fullName>
+                    <default>false</default>
+                    <label>Jackson</label>
+                </value>
+                <value>
+                    <fullName>Jasper</fullName>
+                    <default>false</default>
+                    <label>Jasper</label>
+                </value>
+                <value>
+                    <fullName>Johnson</fullName>
+                    <default>false</default>
+                    <label>Johnson</label>
+                </value>
+                <value>
+                    <fullName>Kosciuosko</fullName>
+                    <default>false</default>
+                    <label>Kosciuosko</label>
+                </value>
+                <value>
+                    <fullName>Lake</fullName>
+                    <default>false</default>
+                    <label>Lake</label>
+                </value>
+                <value>
+                    <fullName>Lawrence</fullName>
+                    <default>false</default>
+                    <label>Lawrence</label>
+                </value>
+                <value>
+                    <fullName>Madison</fullName>
+                    <default>false</default>
+                    <label>Madison</label>
+                </value>
+                <value>
+                    <fullName>Marion</fullName>
+                    <default>false</default>
+                    <label>Marion</label>
+                </value>
+                <value>
+                    <fullName>Martin</fullName>
+                    <default>false</default>
+                    <label>Martin</label>
+                </value>
+                <value>
+                    <fullName>Monroe</fullName>
+                    <default>false</default>
+                    <label>Monroe</label>
+                </value>
+                <value>
+                    <fullName>Montgomery</fullName>
+                    <default>false</default>
+                    <label>Montgomery</label>
+                </value>
+                <value>
+                    <fullName>Morgan</fullName>
+                    <default>false</default>
+                    <label>Morgan</label>
+                </value>
+                <value>
+                    <fullName>Newton</fullName>
+                    <default>false</default>
+                    <label>Newton</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Outside of Indiana</fullName>
+                    <default>false</default>
+                    <label>Outside of Indiana</label>
+                </value>
+                <value>
+                    <fullName>Owen</fullName>
+                    <default>false</default>
+                    <label>Owen</label>
+                </value>
+                <value>
+                    <fullName>Putnam</fullName>
+                    <default>false</default>
+                    <label>Putnam</label>
+                </value>
+                <value>
+                    <fullName>Randolph</fullName>
+                    <default>false</default>
+                    <label>Randolph</label>
+                </value>
+                <value>
+                    <fullName>Rush</fullName>
+                    <default>false</default>
+                    <label>Rush</label>
+                </value>
+                <value>
+                    <fullName>Scott</fullName>
+                    <default>false</default>
+                    <label>Scott</label>
+                </value>
+                <value>
+                    <fullName>Shawnee</fullName>
+                    <default>false</default>
+                    <label>Shawnee</label>
+                </value>
+                <value>
+                    <fullName>Shelby</fullName>
+                    <default>false</default>
+                    <label>Shelby</label>
+                </value>
+                <value>
+                    <fullName>Tippecanoe</fullName>
+                    <default>false</default>
+                    <label>Tippecanoe</label>
+                </value>
+                <value>
+                    <fullName>Tipton</fullName>
+                    <default>false</default>
+                    <label>Tipton</label>
+                </value>
+                <value>
+                    <fullName>Vandeburgh</fullName>
+                    <default>false</default>
+                    <label>Vandeburgh</label>
+                </value>
+                <value>
+                    <fullName>Wayne</fullName>
+                    <default>false</default>
+                    <label>Wayne</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agape_Demographics__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Demographics</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Direction_Following_Ability__c</fullName>
+        <externalId>false</externalId>
+        <label>Direction Following Ability</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agape_Dislikes__c</fullName>
+        <externalId>false</externalId>
+        <label>Dislikes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Dismount__c</fullName>
+        <externalId>false</externalId>
+        <label>Dismount</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Emergency_Form__c</fullName>
+        <externalId>false</externalId>
+        <label>Emergency Medical Policy</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Ethnicity__c</fullName>
+        <externalId>false</externalId>
+        <label>Ethnicity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Asian</fullName>
+                    <default>false</default>
+                    <label>Asian</label>
+                </value>
+                <value>
+                    <fullName>Black</fullName>
+                    <default>false</default>
+                    <label>Black</label>
+                </value>
+                <value>
+                    <fullName>Caucasian</fullName>
+                    <default>false</default>
+                    <label>Caucasian</label>
+                </value>
+                <value>
+                    <fullName>Hispanic</fullName>
+                    <default>false</default>
+                    <label>Hispanic</label>
+                </value>
+                <value>
+                    <fullName>Multi-racial</fullName>
+                    <default>false</default>
+                    <label>Multi-racial</label>
+                </value>
+                <value>
+                    <fullName>Native American</fullName>
+                    <default>false</default>
+                    <label>Native American</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agape_Gender__c</fullName>
+        <externalId>false</externalId>
+        <label>Gender</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Male</fullName>
+                    <default>false</default>
+                    <label>Male</label>
+                </value>
+                <value>
+                    <fullName>Female</fullName>
+                    <default>false</default>
+                    <label>Female</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agape_Health_History_Physician_Release__c</fullName>
+        <externalId>false</externalId>
+        <label>Physician Release</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Health_History__c</fullName>
+        <externalId>false</externalId>
+        <label>Health History</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Height__c</fullName>
+        <externalId>false</externalId>
+        <label>Height</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agape_Helmet_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>Helmet Size</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agape_How_rider_holds_reins__c</fullName>
+        <externalId>false</externalId>
+        <label>How rider holds reins</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Direct Rein</fullName>
+                    <default>false</default>
+                    <label>Direct Rein</label>
+                </value>
+                <value>
+                    <fullName>Neck Rein</fullName>
+                    <default>false</default>
+                    <label>Neck Rein</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agape_Liability_Release__c</fullName>
+        <externalId>false</externalId>
+        <label>Liability Release</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Likes__c</fullName>
+        <externalId>false</externalId>
+        <label>Likes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Mount__c</fullName>
+        <externalId>false</externalId>
+        <label>Mount</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Paperwork_Expiration__c</fullName>
+        <externalId>false</externalId>
+        <label>Paperwork Expiration</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Payment_Source_Notes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter dates for funding source allocation(s).  Do not delete old funding source notes, but add to them when funding source changes.</inlineHelpText>
+        <label>Payment Source Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agape_Payment_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Self-Pay</fullName>
+                    <default>false</default>
+                    <label>Self-Pay</label>
+                </value>
+                <value>
+                    <fullName>Agape Scholarship</fullName>
+                    <default>false</default>
+                    <label>Agape Scholarship</label>
+                </value>
+                <value>
+                    <fullName>DCS</fullName>
+                    <default>false</default>
+                    <label>DCS</label>
+                </value>
+                <value>
+                    <fullName>Children&apos;s Bureau</fullName>
+                    <default>false</default>
+                    <label>Children&apos;s Bureau</label>
+                </value>
+                <value>
+                    <fullName>Choices</fullName>
+                    <default>false</default>
+                    <label>Choices</label>
+                </value>
+                <value>
+                    <fullName>TANF</fullName>
+                    <default>false</default>
+                    <label>TANF</label>
+                </value>
+                <value>
+                    <fullName>Partner_Funded</fullName>
+                    <default>false</default>
+                    <label>Partner Funded</label>
+                </value>
+                <value>
+                    <fullName>Partner-Agape Funded</fullName>
+                    <default>false</default>
+                    <label>Partner-Agape Funded</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agape_Photo_Media_Release__c</fullName>
+        <externalId>false</externalId>
+        <label>Photo &amp; Media Release</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agape_Precautions__c</fullName>
+        <externalId>false</externalId>
+        <label>Precautions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Primary_Diagnosis__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Diagnosis</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adult co-participant, court ordered</fullName>
+                    <default>false</default>
+                    <label>Adult co-participant, court ordered</label>
+                </value>
+                <value>
+                    <fullName>Adult co-participant, non-court ordered</fullName>
+                    <default>false</default>
+                    <label>Adult co-participant, non-court ordered</label>
+                </value>
+                <value>
+                    <fullName>Alzheimer&apos;s Disease</fullName>
+                    <default>false</default>
+                    <label>Alzheimer&apos;s Disease</label>
+                </value>
+                <value>
+                    <fullName>Angelmans Syndrome</fullName>
+                    <default>false</default>
+                    <label>Angelmans Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Anxiety</fullName>
+                    <default>false</default>
+                    <label>Anxiety</label>
+                </value>
+                <value>
+                    <fullName>Aspergers</fullName>
+                    <default>false</default>
+                    <label>Aspergers</label>
+                </value>
+                <value>
+                    <fullName>At Risk Youth</fullName>
+                    <default>false</default>
+                    <label>At Risk Youth</label>
+                </value>
+                <value>
+                    <fullName>Attention Deficit Disorder</fullName>
+                    <default>false</default>
+                    <label>Attention Deficit Disorder</label>
+                </value>
+                <value>
+                    <fullName>Attention Deficit Hyperactivity Disorder</fullName>
+                    <default>false</default>
+                    <label>Attention Deficit Hyperactivity Disorder</label>
+                </value>
+                <value>
+                    <fullName>Auditory Processing Disorder</fullName>
+                    <default>false</default>
+                    <label>Auditory Processing Disorder</label>
+                </value>
+                <value>
+                    <fullName>Autism</fullName>
+                    <default>false</default>
+                    <label>Autism</label>
+                </value>
+                <value>
+                    <fullName>Beta Thalassemia</fullName>
+                    <default>false</default>
+                    <label>Beta Thalassemia</label>
+                </value>
+                <value>
+                    <fullName>Bi-Polar Disorder</fullName>
+                    <default>false</default>
+                    <label>Bi-Polar Disorder</label>
+                </value>
+                <value>
+                    <fullName>Brain Injuries</fullName>
+                    <default>false</default>
+                    <label>Brain Injuries</label>
+                </value>
+                <value>
+                    <fullName>Cancer</fullName>
+                    <default>false</default>
+                    <label>Cancer</label>
+                </value>
+                <value>
+                    <fullName>Cardiovascular</fullName>
+                    <default>false</default>
+                    <label>Cardiovascular</label>
+                </value>
+                <value>
+                    <fullName>Cerebellar Ataxia</fullName>
+                    <default>false</default>
+                    <label>Cerebellar Ataxia</label>
+                </value>
+                <value>
+                    <fullName>Cerebellar Hypoplasia</fullName>
+                    <default>false</default>
+                    <label>Cerebellar Hypoplasia</label>
+                </value>
+                <value>
+                    <fullName>Cerebral Palsy</fullName>
+                    <default>false</default>
+                    <label>Cerebral Palsy</label>
+                </value>
+                <value>
+                    <fullName>Chromosome Disorder</fullName>
+                    <default>false</default>
+                    <label>Chromosome Disorder</label>
+                </value>
+                <value>
+                    <fullName>Cognitive Disability</fullName>
+                    <default>false</default>
+                    <label>Cognitive Disability</label>
+                </value>
+                <value>
+                    <fullName>Congenital Anomaly</fullName>
+                    <default>false</default>
+                    <label>Congenital Anomaly</label>
+                </value>
+                <value>
+                    <fullName>Constitutional Dwarfism</fullName>
+                    <default>false</default>
+                    <label>Constitutional Dwarfism</label>
+                </value>
+                <value>
+                    <fullName>Court Ordered</fullName>
+                    <default>false</default>
+                    <label>Court Ordered</label>
+                </value>
+                <value>
+                    <fullName>Craniofacial Abnormality</fullName>
+                    <default>false</default>
+                    <label>Craniofacial Abnormality</label>
+                </value>
+                <value>
+                    <fullName>Deafness</fullName>
+                    <default>false</default>
+                    <label>Deafness</label>
+                </value>
+                <value>
+                    <fullName>Depression</fullName>
+                    <default>false</default>
+                    <label>Depression</label>
+                </value>
+                <value>
+                    <fullName>Developmental Delay</fullName>
+                    <default>false</default>
+                    <label>Developmental Delay</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Melitis</fullName>
+                    <default>false</default>
+                    <label>Diabetes Melitis</label>
+                </value>
+                <value>
+                    <fullName>Disruptive Mood Dysregulation Disorder</fullName>
+                    <default>false</default>
+                    <label>Disruptive Mood Dysregulation Disorder</label>
+                </value>
+                <value>
+                    <fullName>Down Syndrome</fullName>
+                    <default>false</default>
+                    <label>Down Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Drug Dependence/Recovering Addict</fullName>
+                    <default>false</default>
+                    <label>Drug Dependence/Recovering Addict</label>
+                </value>
+                <value>
+                    <fullName>Dyslexia</fullName>
+                    <default>false</default>
+                    <label>Dyslexia</label>
+                </value>
+                <value>
+                    <fullName>Dyspraxia</fullName>
+                    <default>false</default>
+                    <label>Dyspraxia</label>
+                </value>
+                <value>
+                    <fullName>Ehlers-Danlos Syndrome</fullName>
+                    <default>false</default>
+                    <label>Ehlers-Danlos Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Emotional Disability</fullName>
+                    <default>false</default>
+                    <label>Emotional Disability</label>
+                </value>
+                <value>
+                    <fullName>Encephalopathy</fullName>
+                    <default>false</default>
+                    <label>Encephalopathy</label>
+                </value>
+                <value>
+                    <fullName>Epilepsy</fullName>
+                    <default>false</default>
+                    <label>Epilepsy/Seizure Disorder</label>
+                </value>
+                <value>
+                    <fullName>Fetal Alcohol Syndrome</fullName>
+                    <default>false</default>
+                    <label>Fetal Alcohol Syndrome/Drug Related Neurodevelopmental Disorder</label>
+                </value>
+                <value>
+                    <fullName>Genetic Disorder</fullName>
+                    <default>false</default>
+                    <label>Genetic Disorder</label>
+                </value>
+                <value>
+                    <fullName>Global Developmental Delay</fullName>
+                    <default>false</default>
+                    <label>Global Developmental Delay</label>
+                </value>
+                <value>
+                    <fullName>Goltz-Gorlin Syndrome/Basal-cell Carcinoma Syndrome</fullName>
+                    <default>false</default>
+                    <label>Goltz-Gorlin Syndrome/Basal-cell Carcinoma Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Grief</fullName>
+                    <default>false</default>
+                    <label>Grief</label>
+                </value>
+                <value>
+                    <fullName>Hearing Impairment</fullName>
+                    <default>false</default>
+                    <label>Hearing Impairment/Deafness</label>
+                </value>
+                <value>
+                    <fullName>Hereditary Spastic Paraplegia</fullName>
+                    <default>false</default>
+                    <label>Hereditary Spastic Paraplegia</label>
+                </value>
+                <value>
+                    <fullName>Hydrocephalus</fullName>
+                    <default>false</default>
+                    <label>Hydrocephalus</label>
+                </value>
+                <value>
+                    <fullName>Hypermobility Syndrome</fullName>
+                    <default>false</default>
+                    <label>Hypermobility Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Hypotonia</fullName>
+                    <default>false</default>
+                    <label>Hypotonia/Low Muscle Tone</label>
+                </value>
+                <value>
+                    <fullName>Impulse Control Disorder</fullName>
+                    <default>false</default>
+                    <label>Impulse Control Disorder</label>
+                </value>
+                <value>
+                    <fullName>Juvenile Rheumatoid Arthritis</fullName>
+                    <default>false</default>
+                    <label>Juvenile Rheumatoid Arthritis</label>
+                </value>
+                <value>
+                    <fullName>Learning Disabilities</fullName>
+                    <default>false</default>
+                    <label>Learning Disabilities</label>
+                </value>
+                <value>
+                    <fullName>Legg-Perthes Disease</fullName>
+                    <default>false</default>
+                    <label>Legg-Perthes Disease</label>
+                </value>
+                <value>
+                    <fullName>Lennox-Gastaut Syndrome</fullName>
+                    <default>false</default>
+                    <label>Lennox-Gastaut Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Mast Cell Activation Syndrome</fullName>
+                    <default>false</default>
+                    <label>Mast Cell Activation Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Microcephaly</fullName>
+                    <default>false</default>
+                    <label>Microcephaly</label>
+                </value>
+                <value>
+                    <fullName>Mild Intellectual Disability/Mild Mental Retardation</fullName>
+                    <default>false</default>
+                    <label>Mild Intellectual Disability/Mild Mental Retardation</label>
+                </value>
+                <value>
+                    <fullName>Mitochondrial Disease</fullName>
+                    <default>false</default>
+                    <label>Mitochondrial Disease</label>
+                </value>
+                <value>
+                    <fullName>Moderate Cognitive Impairment</fullName>
+                    <default>false</default>
+                    <label>Moderate Cognitive Impairment</label>
+                </value>
+                <value>
+                    <fullName>Mood Disorder</fullName>
+                    <default>false</default>
+                    <label>Mood Disorder</label>
+                </value>
+                <value>
+                    <fullName>Multiple Hereditory Exostosis (MHE)</fullName>
+                    <default>false</default>
+                    <label>Multiple Hereditory Exostosis (MHE)</label>
+                </value>
+                <value>
+                    <fullName>Multiple Sclerosis</fullName>
+                    <default>false</default>
+                    <label>Multiple Sclerosis</label>
+                </value>
+                <value>
+                    <fullName>Muscular Dystrophy</fullName>
+                    <default>false</default>
+                    <label>Muscular Dystrophy</label>
+                </value>
+                <value>
+                    <fullName>Neuromuscular Scoliosis</fullName>
+                    <default>false</default>
+                    <label>Neuromuscular Scoliosis</label>
+                </value>
+                <value>
+                    <fullName>Neuropathy</fullName>
+                    <default>false</default>
+                    <label>Neuropathy</label>
+                </value>
+                <value>
+                    <fullName>No Diagnosis- such as a corporate leadership program</fullName>
+                    <default>false</default>
+                    <label>No Diagnosis- such as a corporate leadership program</label>
+                </value>
+                <value>
+                    <fullName>OCD</fullName>
+                    <default>false</default>
+                    <label>Obsessive Compulsive Disorder</label>
+                </value>
+                <value>
+                    <fullName>Oppositional Defiant Disorder</fullName>
+                    <default>false</default>
+                    <label>Oppositional Defiant Disorder</label>
+                </value>
+                <value>
+                    <fullName>Pervasive Developmental Disorder - Not Otherwise Specified</fullName>
+                    <default>false</default>
+                    <label>Pervasive Developmental Disorder - Not Otherwise Specified</label>
+                </value>
+                <value>
+                    <fullName>PTSD</fullName>
+                    <default>false</default>
+                    <label>Post Traumatic Stress Disorder</label>
+                </value>
+                <value>
+                    <fullName>Post Traumatic Stress Disorder - Sexual Abuse</fullName>
+                    <default>false</default>
+                    <label>Post Traumatic Stress Disorder - Sexual Abuse</label>
+                </value>
+                <value>
+                    <fullName>Post Traumatic Stress Disorder - Veteran</fullName>
+                    <default>false</default>
+                    <label>Post Traumatic Stress Disorder - Veteran</label>
+                </value>
+                <value>
+                    <fullName>Prader-Willi Syndrome</fullName>
+                    <default>false</default>
+                    <label>Prader-Willi Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Processing Disorder - Auditory</fullName>
+                    <default>false</default>
+                    <label>Processing Disorder - Auditory</label>
+                </value>
+                <value>
+                    <fullName>Processing Disorder - Sensory</fullName>
+                    <default>false</default>
+                    <label>Processing Disorder - Sensory</label>
+                </value>
+                <value>
+                    <fullName>Processing Disorder - Visual</fullName>
+                    <default>false</default>
+                    <label>Processing Disorder - Visual</label>
+                </value>
+                <value>
+                    <fullName>Reactive Attachment Disorder</fullName>
+                    <default>false</default>
+                    <label>Reactive Attachment Disorder</label>
+                </value>
+                <value>
+                    <fullName>Rhetts Syndrome</fullName>
+                    <default>false</default>
+                    <label>Rhetts Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Schizophrenia</fullName>
+                    <default>false</default>
+                    <label>Schizophrenia</label>
+                </value>
+                <value>
+                    <fullName>Scoliosis</fullName>
+                    <default>false</default>
+                    <label>Scoliosis</label>
+                </value>
+                <value>
+                    <fullName>Seizure Disorder</fullName>
+                    <default>false</default>
+                    <label>Seizure Disorder</label>
+                </value>
+                <value>
+                    <fullName>Sickle Cell Anemia</fullName>
+                    <default>false</default>
+                    <label>Sickle Cell Anemia</label>
+                </value>
+                <value>
+                    <fullName>Sleep Apnea</fullName>
+                    <default>false</default>
+                    <label>Sleep Apnea</label>
+                </value>
+                <value>
+                    <fullName>Smith-Lemli-Opitz syndrome</fullName>
+                    <default>false</default>
+                    <label>Smith-Lemli-Opitz syndrome</label>
+                </value>
+                <value>
+                    <fullName>Speech Delay</fullName>
+                    <default>false</default>
+                    <label>Speech Delay</label>
+                </value>
+                <value>
+                    <fullName>Speech Impediment</fullName>
+                    <default>false</default>
+                    <label>Speech Impediment</label>
+                </value>
+                <value>
+                    <fullName>Spina Bifida</fullName>
+                    <default>false</default>
+                    <label>Spina Bifida</label>
+                </value>
+                <value>
+                    <fullName>Spinal Cord Injuries</fullName>
+                    <default>false</default>
+                    <label>Spinal Cord Injuries</label>
+                </value>
+                <value>
+                    <fullName>Stroke</fullName>
+                    <default>false</default>
+                    <label>Stroke</label>
+                </value>
+                <value>
+                    <fullName>TBI</fullName>
+                    <default>false</default>
+                    <label>TBI</label>
+                </value>
+                <value>
+                    <fullName>Transverse Myelitis</fullName>
+                    <default>false</default>
+                    <label>Transverse Myelitis</label>
+                </value>
+                <value>
+                    <fullName>Traumatic Brain Injury</fullName>
+                    <default>false</default>
+                    <label>Traumatic Brain Injury</label>
+                </value>
+                <value>
+                    <fullName>Triple X Syndrome (47 XXX)</fullName>
+                    <default>false</default>
+                    <label>Triple X Syndrome (47 XXX)</label>
+                </value>
+                <value>
+                    <fullName>Visual Impairment</fullName>
+                    <default>false</default>
+                    <label>Visual Impairment/Blindness</label>
+                </value>
+                <value>
+                    <fullName>Von Willenbrand Disease</fullName>
+                    <default>false</default>
+                    <label>Von Willenbrand Disease</label>
+                </value>
+                <value>
+                    <fullName>Wolf Parkinson White Syndrome (WPW)</fullName>
+                    <default>false</default>
+                    <label>Wolf Parkinson White Syndrome (WPW)</label>
+                </value>
+                <value>
+                    <fullName>emphysema</fullName>
+                    <default>false</default>
+                    <label>emphysema</label>
+                </value>
+                <value>
+                    <fullName>COPD- chronic obstructive pulmonary disease</fullName>
+                    <default>false</default>
+                    <label>COPD- chronic obstructive pulmonary disease</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agape_Program_Participation__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Participation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Therapeutic Riding</fullName>
+                    <default>false</default>
+                    <label>Therapeutic Riding</label>
+                </value>
+                <value>
+                    <fullName>Therapeutic Riding (BW)</fullName>
+                    <default>false</default>
+                    <label>Therapeutic Riding (BW)</label>
+                </value>
+                <value>
+                    <fullName>Therapeutic Riding (East)</fullName>
+                    <default>false</default>
+                    <label>Therapeutic Riding (East)</label>
+                </value>
+                <value>
+                    <fullName>Stirrup Success in the Stable</fullName>
+                    <default>false</default>
+                    <label>Stirrup Success in the Stable</label>
+                </value>
+                <value>
+                    <fullName>Stirrup Success in the Stable (BW)</fullName>
+                    <default>false</default>
+                    <label>Stirrup Success in the Stable (BW)</label>
+                </value>
+                <value>
+                    <fullName>Stirrup Success in the Stable (East)</fullName>
+                    <default>false</default>
+                    <label>Stirrup Success in the Stable (East)</label>
+                </value>
+                <value>
+                    <fullName>Unbridled Leadership</fullName>
+                    <default>false</default>
+                    <label>Unbridled Leadership</label>
+                </value>
+                <value>
+                    <fullName>Youth Leadership</fullName>
+                    <default>false</default>
+                    <label>Youth Leadership</label>
+                </value>
+                <value>
+                    <fullName>Carriage Driving</fullName>
+                    <default>false</default>
+                    <label>Carriage Driving</label>
+                </value>
+                <value>
+                    <fullName>Carriage Driving (BW)</fullName>
+                    <default>false</default>
+                    <label>Carriage Driving (BW)</label>
+                </value>
+                <value>
+                    <fullName>Stirrup Success Mobile</fullName>
+                    <default>false</default>
+                    <label>Stirrup Success Mobile</label>
+                </value>
+                <value>
+                    <fullName>Memory Lane</fullName>
+                    <default>false</default>
+                    <label>Memory Lane</label>
+                </value>
+                <value>
+                    <fullName>Adult Camp (BW)</fullName>
+                    <default>false</default>
+                    <label>Adult Camp (BW)</label>
+                </value>
+                <value>
+                    <fullName>Camp Riley (BW)</fullName>
+                    <default>false</default>
+                    <label>Camp Riley (BW)</label>
+                </value>
+                <value>
+                    <fullName>Camp Hi-Lite (BW)</fullName>
+                    <default>false</default>
+                    <label>Camp Hi-Lite (BW)</label>
+                </value>
+                <value>
+                    <fullName>Camp R.O.C.K.S. (BW)</fullName>
+                    <default>false</default>
+                    <label>Camp R.O.C.K.S. (BW)</label>
+                </value>
+                <value>
+                    <fullName>Camp About Face (BW)</fullName>
+                    <default>false</default>
+                    <label>Camp About Face (BW)</label>
+                </value>
+                <value>
+                    <fullName>CHAMP Camp (BW)</fullName>
+                    <default>false</default>
+                    <label>CHAMP Camp (BW)</label>
+                </value>
+                <value>
+                    <fullName>Care for Kids (BW)</fullName>
+                    <default>false</default>
+                    <label>Care for Kids (BW)</label>
+                </value>
+                <value>
+                    <fullName>HEAR Indiana (BW)</fullName>
+                    <default>false</default>
+                    <label>HEAR Indiana (BW)</label>
+                </value>
+                <value>
+                    <fullName>Camp Kan Du (BW)</fullName>
+                    <default>false</default>
+                    <label>Camp Kan Du (BW)</label>
+                </value>
+                <value>
+                    <fullName>Camp Independence (BW)</fullName>
+                    <default>false</default>
+                    <label>Camp Independence (BW)</label>
+                </value>
+                <value>
+                    <fullName>Camp Little Red Door (BW)</fullName>
+                    <default>false</default>
+                    <label>Camp Little Red Door (BW)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+
+    <fields>
+        <fullName>Agape_Registration_Form__c</fullName>
+        <externalId>false</externalId>
+        <label>Registration Form</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Riding_Position_posture__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please describe</inlineHelpText>
+        <label>Riding Position/posture</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agape_Saddle__c</fullName>
+        <externalId>false</externalId>
+        <label>Saddle</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agape_Scholarship_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Scholarship Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Scholarship_Awarded__c</fullName>
+        <externalId>false</externalId>
+        <label>Scholarship Awarded</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agape_Scholarship_Form__c</fullName>
+        <externalId>false</externalId>
+        <label>Scholarship Form</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agape_School__c</fullName>
+        <externalId>false</externalId>
+        <label>School/Day Program</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agape_Secondary_Diagnosis__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Diagnosis</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adult co-participant, court ordered</fullName>
+                    <default>false</default>
+                    <label>Adult co-participant, court ordered</label>
+                </value>
+                <value>
+                    <fullName>Adult co-participant, non-court ordered</fullName>
+                    <default>false</default>
+                    <label>Adult co-participant, non-court ordered</label>
+                </value>
+                <value>
+                    <fullName>Alzheimer&apos;s Disease</fullName>
+                    <default>false</default>
+                    <label>Alzheimer&apos;s Disease</label>
+                </value>
+                <value>
+                    <fullName>Angelmans Syndrome</fullName>
+                    <default>false</default>
+                    <label>Angelmans Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Anxiety</fullName>
+                    <default>false</default>
+                    <label>Anxiety</label>
+                </value>
+                <value>
+                    <fullName>Aspergers</fullName>
+                    <default>false</default>
+                    <label>Aspergers</label>
+                </value>
+                <value>
+                    <fullName>At Risk Youth</fullName>
+                    <default>false</default>
+                    <label>At Risk Youth</label>
+                </value>
+                <value>
+                    <fullName>Attention Deficit Disorder</fullName>
+                    <default>false</default>
+                    <label>Attention Deficit Disorder</label>
+                </value>
+                <value>
+                    <fullName>Attention Deficit Hyperactivity Disorder</fullName>
+                    <default>false</default>
+                    <label>Attention Deficit Hyperactivity Disorder</label>
+                </value>
+                <value>
+                    <fullName>Auditory Processing Disorder</fullName>
+                    <default>false</default>
+                    <label>Auditory Processing Disorder</label>
+                </value>
+                <value>
+                    <fullName>Autism</fullName>
+                    <default>false</default>
+                    <label>Autism</label>
+                </value>
+                <value>
+                    <fullName>Beta Thalassemia</fullName>
+                    <default>false</default>
+                    <label>Beta Thalassemia</label>
+                </value>
+                <value>
+                    <fullName>Bi-Polar Disorder</fullName>
+                    <default>false</default>
+                    <label>Bi-Polar Disorder</label>
+                </value>
+                <value>
+                    <fullName>Brain Injuries</fullName>
+                    <default>false</default>
+                    <label>Brain Injuries</label>
+                </value>
+                <value>
+                    <fullName>Cancer</fullName>
+                    <default>false</default>
+                    <label>Cancer</label>
+                </value>
+                <value>
+                    <fullName>Cardiovascular</fullName>
+                    <default>false</default>
+                    <label>Cardiovascular</label>
+                </value>
+                <value>
+                    <fullName>Cerebellar Ataxia</fullName>
+                    <default>false</default>
+                    <label>Cerebellar Ataxia</label>
+                </value>
+                <value>
+                    <fullName>Cerebellar Hypoplasia</fullName>
+                    <default>false</default>
+                    <label>Cerebellar Hypoplasia</label>
+                </value>
+                <value>
+                    <fullName>Cerebral Palsy</fullName>
+                    <default>false</default>
+                    <label>Cerebral Palsy</label>
+                </value>
+                <value>
+                    <fullName>Chromosome Disorder</fullName>
+                    <default>false</default>
+                    <label>Chromosome Disorder</label>
+                </value>
+                <value>
+                    <fullName>Cognitive Disability</fullName>
+                    <default>false</default>
+                    <label>Cognitive Disability</label>
+                </value>
+                <value>
+                    <fullName>Congenital Anomaly</fullName>
+                    <default>false</default>
+                    <label>Congenital Anomaly</label>
+                </value>
+                <value>
+                    <fullName>Court Ordered</fullName>
+                    <default>false</default>
+                    <label>Court Ordered</label>
+                </value>
+                <value>
+                    <fullName>Craniofacial Abnormality</fullName>
+                    <default>false</default>
+                    <label>Craniofacial Abnormality</label>
+                </value>
+                <value>
+                    <fullName>Deafness</fullName>
+                    <default>false</default>
+                    <label>Deafness</label>
+                </value>
+                <value>
+                    <fullName>Depression</fullName>
+                    <default>false</default>
+                    <label>Depression</label>
+                </value>
+                <value>
+                    <fullName>Developmental Delay</fullName>
+                    <default>false</default>
+                    <label>Developmental Delay</label>
+                </value>
+                <value>
+                    <fullName>Disruptive Mood Dysregulation Disorder</fullName>
+                    <default>false</default>
+                    <label>Disruptive Mood Dysregulation Disorder</label>
+                </value>
+                <value>
+                    <fullName>Down Syndrome</fullName>
+                    <default>false</default>
+                    <label>Down Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Drug Dependence/Recovering Addict</fullName>
+                    <default>false</default>
+                    <label>Drug Dependence/Recovering Addict</label>
+                </value>
+                <value>
+                    <fullName>Dyslexia</fullName>
+                    <default>false</default>
+                    <label>Dyslexia</label>
+                </value>
+                <value>
+                    <fullName>Dyspraxia</fullName>
+                    <default>false</default>
+                    <label>Dyspraxia</label>
+                </value>
+                <value>
+                    <fullName>Ehlers-Danlos Syndrome</fullName>
+                    <default>false</default>
+                    <label>Ehlers-Danlos Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Emotional Disability</fullName>
+                    <default>false</default>
+                    <label>Emotional Disability</label>
+                </value>
+                <value>
+                    <fullName>Encephalopathy</fullName>
+                    <default>false</default>
+                    <label>Encephalopathy</label>
+                </value>
+                <value>
+                    <fullName>Epilepsy</fullName>
+                    <default>false</default>
+                    <label>Epilepsy/Seizure Disorder</label>
+                </value>
+                <value>
+                    <fullName>Fetal Alcohol Syndrome</fullName>
+                    <default>false</default>
+                    <label>Fetal Alcohol Syndrome/Drug Related Neurodevelopmental Disorder</label>
+                </value>
+                <value>
+                    <fullName>Genetic Disorder</fullName>
+                    <default>false</default>
+                    <label>Genetic Disorder</label>
+                </value>
+                <value>
+                    <fullName>Global Developmental Delay</fullName>
+                    <default>false</default>
+                    <label>Global Developmental Delay</label>
+                </value>
+                <value>
+                    <fullName>Goltz-Gorlin Syndrome/Basal-cell Carcinoma Syndrome</fullName>
+                    <default>false</default>
+                    <label>Goltz-Gorlin Syndrome/Basal-cell Carcinoma Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Grief</fullName>
+                    <default>false</default>
+                    <label>Grief</label>
+                </value>
+                <value>
+                    <fullName>Hearing Impairment</fullName>
+                    <default>false</default>
+                    <label>Hearing Impairment/Deafness</label>
+                </value>
+                <value>
+                    <fullName>Hereditary Spastic Paraplegia</fullName>
+                    <default>false</default>
+                    <label>Hereditary Spastic Paraplegia</label>
+                </value>
+                <value>
+                    <fullName>Hydrocephalus</fullName>
+                    <default>false</default>
+                    <label>Hydrocephalus</label>
+                </value>
+                <value>
+                    <fullName>Hypermobility Syndrome</fullName>
+                    <default>false</default>
+                    <label>Hypermobility Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Hypotonia</fullName>
+                    <default>false</default>
+                    <label>Hypotonia/Low Muscle Tone</label>
+                </value>
+                <value>
+                    <fullName>Impulse Control Disorder</fullName>
+                    <default>false</default>
+                    <label>Impulse Control Disorder</label>
+                </value>
+                <value>
+                    <fullName>Juvenile Rheumatoid Arthritis</fullName>
+                    <default>false</default>
+                    <label>Juvenile Rheumatoid Arthritis</label>
+                </value>
+                <value>
+                    <fullName>Learning Disabilities</fullName>
+                    <default>false</default>
+                    <label>Learning Disabilities</label>
+                </value>
+                <value>
+                    <fullName>Legg-Perthes Disease</fullName>
+                    <default>false</default>
+                    <label>Legg-Perthes Disease</label>
+                </value>
+                <value>
+                    <fullName>Lennox-Gastaut Syndrome</fullName>
+                    <default>false</default>
+                    <label>Lennox-Gastaut Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Mast Cell Activation Syndrome</fullName>
+                    <default>false</default>
+                    <label>Mast Cell Activation Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Microcephaly</fullName>
+                    <default>false</default>
+                    <label>Microcephaly</label>
+                </value>
+                <value>
+                    <fullName>Mild Intellectual Disability/Mild Mental Retardation</fullName>
+                    <default>false</default>
+                    <label>Mild Intellectual Disability/Mild Mental Retardation</label>
+                </value>
+                <value>
+                    <fullName>Mitochondrial Disease</fullName>
+                    <default>false</default>
+                    <label>Mitochondrial Disease</label>
+                </value>
+                <value>
+                    <fullName>Moderate Cognitive Impairment</fullName>
+                    <default>false</default>
+                    <label>Moderate Cognitive Impairment</label>
+                </value>
+                <value>
+                    <fullName>Mood Disorder</fullName>
+                    <default>false</default>
+                    <label>Mood Disorder</label>
+                </value>
+                <value>
+                    <fullName>Multiple Hereditory Exostosis (MHE)</fullName>
+                    <default>false</default>
+                    <label>Multiple Hereditory Exostosis (MHE)</label>
+                </value>
+                <value>
+                    <fullName>Multiple Sclerosis</fullName>
+                    <default>false</default>
+                    <label>Multiple Sclerosis</label>
+                </value>
+                <value>
+                    <fullName>Muscular Dystrophy</fullName>
+                    <default>false</default>
+                    <label>Muscular Dystrophy</label>
+                </value>
+                <value>
+                    <fullName>Neuromuscular Scoliosis</fullName>
+                    <default>false</default>
+                    <label>Neuromuscular Scoliosis</label>
+                </value>
+                <value>
+                    <fullName>Neuropathy</fullName>
+                    <default>false</default>
+                    <label>Neuropathy</label>
+                </value>
+                <value>
+                    <fullName>OCD</fullName>
+                    <default>false</default>
+                    <label>Obsessive Compulsive Disorder</label>
+                </value>
+                <value>
+                    <fullName>Oppositional Defiant Disorder</fullName>
+                    <default>false</default>
+                    <label>Oppositional Defiant Disorder</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Pervasive Developmental Disorder - Not Otherwise Specified</fullName>
+                    <default>false</default>
+                    <label>Pervasive Developmental Disorder - Not Otherwise Specified</label>
+                </value>
+                <value>
+                    <fullName>PTSD</fullName>
+                    <default>false</default>
+                    <label>Post Traumatic Stress Disorder</label>
+                </value>
+                <value>
+                    <fullName>Post Traumatic Stress Disorder - Sexual Abuse</fullName>
+                    <default>false</default>
+                    <label>Post Traumatic Stress Disorder - Sexual Abuse</label>
+                </value>
+                <value>
+                    <fullName>Post Traumatic Stress Disorder - Veteran</fullName>
+                    <default>false</default>
+                    <label>Post Traumatic Stress Disorder - Veteran</label>
+                </value>
+                <value>
+                    <fullName>Prader-Willi Syndrome</fullName>
+                    <default>false</default>
+                    <label>Prader-Willi Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Processing Disorder - Auditory</fullName>
+                    <default>false</default>
+                    <label>Processing Disorder - Auditory</label>
+                </value>
+                <value>
+                    <fullName>Processing Disorder - Sensory</fullName>
+                    <default>false</default>
+                    <label>Processing Disorder - Sensory</label>
+                </value>
+                <value>
+                    <fullName>Processing Disorder - Visual</fullName>
+                    <default>false</default>
+                    <label>Processing Disorder - Visual</label>
+                </value>
+                <value>
+                    <fullName>Reactive Attachment Disorder</fullName>
+                    <default>false</default>
+                    <label>Reactive Attachment Disorder</label>
+                </value>
+                <value>
+                    <fullName>Rhetts Syndrome</fullName>
+                    <default>false</default>
+                    <label>Rhetts Syndrome</label>
+                </value>
+                <value>
+                    <fullName>Schizophrenia</fullName>
+                    <default>false</default>
+                    <label>Schizophrenia</label>
+                </value>
+                <value>
+                    <fullName>Scoliosis</fullName>
+                    <default>false</default>
+                    <label>Scoliosis</label>
+                </value>
+                <value>
+                    <fullName>Seizure Disorder</fullName>
+                    <default>false</default>
+                    <label>Seizure Disorder</label>
+                </value>
+                <value>
+                    <fullName>Sickle Cell Anemia</fullName>
+                    <default>false</default>
+                    <label>Sickle Cell Anemia</label>
+                </value>
+                <value>
+                    <fullName>Sleep Apnea</fullName>
+                    <default>false</default>
+                    <label>Sleep Apnea</label>
+                </value>
+                <value>
+                    <fullName>Smith-Lemli-Opitz syndrome</fullName>
+                    <default>false</default>
+                    <label>Smith-Lemli-Opitz syndrome</label>
+                </value>
+                <value>
+                    <fullName>Speech Delay</fullName>
+                    <default>false</default>
+                    <label>Speech Delay</label>
+                </value>
+                <value>
+                    <fullName>Speech Impediment</fullName>
+                    <default>false</default>
+                    <label>Speech Impediment</label>
+                </value>
+                <value>
+                    <fullName>Spina Bifida</fullName>
+                    <default>false</default>
+                    <label>Spina Bifida</label>
+                </value>
+                <value>
+                    <fullName>Spinal Cord Injuries</fullName>
+                    <default>false</default>
+                    <label>Spinal Cord Injuries</label>
+                </value>
+                <value>
+                    <fullName>Stroke</fullName>
+                    <default>false</default>
+                    <label>Stroke</label>
+                </value>
+                <value>
+                    <fullName>TBI</fullName>
+                    <default>false</default>
+                    <label>TBI</label>
+                </value>
+                <value>
+                    <fullName>Transverse Myelitis</fullName>
+                    <default>false</default>
+                    <label>Transverse Myelitis</label>
+                </value>
+                <value>
+                    <fullName>Traumatic Brain Injury</fullName>
+                    <default>false</default>
+                    <label>Traumatic Brain Injury</label>
+                </value>
+                <value>
+                    <fullName>Visual Impairment</fullName>
+                    <default>false</default>
+                    <label>Visual Impairment/Blindness</label>
+                </value>
+                <value>
+                    <fullName>Von Willenbrand Disease</fullName>
+                    <default>false</default>
+                    <label>Von Willenbrand Disease</label>
+                </value>
+                <value>
+                    <fullName>emphysema</fullName>
+                    <default>false</default>
+                    <label>emphysema</label>
+                </value>
+                <value>
+                    <fullName>COPD- chronic obstructive pulmonary disease</fullName>
+                    <default>false</default>
+                    <label>COPD- chronic obstructive pulmonary disease</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agape_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agape_Weight__c</fullName>
+        <externalId>false</externalId>
+        <label>Weight</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <!-- End of Existing Paticipant Fields-->
+
+    <!-- Existing Custom Contact Fields -->
+    <fields>
+        <fullName>Admin_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Admin_Contact_Mobile_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact Mobile Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Admin_Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Admin_Contact_Work_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Contact Work Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Agape_Admin_Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Agape Admin Contact</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agape_Program_Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Agape Program Contact</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>FLOOR((TODAY()-Birthdate)/365.2425)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+     <fields>
+        <fullName>Contact_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Donor</fullName>
+                    <default>false</default>
+                    <label>Donor</label>
+                </value>
+                <value>
+                    <fullName>Staff</fullName>
+                    <default>false</default>
+                    <label>Staff</label>
+                </value>
+                <value>
+                    <fullName>Volunteer</fullName>
+                    <default>false</default>
+                    <label>Volunteer</label>
+                </value>
+                <value>
+                    <fullName>Board of Directors</fullName>
+                    <default>false</default>
+                    <label>Board of Directors</label>
+                </value>
+                <value>
+                    <fullName>Parent</fullName>
+                    <default>false</default>
+                    <label>Parent</label>
+                </value>
+                <value>
+                    <fullName>Tour</fullName>
+                    <default>false</default>
+                    <label>Tour</label>
+                </value>
+                <value>
+                    <fullName>Participant</fullName>
+                    <default>false</default>
+                    <label>Participant</label>
+                </value>
+                <value>
+                    <fullName>Guardian</fullName>
+                    <default>false</default>
+                    <label>Guardian</label>
+                </value>
+                <value>
+                    <fullName>Spouse</fullName>
+                    <default>false</default>
+                    <label>Spouse</label>
+                </value>
+                <value>
+                    <fullName>Partner</fullName>
+                    <default>false</default>
+                    <label>Partner</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Cultivation_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Cultivation Stage</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Identified</fullName>
+                    <default>false</default>
+                    <label>Identified</label>
+                </value>
+                <value>
+                    <fullName>Researched</fullName>
+                    <default>false</default>
+                    <label>Researched</label>
+                </value>
+                <value>
+                    <fullName>Cultivated</fullName>
+                    <default>false</default>
+                    <label>Cultivated</label>
+                </value>
+                <value>
+                    <fullName>Solicited</fullName>
+                    <default>false</default>
+                    <label>Solicited</label>
+                </value>
+                <value>
+                    <fullName>Recognized</fullName>
+                    <default>false</default>
+                    <label>Recognized</label>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Employer__c</fullName>
+        <externalId>false</externalId>
+        <label>Employer</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+        <fields>
+        <fullName>Online_Newsletter__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Online Newsletter</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+        <fields>
+        <fullName>Parent_Email_Group__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Parent Email Group</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Pet_s_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Pet&apos;s Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+     <fields>
+        <fullName>Preferred_Contact_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Contact Method</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Text Message</fullName>
+                    <default>false</default>
+                    <label>Text Message</label>
+                </value>
+                <value>
+                    <fullName>Mobile Phone</fullName>
+                    <default>false</default>
+                    <label>Mobile Phone</label>
+                </value>
+                <value>
+                    <fullName>Home Phone</fullName>
+                    <default>false</default>
+                    <label>Home Phone</label>
+                </value>
+                <value>
+                    <fullName>Work Phone</fullName>
+                    <default>false</default>
+                    <label>Work Phone</label>
+                </value>
+                <value>
+                    <fullName>Personal Email</fullName>
+                    <default>false</default>
+                    <label>Personal Email</label>
+                </value>
+                <value>
+                    <fullName>Home Email</fullName>
+                    <default>false</default>
+                    <label>Home Email</label>
+                </value>
+                <value>
+                    <fullName>Work Email</fullName>
+                    <default>false</default>
+                    <label>Work Email</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+        <fields>
+        <fullName>Program_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Contact_Mobile_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Contact Mobile Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Program_Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Contact Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Contact_Work_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Contact Work Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields>
+     <fields>
+        <fullName>School__c</fullName>
+        <externalId>false</externalId>
+        <label>School</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Admin_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Admin Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Admin_Contact_Mobile_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Admin Contact Mobile Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Secondary_Admin_Contact_Work_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Admin Contact Work Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Secondary_Admin__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Admin Contact Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Program_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Program Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Program_Contact_Mobile_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Program Contact Mobile Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Secondary_Program_Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Program Contact Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Program_Contact_Work_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Program Contact Work Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Email_Group__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Volunteer Email Group</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <!-- End Existing Custom Contact Fields -->
+    <recordTypes>
+        <fullName>Therapeutic_Riding_Partcipant</fullName>
+        <active>true</active>
+        <label>Therapeutic Riding Partcipant</label>
+        <picklistValues>
+            <picklist>Contact_Type__c</picklist>
+            <values>
+                <fullName>Board of Directors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guardian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Participant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cultivation_Stage__c</picklist>
+            <values>
+                <fullName>Cultivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Identified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recognized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Researched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solicited</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GW_Volunteers__Volunteer_Availability__c</picklist>
+            <values>
+                <fullName>Afternoon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekdays</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekends</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GW_Volunteers__Volunteer_Skills__c</picklist>
+            <values>
+                <fullName>Computer usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fundraising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Horse Handle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landscaping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual labor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Side Walk</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GW_Volunteers__Volunteer_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospective</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preferred_Contact_Method__c</picklist>
+            <values>
+                <fullName>Home Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Text Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Phone</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npe01__PreferredPhone__c</picklist>
+            <values>
+                <fullName>Household</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npe01__Preferred_Email__c</picklist>
+            <values>
+                <fullName>Alternate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npe01__Primary_Address_Type__c</picklist>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Location</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Winter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npe01__Secondary_Address_Type__c</picklist>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Location</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Winter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npe01__SystemAccountProcessor__c</picklist>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One-to-One</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npo02__Level__c</picklist>
+            <values>
+                <fullName>Primary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tertiary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npo02__Naming_Exclusions__c</picklist>
+            <values>
+                <fullName>Household%5F%5Fc%2EFormal_Greeting%5F%5Fc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Household%5F%5Fc%2EInformal_Greeting%5F%5Fc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Household%5F%5Fc%2EName</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npo02__SystemHouseholdProcessor__c</picklist>
+            <values>
+                <fullName>All Individual Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All New or Edited Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contacts</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+</CustomObject>

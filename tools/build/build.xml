@@ -182,7 +182,7 @@
 
     <!-- Deploy to Non-Supportforce Devs -->
     <target name="deployToDev" depends="cleanTemp">
-        <copy todir="${build.temp}/applications" flatten = "true">
+        <!-- <copy todir="${build.temp}/applications" flatten = "true">
             <fileset dir="${home}/src/applications">
                 <include name="**/*.app" />
             </fileset>
@@ -211,7 +211,7 @@
     		<fileset dir="${home}/src/labels">
     			<include name="**/*.labels" />
     		</fileset>
-    	</copy>
+    	</copy> -->
 
         <copy todir="${build.temp}/layouts" flatten = "true">
             <fileset dir="${home}/src/layouts">
@@ -223,7 +223,7 @@
             <fileset dir="${home}/src/objects" />
         </copy>
 
-        <copy todir="${build.temp}/permissionsets" flatten = "true">
+        <!-- <copy todir="${build.temp}/permissionsets" flatten = "true">
             <fileset dir="${home}/src/permissionsets">
                 <include name="**/*.permissionset" />
             </fileset>
@@ -235,17 +235,17 @@
 
         <copy todir="${build.temp}/staticresources" flatten = "true">
             <fileset dir="${home}/src/staticresources" />
-        </copy>
+        </copy> -->
 
         <copy todir="${build.temp}/tabs" flatten = "true">
             <fileset dir="${home}/src/tabs" />
         </copy>
 
-        <copy todir="${build.temp}/triggers" flatten = "true">
+        <!-- <copy todir="${build.temp}/triggers" flatten = "true">
             <fileset dir="${home}/src/triggers">
                 <include name="**/*.trigger*" />
             </fileset>
-        </copy>
+        </copy> -->
        
 		<copy todir="${build.temp}" flatten = "false">
             <fileset dir="${home}/src">

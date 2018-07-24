@@ -40,71 +40,60 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
+    <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <enableActivities>false</enableActivities>
-    <enableBulkApi>false</enableBulkApi>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
     <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
+    <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
-    <enableSharing>false</enableSharing>
-    <enableStreamingApi>false</enableStreamingApi>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>ParentGoal__c</fullName>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Goal__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Parent Goal</label>
-        <referenceTo>AGAPE_Goal__c</referenceTo>
+        <referenceTo>Agape_Goal__c</referenceTo>
         <relationshipLabel>Goals</relationshipLabel>
         <relationshipName>Goals</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Program__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
+        <fullName>Program_Type__c</fullName>
         <externalId>false</externalId>
-        <label>Program</label>
-        <referenceTo>AGAPE_Program__c</referenceTo>
-        <relationshipLabel>Goals</relationshipLabel>
-        <relationshipName>Goals</relationshipName>
+        <label>Program Type</label>
         <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Type__c</fullName>
-        <externalId>false</externalId>
-        <label>Type</label>
-        <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Social</fullName>
+                    <fullName>EFL</fullName>
                     <default>false</default>
-                    <label>Social</label>
+                    <label>EFL</label>
                 </value>
                 <value>
-                    <fullName>Emotional</fullName>
+                    <fullName>TR</fullName>
                     <default>false</default>
-                    <label>Emotional</label>
-                </value>
-                <value>
-                    <fullName>Cognitive</fullName>
-                    <default>false</default>
-                    <label>Cognitive</label>
-                </value>
-                <value>
-                    <fullName>Physical</fullName>
-                    <default>false</default>
-                    <label>Physical</label>
+                    <label>TR</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -112,22 +101,12 @@
     <label>Goal</label>
     <listViews>
         <fullName>All</fullName>
-        <columns>Type__c</columns>
-        <columns>ParentGoal__c</columns>
-        <columns>NAME</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
-    <listViews>
-        <fullName>All_Goals</fullName>
-        <columns>NAME</columns>
-        <columns>ParentGoal__c</columns>
-        <columns>Type__c</columns>
-        <filterScope>Mine</filterScope>
-        <label>All Goals</label>
-    </listViews>
     <nameField>
         <label>Goal Name</label>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Goals</pluralLabel>
