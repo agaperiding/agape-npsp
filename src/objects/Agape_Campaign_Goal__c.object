@@ -90,6 +90,3577 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <!-- Goal Set By -->
+<fields>
+        <fullName>Goal_Set_By__c</fullName>
+        <description>Goal chosen by</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Goal chosen by</inlineHelpText>
+        <label>Goal Set By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Primary</fullName>
+                    <default>false</default>
+                    <label>Parent</label>
+                </value>
+                <value>
+                    <fullName>Secondary</fullName>
+                    <default>false</default>
+                    <label>Caregiver</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+</fields>
+<!-- Goal Set By -->
+<fields>
+        <fullName>Goal_Set_By__c</fullName>
+        <description>Goal chosen by</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Goal chosen by</inlineHelpText>
+        <label>Goal Set By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Parent</fullName>
+                    <default>false</default>
+                    <label>Parent</label>
+                </value>
+                <value>
+                    <fullName>Caregiver</fullName>
+                    <default>false</default>
+                    <label>Caregiver</label>
+                </value>
+                <value>
+                    <fullName>Instructor</fullName>
+                    <default>false</default>
+                    <label>Instructor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+</fields>
+<!-- Goal Area -->
+<fields>
+        <fullName>Goal_Area__c</fullName>
+        <description>First Primary Goal Area chosen by parent/caregiver at intake.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>First Primary Goal Area chosen by parent/caregiver at intake.</inlineHelpText>
+        <label>Goal Area</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Social</fullName>
+                    <default>false</default>
+                    <label>Social</label>
+                </value>
+                <value>
+                    <fullName>Emotional</fullName>
+                    <default>false</default>
+                    <label>Emotional</label>
+                </value>
+                <value>
+                    <fullName>Cognitive</fullName>
+                    <default>false</default>
+                    <label>Cognitive</label>
+                </value>
+                <value>
+                    <fullName>Physical</fullName>
+                    <default>false</default>
+                    <label>Physical</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+</fields>
+
+<!--Obj Cat  -->
+ <fields>
+        <fullName>Objective_Category__c</fullName>
+        <description>First Objective Category as chosen by parent/caregiver at intake.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>First Objective Category as chosen by parent/caregiver at intake.</inlineHelpText>
+        <label>Objective Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Goal_Area_1__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Verbal Communication (S.1)</fullName>
+                    <default>false</default>
+                    <label>Verbal Communication (S.1)</label>
+                </value>
+                <value>
+                    <fullName>Non-Verbal Communication (S.2)</fullName>
+                    <default>false</default>
+                    <label>Non-Verbal Communication (S.2)</label>
+                </value>
+                <value>
+                    <fullName>Teamwork/Collaboration (S.3)</fullName>
+                    <default>false</default>
+                    <label>Teamwork/Collaboration (S.3)</label>
+                </value>
+                <value>
+                    <fullName>Accountability(S.4)</fullName>
+                    <default>false</default>
+                    <label>Accountability(S.4)</label>
+                </value>
+                <value>
+                    <fullName>Building Relationships (S.5)</fullName>
+                    <default>false</default>
+                    <label>Building Relationships (S.5)</label>
+                </value>
+                <value>
+                    <fullName>Impulse Control (S.6)</fullName>
+                    <default>false</default>
+                    <label>Impulse Control (S.6)</label>
+                </value>
+                <value>
+                    <fullName>Attention Seeking Behaviors (S.7)</fullName>
+                    <default>false</default>
+                    <label>Attention Seeking Behaviors (S.7)</label>
+                </value>
+                <value>
+                    <fullName>Independence (S.8)</fullName>
+                    <default>false</default>
+                    <label>Independence (S.8)</label>
+                </value>
+                <value>
+                    <fullName>Emotion Identification (E.1)</fullName>
+                    <default>false</default>
+                    <label>Emotion Identification (E.1)</label>
+                </value>
+                <value>
+                    <fullName>Adapting to Change (E.2)</fullName>
+                    <default>false</default>
+                    <label>Adapting to Change (E.2)</label>
+                </value>
+                <value>
+                    <fullName>Coping Skills (E.3.)</fullName>
+                    <default>false</default>
+                    <label>Coping Skills (E.3.)</label>
+                </value>
+                <value>
+                    <fullName>Confidence (E.4)</fullName>
+                    <default>false</default>
+                    <label>Confidence (E.4)</label>
+                </value>
+                <value>
+                    <fullName>Trust (E.5)</fullName>
+                    <default>false</default>
+                    <label>Trust (E.5)</label>
+                </value>
+                <value>
+                    <fullName>Expressing Needs (E.6)</fullName>
+                    <default>false</default>
+                    <label>Expressing Needs (E.6)</label>
+                </value>
+                <value>
+                    <fullName>Empathy (E.7)</fullName>
+                    <default>false</default>
+                    <label>Empathy (E.7)</label>
+                </value>
+                <value>
+                    <fullName>Perseverance (E.8)</fullName>
+                    <default>false</default>
+                    <label>Perseverance (E.8)</label>
+                </value>
+                <value>
+                    <fullName>Boundaries (E.9)</fullName>
+                    <default>false</default>
+                    <label>Boundaries (E.9)</label>
+                </value>
+                <value>
+                    <fullName>Managing Anxiety (E.10)</fullName>
+                    <default>false</default>
+                    <label>Managing Anxiety (E.10)</label>
+                </value>
+                <value>
+                    <fullName>Problem Solving (C.1)</fullName>
+                    <default>false</default>
+                    <label>Problem Solving (C.1)</label>
+                </value>
+                <value>
+                    <fullName>Following Directions (C.2)</fullName>
+                    <default>false</default>
+                    <label>Following Directions (C.2)</label>
+                </value>
+                <value>
+                    <fullName>Task Completion (C.3)</fullName>
+                    <default>false</default>
+                    <label>Task Completion (C.3)</label>
+                </value>
+                <value>
+                    <fullName>Decision Making (C.4)</fullName>
+                    <default>false</default>
+                    <label>Decision Making (C.4)</label>
+                </value>
+                <value>
+                    <fullName>Anticipating Consequences (C.5)</fullName>
+                    <default>false</default>
+                    <label>Anticipating Consequences (C.5)</label>
+                </value>
+                <value>
+                    <fullName>Sensory Processing (C.6)</fullName>
+                    <default>false</default>
+                    <label>Sensory Processing (C.6)</label>
+                </value>
+                <value>
+                    <fullName>Personal Safety (C.7)</fullName>
+                    <default>false</default>
+                    <label>Personal Safety (C.7)</label>
+                </value>
+                <value>
+                    <fullName>Independent Living Skills (C.8)</fullName>
+                    <default>false</default>
+                    <label>Independent Living Skills (C.8)</label>
+                </value>
+                <value>
+                    <fullName>Focus/Concentration (C.9)</fullName>
+                    <default>false</default>
+                    <label>Focus/Concentration (C.9)</label>
+                </value>
+                <value>
+                    <fullName>Organization (C.10)</fullName>
+                    <default>false</default>
+                    <label>Organization (C.10)</label>
+                </value>
+                <value>
+                    <fullName>Adaptive Skills (C.11)</fullName>
+                    <default>false</default>
+                    <label>Adaptive Skills (C.11)</label>
+                </value>
+                <value>
+                    <fullName>Balance (P.1)</fullName>
+                    <default>false</default>
+                    <label>Balance (P.1)</label>
+                </value>
+                <value>
+                    <fullName>Coordination (P.2)</fullName>
+                    <default>false</default>
+                    <label>Coordination (P.2)</label>
+                </value>
+                <value>
+                    <fullName>Fine Motor Skills (P.3)</fullName>
+                    <default>false</default>
+                    <label>Fine Motor Skills (P.3)</label>
+                </value>
+                <value>
+                    <fullName>Gross Motor Skills (P.4)</fullName>
+                    <default>false</default>
+                    <label>Gross Motor Skills (P.4)</label>
+                </value>
+                <value>
+                    <fullName>Core Strength (P.5)</fullName>
+                    <default>false</default>
+                    <label>Core Strength (P.5)</label>
+                </value>
+                <value>
+                    <fullName>Muscle Tone (P.6)</fullName>
+                    <default>false</default>
+                    <label>Muscle Tone (P.6)</label>
+                </value>
+                <value>
+                    <fullName>Posture (P.7)</fullName>
+                    <default>false</default>
+                    <label>Posture (P.7)</label>
+                </value>
+                <value>
+                    <fullName>Energy Level (P.8)</fullName>
+                    <default>false</default>
+                    <label>Energy Level (P.8)</label>
+                </value>
+                <value>
+                    <fullName>Self-Control (P.9)</fullName>
+                    <default>false</default>
+                    <label>Self-Control (P.9)</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Social</controllingFieldValue>
+                <valueName>Verbal Communication (S.1)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Social</controllingFieldValue>
+                <valueName>Non-Verbal Communication (S.2)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Social</controllingFieldValue>
+                <valueName>Teamwork/Collaboration (S.3)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Social</controllingFieldValue>
+                <valueName>Accountability(S.4)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Social</controllingFieldValue>
+                <valueName>Building Relationships (S.5)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Social</controllingFieldValue>
+                <valueName>Impulse Control (S.6)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Social</controllingFieldValue>
+                <valueName>Attention Seeking Behaviors (S.7)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Social</controllingFieldValue>
+                <valueName>Independence (S.8)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional</controllingFieldValue>
+                <valueName>Emotion Identification (E.1)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional</controllingFieldValue>
+                <valueName>Adapting to Change (E.2)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional</controllingFieldValue>
+                <valueName>Coping Skills (E.3.)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional</controllingFieldValue>
+                <valueName>Confidence (E.4)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional</controllingFieldValue>
+                <valueName>Trust (E.5)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional</controllingFieldValue>
+                <valueName>Expressing Needs (E.6)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional</controllingFieldValue>
+                <valueName>Empathy (E.7)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional</controllingFieldValue>
+                <valueName>Perseverance (E.8)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional</controllingFieldValue>
+                <valueName>Boundaries (E.9)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional</controllingFieldValue>
+                <valueName>Managing Anxiety (E.10)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cognitive</controllingFieldValue>
+                <valueName>Problem Solving (C.1)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cognitive</controllingFieldValue>
+                <valueName>Following Directions (C.2)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cognitive</controllingFieldValue>
+                <valueName>Task Completion (C.3)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cognitive</controllingFieldValue>
+                <valueName>Decision Making (C.4)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cognitive</controllingFieldValue>
+                <valueName>Anticipating Consequences (C.5)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cognitive</controllingFieldValue>
+                <valueName>Sensory Processing (C.6)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cognitive</controllingFieldValue>
+                <valueName>Personal Safety (C.7)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cognitive</controllingFieldValue>
+                <valueName>Independent Living Skills (C.8)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cognitive</controllingFieldValue>
+                <valueName>Focus/Concentration (C.9)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cognitive</controllingFieldValue>
+                <valueName>Organization (C.10)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cognitive</controllingFieldValue>
+                <valueName>Adaptive Skills (C.11)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Physical</controllingFieldValue>
+                <valueName>Balance (P.1)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Physical</controllingFieldValue>
+                <valueName>Coordination (P.2)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Physical</controllingFieldValue>
+                <valueName>Fine Motor Skills (P.3)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Physical</controllingFieldValue>
+                <valueName>Gross Motor Skills (P.4)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Physical</controllingFieldValue>
+                <valueName>Core Strength (P.5)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Physical</controllingFieldValue>
+                <valueName>Muscle Tone (P.6)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Physical</controllingFieldValue>
+                <valueName>Posture (P.7)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Physical</controllingFieldValue>
+                <valueName>Energy Level (P.8)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Physical</controllingFieldValue>
+                <valueName>Self-Control (P.9)</valueName>
+            </valueSettings>
+        </valueSet>
+</fields>
+<!-- Obj Sub Cat -->
+<fields>
+        <fullName>Objective_Sub_category__c</fullName>
+        <externalId>false</externalId>
+        <label>Objective Sub-category 1a</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Objective_Category_1a__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Conversational Skills (S.1.CS)</fullName>
+                    <default>false</default>
+                    <label>Conversational Skills (S.1.CS)</label>
+                </value>
+                <value>
+                    <fullName>Communicating Need (S.1.CN)</fullName>
+                    <default>false</default>
+                    <label>Communicating Need (S.1.CN)</label>
+                </value>
+                <value>
+                    <fullName>Conflict Resolution (S.1.CR)</fullName>
+                    <default>false</default>
+                    <label>Conflict Resolution (S.1.CR)</label>
+                </value>
+                <value>
+                    <fullName>Sharing Information (S.1.SI)</fullName>
+                    <default>false</default>
+                    <label>Sharing Information (S.1.SI)</label>
+                </value>
+                <value>
+                    <fullName>Interpersonal Communication (S.2.IC)</fullName>
+                    <default>false</default>
+                    <label>Interpersonal Communication (S.2.IC)</label>
+                </value>
+                <value>
+                    <fullName>Equine Interactions (S.2.EI)</fullName>
+                    <default>false</default>
+                    <label>Equine Interactions (S.2.EI)</label>
+                </value>
+                <value>
+                    <fullName>Teamwork (S.3.TW)</fullName>
+                    <default>false</default>
+                    <label>Teamwork (S.3.TW)</label>
+                </value>
+                <value>
+                    <fullName>Leadership Skills (S.3.LS)</fullName>
+                    <default>false</default>
+                    <label>Leadership Skills (S.3.LS)</label>
+                </value>
+                <value>
+                    <fullName>Ownership (S.4.OS)</fullName>
+                    <default>false</default>
+                    <label>Ownership (S.4.OS)</label>
+                </value>
+                <value>
+                    <fullName>Decision Making (S.4.DM)</fullName>
+                    <default>false</default>
+                    <label>Decision Making (S.4.DM)</label>
+                </value>
+                <value>
+                    <fullName>Initiating Relationships (S.5.IR)</fullName>
+                    <default>false</default>
+                    <label>Initiating Relationships (S.5.IR)</label>
+                </value>
+                <value>
+                    <fullName>Maintaining Relationships (S.5.MR)</fullName>
+                    <default>false</default>
+                    <label>Maintaining Relationships (S.5.MR)</label>
+                </value>
+                <value>
+                    <fullName>Identifying Consequences (S.6.IC)</fullName>
+                    <default>false</default>
+                    <label>Identifying Consequences (S.6.IC)</label>
+                </value>
+                <value>
+                    <fullName>Behavior Modification (S.6.BM)</fullName>
+                    <default>false</default>
+                    <label>Behavior Modification (S.6.BM)</label>
+                </value>
+                <value>
+                    <fullName>Negative-Attention Seeking (S.7.NS)</fullName>
+                    <default>false</default>
+                    <label>Negative-Attention Seeking (S.7.NS)</label>
+                </value>
+                <value>
+                    <fullName>Compliance (S.7.CP)</fullName>
+                    <default>false</default>
+                    <label>Compliance (S.7.CP)</label>
+                </value>
+                <value>
+                    <fullName>Adaptive Behaviors (S.8.AB)</fullName>
+                    <default>false</default>
+                    <label>Adaptive Behaviors (S.8.AB)</label>
+                </value>
+                <value>
+                    <fullName>Emotion Identification (E.1.EI)</fullName>
+                    <default>false</default>
+                    <label>Emotion Identification (E.1.EI)</label>
+                </value>
+                <value>
+                    <fullName>Adapting to Change (E.2.AC)</fullName>
+                    <default>false</default>
+                    <label>Adapting to Change (E.2.AC)</label>
+                </value>
+                <value>
+                    <fullName>Emotional Regulation (E.3.ER)</fullName>
+                    <default>false</default>
+                    <label>Emotional Regulation (E.3.ER)</label>
+                </value>
+                <value>
+                    <fullName>Adaptive Behaviors (E.3.AB</fullName>
+                    <default>false</default>
+                    <label>Adaptive Behaviors (E.3.AB</label>
+                </value>
+                <value>
+                    <fullName>Confidence (E.4.CF)</fullName>
+                    <default>false</default>
+                    <label>Confidence (E.4.CF)</label>
+                </value>
+                <value>
+                    <fullName>Trust (E.5.TR)</fullName>
+                    <default>false</default>
+                    <label>Trust (E.5.TR)</label>
+                </value>
+                <value>
+                    <fullName>Expressing Needs (E.6.EN)</fullName>
+                    <default>false</default>
+                    <label>Expressing Needs (E.6.EN)</label>
+                </value>
+                <value>
+                    <fullName>Empathy (E.7.EM)</fullName>
+                    <default>false</default>
+                    <label>Empathy (E.7.EM)</label>
+                </value>
+                <value>
+                    <fullName>Perseverance (E.8.PR)</fullName>
+                    <default>false</default>
+                    <label>Perseverance (E.8.PR)</label>
+                </value>
+                <value>
+                    <fullName>Boundaries (E.9.BD)</fullName>
+                    <default>false</default>
+                    <label>Boundaries (E.9.BD)</label>
+                </value>
+                <value>
+                    <fullName>Managing Anxiety (E.10.MA)</fullName>
+                    <default>false</default>
+                    <label>Managing Anxiety (E.10.MA)</label>
+                </value>
+                <value>
+                    <fullName>Problem Solving (C.1.PS)</fullName>
+                    <default>false</default>
+                    <label>Problem Solving (C.1.PS)</label>
+                </value>
+                <value>
+                    <fullName>Following Directions (C.2.FD)</fullName>
+                    <default>false</default>
+                    <label>Following Directions (C.2.FD)</label>
+                </value>
+                <value>
+                    <fullName>Task Completion (C.3.TC)</fullName>
+                    <default>false</default>
+                    <label>Task Completion (C.3.TC)</label>
+                </value>
+                <value>
+                    <fullName>Decision Making (C.4.DM)</fullName>
+                    <default>false</default>
+                    <label>Decision Making (C.4.DM)</label>
+                </value>
+                <value>
+                    <fullName>Anticipating Consequences (C.5.AC)</fullName>
+                    <default>false</default>
+                    <label>Anticipating Consequences (C.5.AC)</label>
+                </value>
+                <value>
+                    <fullName>Sensory Processing (C.6.SP)</fullName>
+                    <default>false</default>
+                    <label>Sensory Processing (C.6.SP)</label>
+                </value>
+                <value>
+                    <fullName>Personal Safety (C.7.SY)</fullName>
+                    <default>false</default>
+                    <label>Personal Safety (C.7.SY)</label>
+                </value>
+                <value>
+                    <fullName>Independent Living Skills (C.8.LS)</fullName>
+                    <default>false</default>
+                    <label>Independent Living Skills (C.8.LS)</label>
+                </value>
+                <value>
+                    <fullName>Focus/Concentration (C.9.FC)</fullName>
+                    <default>false</default>
+                    <label>Focus/Concentration (C.9.FC)</label>
+                </value>
+                <value>
+                    <fullName>Organization (C.10.OR)</fullName>
+                    <default>false</default>
+                    <label>Organization (C.10.OR)</label>
+                </value>
+                <value>
+                    <fullName>Adaptive Skills (C.11.AS)</fullName>
+                    <default>false</default>
+                    <label>Adaptive Skills (C.11.AS)</label>
+                </value>
+                <value>
+                    <fullName>Balance (P.1.B)</fullName>
+                    <default>false</default>
+                    <label>Balance (P.1.B)</label>
+                </value>
+                <value>
+                    <fullName>Coordination (P.2.C)</fullName>
+                    <default>false</default>
+                    <label>Coordination (P.2.C)</label>
+                </value>
+                <value>
+                    <fullName>Fine Motor Skills (P.3.FM)</fullName>
+                    <default>false</default>
+                    <label>Fine Motor Skills (P.3.FM)</label>
+                </value>
+                <value>
+                    <fullName>Gross Motor Skills (P.4.GM)</fullName>
+                    <default>false</default>
+                    <label>Gross Motor Skills (P.4.GM)</label>
+                </value>
+                <value>
+                    <fullName>Core Strength (P.5.CS)</fullName>
+                    <default>false</default>
+                    <label>Core Strength (P.5.CS)</label>
+                </value>
+                <value>
+                    <fullName>Muscle Tone (P.6.MT)</fullName>
+                    <default>false</default>
+                    <label>Muscle Tone (P.6.MT)</label>
+                </value>
+                <value>
+                    <fullName>Posture (P.7.P)</fullName>
+                    <default>false</default>
+                    <label>Posture (P.7.P)</label>
+                </value>
+                <value>
+                    <fullName>Energy Level (P.8.EL)</fullName>
+                    <default>false</default>
+                    <label>Energy Level (P.8.EL)</label>
+                </value>
+                <value>
+                    <fullName>Self-Control (P.9.SC)</fullName>
+                    <default>false</default>
+                    <label>Self-Control (P.9.SC)</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Decision Making (C.4)</controllingFieldValue>
+                <valueName>Decision Making (C.4.DM)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Anticipating Consequences (C.5)</controllingFieldValue>
+                <valueName>Anticipating Consequences (C.5.AC)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sensory Processing (C.6)</controllingFieldValue>
+                <valueName>Sensory Processing (C.6.SP)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Safety (C.7)</controllingFieldValue>
+                <valueName>Personal Safety (C.7.SY)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Independent Living Skills (C.8)</controllingFieldValue>
+                <valueName>Independent Living Skills (C.8.LS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Focus/Concentration (C.9)</controllingFieldValue>
+                <valueName>Focus/Concentration (C.9.FC)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Organization (C.10)</controllingFieldValue>
+                <valueName>Organization (C.10.OR)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Skills (C.11)</controllingFieldValue>
+                <valueName>Adaptive Skills (C.11.AS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Balance (P.1)</controllingFieldValue>
+                <valueName>Balance (P.1.B)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coordination (P.2)</controllingFieldValue>
+                <valueName>Coordination (P.2.C)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adapting to Change (E.2)</controllingFieldValue>
+                <valueName>Adapting to Change (E.2.AC)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fine Motor Skills (P.3)</controllingFieldValue>
+                <valueName>Fine Motor Skills (P.3.FM)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coping Skills (E.3.)</controllingFieldValue>
+                <valueName>Emotional Regulation (E.3.ER)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coping Skills (E.3.)</controllingFieldValue>
+                <valueName>Adaptive Behaviors (E.3.AB</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gross Motor Skills (P.4)</controllingFieldValue>
+                <valueName>Gross Motor Skills (P.4.GM)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Confidence (E.4)</controllingFieldValue>
+                <valueName>Confidence (E.4.CF)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Strength (P.5)</controllingFieldValue>
+                <valueName>Core Strength (P.5.CS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Trust (E.5)</controllingFieldValue>
+                <valueName>Trust (E.5.TR)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Muscle Tone (P.6)</controllingFieldValue>
+                <valueName>Muscle Tone (P.6.MT)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Expressing Needs (E.6)</controllingFieldValue>
+                <valueName>Expressing Needs (E.6.EN)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Posture (P.7)</controllingFieldValue>
+                <valueName>Posture (P.7.P)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Empathy (E.7)</controllingFieldValue>
+                <valueName>Empathy (E.7.EM)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Energy Level (P.8)</controllingFieldValue>
+                <valueName>Energy Level (P.8.EL)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Perseverance (E.8)</controllingFieldValue>
+                <valueName>Perseverance (E.8.PR)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Control (P.9)</controllingFieldValue>
+                <valueName>Self-Control (P.9.SC)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Boundaries (E.9)</controllingFieldValue>
+                <valueName>Boundaries (E.9.BD)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Managing Anxiety (E.10)</controllingFieldValue>
+                <valueName>Managing Anxiety (E.10.MA)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Problem Solving (C.1)</controllingFieldValue>
+                <valueName>Problem Solving (C.1.PS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Verbal Communication (S.1)</controllingFieldValue>
+                <valueName>Conversational Skills (S.1.CS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Verbal Communication (S.1)</controllingFieldValue>
+                <valueName>Communicating Need (S.1.CN)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Verbal Communication (S.1)</controllingFieldValue>
+                <valueName>Conflict Resolution (S.1.CR)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Verbal Communication (S.1)</controllingFieldValue>
+                <valueName>Sharing Information (S.1.SI)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Non-Verbal Communication (S.2)</controllingFieldValue>
+                <valueName>Interpersonal Communication (S.2.IC)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Non-Verbal Communication (S.2)</controllingFieldValue>
+                <valueName>Equine Interactions (S.2.EI)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork/Collaboration (S.3)</controllingFieldValue>
+                <valueName>Teamwork (S.3.TW)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork/Collaboration (S.3)</controllingFieldValue>
+                <valueName>Leadership Skills (S.3.LS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Accountability(S.4)</controllingFieldValue>
+                <valueName>Ownership (S.4.OS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Accountability(S.4)</controllingFieldValue>
+                <valueName>Decision Making (S.4.DM)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Building Relationships (S.5)</controllingFieldValue>
+                <valueName>Initiating Relationships (S.5.IR)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Building Relationships (S.5)</controllingFieldValue>
+                <valueName>Maintaining Relationships (S.5.MR)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Impulse Control (S.6)</controllingFieldValue>
+                <valueName>Identifying Consequences (S.6.IC)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Impulse Control (S.6)</controllingFieldValue>
+                <valueName>Behavior Modification (S.6.BM)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Attention Seeking Behaviors (S.7)</controllingFieldValue>
+                <valueName>Negative-Attention Seeking (S.7.NS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Attention Seeking Behaviors (S.7)</controllingFieldValue>
+                <valueName>Compliance (S.7.CP)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Independence (S.8)</controllingFieldValue>
+                <valueName>Adaptive Behaviors (S.8.AB)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotion Identification (E.1)</controllingFieldValue>
+                <valueName>Emotion Identification (E.1.EI)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Following Directions (C.2)</controllingFieldValue>
+                <valueName>Following Directions (C.2.FD)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Task Completion (C.3)</controllingFieldValue>
+                <valueName>Task Completion (C.3.TC)</valueName>
+            </valueSettings>
+        </valueSet>
+</fields>
+<!-- Specific Obj -->
+<fields>
+        <fullName>Specific_Objective__c</fullName>
+        <externalId>false</externalId>
+        <label>Specific Objective</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Objective_Sub_category__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Takes turns during group discussion	S.1.CS.1</fullName>
+                    <default>false</default>
+                    <label>Takes turns during group discussion	S.1.CS.1</label>
+                </value>
+                <value>
+                    <fullName>Able to appropriately initiate conversations	S.1.CS.2</fullName>
+                    <default>false</default>
+                    <label>Able to appropriately initiate conversations	S.1.CS.2</label>
+                </value>
+                <value>
+                    <fullName>Able to greet others appropriately	S.1.CS.3</fullName>
+                    <default>false</default>
+                    <label>Able to greet others appropriately	S.1.CS.3</label>
+                </value>
+                <value>
+                    <fullName>Listens to others thoughts and ideas and responds appropriately	S.1.CS.4</fullName>
+                    <default>false</default>
+                    <label>Listens to others thoughts and ideas and responds appropriately	S.1.CS.4</label>
+                </value>
+                <value>
+                    <fullName>Attends to the conversation	S.1.CS.5</fullName>
+                    <default>false</default>
+                    <label>Attends to the conversation	S.1.CS.5</label>
+                </value>
+                <value>
+                    <fullName>Able to have ____ interchanges during a conversation	S.1.CS.6</fullName>
+                    <default>false</default>
+                    <label>Able to have ____ interchanges during a conversation	S.1.CS.6</label>
+                </value>
+                <value>
+                    <fullName>Able to ask appropriate questions	S.1.CS.7</fullName>
+                    <default>false</default>
+                    <label>Able to ask appropriate questions	S.1.CS.7</label>
+                </value>
+                <value>
+                    <fullName>Reduced echolalia	S.1.CS.8</fullName>
+                    <default>false</default>
+                    <label>Reduced echolalia	S.1.CS.8</label>
+                </value>
+                <value>
+                    <fullName>Able to appropriately respond to prompts without reminders	S.1.CS.9</fullName>
+                    <default>false</default>
+                    <label>Able to appropriately respond to prompts without reminders	S.1.CS.9</label>
+                </value>
+                <value>
+                    <fullName>Shows verbal signs of understanding (asking clarifying questions etc.)	S.1.CS.10</fullName>
+                    <default>false</default>
+                    <label>Shows verbal signs of understanding (asking clarifying questions etc.)	S.1.CS.10</label>
+                </value>
+                <value>
+                    <fullName>Verbally responds to prompts with less than _____ reminders	S.1.CS.11</fullName>
+                    <default>false</default>
+                    <label>Verbally responds to prompts with less than _____ reminders	S.1.CS.11</label>
+                </value>
+                <value>
+                    <fullName>Asks questions when directions are unclear	S.1.CN.1</fullName>
+                    <default>false</default>
+                    <label>Asks questions when directions are unclear	S.1.CN.1</label>
+                </value>
+                <value>
+                    <fullName>Communicates needs in a calm and respectful voice	S.1.CN.2</fullName>
+                    <default>false</default>
+                    <label>Communicates needs in a calm and respectful voice	S.1.CN.2</label>
+                </value>
+                <value>
+                    <fullName>Asks for help when appropriate	S.1.CN.3</fullName>
+                    <default>false</default>
+                    <label>Asks for help when appropriate	S.1.CN.3</label>
+                </value>
+                <value>
+                    <fullName>Maintain a calm voice when escalated	 S.1.CR.1</fullName>
+                    <default>false</default>
+                    <label>Maintain a calm voice when escalated	 S.1.CR.1</label>
+                </value>
+                <value>
+                    <fullName>Able to verbalize opposing thoughts appropriately	S.1.CR.2</fullName>
+                    <default>false</default>
+                    <label>Able to verbalize opposing thoughts appropriately	S.1.CR.2</label>
+                </value>
+                <value>
+                    <fullName>Able to verbally acknowledge the viewpoints of others with appropriate responses	S.1.CR.3</fullName>
+                    <default>false</default>
+                    <label>Able to verbally acknowledge the viewpoints of others with appropriate responses	S.1.CR.3</label>
+                </value>
+                <value>
+                    <fullName>Increases attempts to communicate	S.1.SI.1</fullName>
+                    <default>false</default>
+                    <label>Increases attempts to communicate	S.1.SI.1</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates &quot;voice and choice&quot;	S.1.SI.2</fullName>
+                    <default>false</default>
+                    <label>Demonstrates &quot;voice and choice&quot;	S.1.SI.2</label>
+                </value>
+                <value>
+                    <fullName>Successfully communicates instructions to peers.	S.1.SI.3</fullName>
+                    <default>false</default>
+                    <label>Successfully communicates instructions to peers.	S.1.SI.3</label>
+                </value>
+                <value>
+                    <fullName>Makes eye contact during greetings	S.2.IC.1</fullName>
+                    <default>false</default>
+                    <label>Makes eye contact during greetings	S.2.IC.1</label>
+                </value>
+                <value>
+                    <fullName>Able to make eye contact when someone is speaking	S.2.IC.2</fullName>
+                    <default>false</default>
+                    <label>Able to make eye contact when someone is speaking	S.2.IC.2</label>
+                </value>
+                <value>
+                    <fullName>Recognizes personal space boundaries	S.2.IC.3</fullName>
+                    <default>false</default>
+                    <label>Recognizes personal space boundaries	S.2.IC.3</label>
+                </value>
+                <value>
+                    <fullName>Shows non-verbal signs of understanding	S.2.IC.4</fullName>
+                    <default>false</default>
+                    <label>Shows non-verbal signs of understanding	S.2.IC.4</label>
+                </value>
+                <value>
+                    <fullName>Able to use gestures to express a need	S.2.IC.5</fullName>
+                    <default>false</default>
+                    <label>Able to use gestures to express a need	S.2.IC.5</label>
+                </value>
+                <value>
+                    <fullName>Able to recognize emotional states based on body language	S.2.IC.6</fullName>
+                    <default>false</default>
+                    <label>Able to recognize emotional states based on body language	S.2.IC.6</label>
+                </value>
+                <value>
+                    <fullName>Able to recognize emotional states based on facial expression	S.2.IC.7</fullName>
+                    <default>false</default>
+                    <label>Able to recognize emotional states based on facial expression	S.2.IC.7</label>
+                </value>
+                <value>
+                    <fullName>Able to maintain correct posture despite mood	S.2.EI.1</fullName>
+                    <default>false</default>
+                    <label>Able to maintain correct posture despite mood	S.2.EI.1</label>
+                </value>
+                <value>
+                    <fullName>Is able to adjust their body language to be more effective with the horse	S.2.EI.2</fullName>
+                    <default>false</default>
+                    <label>Is able to adjust their body language to be more effective with the horse	S.2.EI.2</label>
+                </value>
+                <value>
+                    <fullName>Includes others in activities	S.3.TW.1</fullName>
+                    <default>false</default>
+                    <label>Includes others in activities	S.3.TW.1</label>
+                </value>
+                <value>
+                    <fullName>Encourages others to succeed	S.3.TW.2</fullName>
+                    <default>false</default>
+                    <label>Encourages others to succeed	S.3.TW.2</label>
+                </value>
+                <value>
+                    <fullName>Listens to others thoughts and ideas and responds appropriately	S.3.TW.3</fullName>
+                    <default>false</default>
+                    <label>Listens to others thoughts and ideas and responds appropriately	S.3.TW.3</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates conflict resolution skills	S.3.TW.4</fullName>
+                    <default>false</default>
+                    <label>Demonstrates conflict resolution skills	S.3.TW.4</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates decision making skills based on the well-being of others	S.3.TW.5</fullName>
+                    <default>false</default>
+                    <label>Demonstrates decision making skills based on the well-being of others	S.3.TW.5</label>
+                </value>
+                <value>
+                    <fullName>Able to utilize others as resources when appropriate	S.3.TW.6</fullName>
+                    <default>false</default>
+                    <label>Able to utilize others as resources when appropriate	S.3.TW.6</label>
+                </value>
+                <value>
+                    <fullName>Participates in group activities	S.3.TW.7</fullName>
+                    <default>false</default>
+                    <label>Participates in group activities	S.3.TW.7</label>
+                </value>
+                <value>
+                    <fullName>Able to accept assistance when offered	S.3.TW.8</fullName>
+                    <default>false</default>
+                    <label>Able to accept assistance when offered	S.3.TW.8</label>
+                </value>
+                <value>
+                    <fullName>Able to communicate ideas to a group	S.3.TW.9</fullName>
+                    <default>false</default>
+                    <label>Able to communicate ideas to a group	S.3.TW.9</label>
+                </value>
+                <value>
+                    <fullName>Able to follow peer instructions	S.3.TW.10</fullName>
+                    <default>false</default>
+                    <label>Able to follow peer instructions	S.3.TW.10</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates tolerance/acceptance of others	S.3.TW.11</fullName>
+                    <default>false</default>
+                    <label>Demonstrates tolerance/acceptance of others	S.3.TW.11</label>
+                </value>
+                <value>
+                    <fullName>Able to express disagreement in a positive manner	S.3.TW.12</fullName>
+                    <default>false</default>
+                    <label>Able to express disagreement in a positive manner	S.3.TW.12</label>
+                </value>
+                <value>
+                    <fullName>Able to identify positive leadership traits	S.3.LS.1</fullName>
+                    <default>false</default>
+                    <label>Able to identify positive leadership traits	S.3.LS.1</label>
+                </value>
+                <value>
+                    <fullName>Able to assess impacts of leadership decisions	S.3.LS.2</fullName>
+                    <default>false</default>
+                    <label>Able to assess impacts of leadership decisions	S.3.LS.2</label>
+                </value>
+                <value>
+                    <fullName>Able to express leadership principles to others	S.3.LS.3</fullName>
+                    <default>false</default>
+                    <label>Able to express leadership principles to others	S.3.LS.3</label>
+                </value>
+                <value>
+                    <fullName>Able to motivate others	S.3.LS.4</fullName>
+                    <default>false</default>
+                    <label>Able to motivate others	S.3.LS.4</label>
+                </value>
+                <value>
+                    <fullName>Able to learn from failure	S.3.LS.5</fullName>
+                    <default>false</default>
+                    <label>Able to learn from failure	S.3.LS.5</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates accountability after making an error	S.4.OS.1</fullName>
+                    <default>false</default>
+                    <label>Demonstrates accountability after making an error	S.4.OS.1</label>
+                </value>
+                <value>
+                    <fullName>Accepts responsibility for actions	S.4.OS.2</fullName>
+                    <default>false</default>
+                    <label>Accepts responsibility for actions	S.4.OS.2</label>
+                </value>
+                <value>
+                    <fullName>Works to achieve established goals	S.4.OS.3</fullName>
+                    <default>false</default>
+                    <label>Works to achieve established goals	S.4.OS.3</label>
+                </value>
+                <value>
+                    <fullName>Follows through on assigned tasks	S.4.OS.4</fullName>
+                    <default>false</default>
+                    <label>Follows through on assigned tasks	S.4.OS.4</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates good effort when completing tasks	S.4.OS.5</fullName>
+                    <default>false</default>
+                    <label>Demonstrates good effort when completing tasks	S.4.OS.5</label>
+                </value>
+                <value>
+                    <fullName>Follows established safety rules	S.4.DM.1</fullName>
+                    <default>false</default>
+                    <label>Follows established safety rules	S.4.DM.1</label>
+                </value>
+                <value>
+                    <fullName>Understands cause and effect	S.4.DM.2</fullName>
+                    <default>false</default>
+                    <label>Understands cause and effect	S.4.DM.2</label>
+                </value>
+                <value>
+                    <fullName>Able to set appropriate goals	S.4.DM.3</fullName>
+                    <default>false</default>
+                    <label>Able to set appropriate goals	S.4.DM.3</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates respect when interacting with others	S.5.IR.1</fullName>
+                    <default>false</default>
+                    <label>Demonstrates respect when interacting with others	S.5.IR.1</label>
+                </value>
+                <value>
+                    <fullName>Able to appropriately initiate interactions with others	S.5.IR.2</fullName>
+                    <default>false</default>
+                    <label>Able to appropriately initiate interactions with others	S.5.IR.2</label>
+                </value>
+                <value>
+                    <fullName>Acknowledges the presence of others	S.5.IR.3</fullName>
+                    <default>false</default>
+                    <label>Acknowledges the presence of others	S.5.IR.3</label>
+                </value>
+                <value>
+                    <fullName>Expresses an interest in learning about others	S.5.IR.4</fullName>
+                    <default>false</default>
+                    <label>Expresses an interest in learning about others	S.5.IR.4</label>
+                </value>
+                <value>
+                    <fullName>Able to build appropriate relationships outside of a regimented environment	S.5.MR.1</fullName>
+                    <default>false</default>
+                    <label>Able to build appropriate relationships outside of a regimented environment	S.5.MR.1</label>
+                </value>
+                <value>
+                    <fullName>Asks questions to deepen relationships	S.5.MR.2</fullName>
+                    <default>false</default>
+                    <label>Asks questions to deepen relationships	S.5.MR.2</label>
+                </value>
+                <value>
+                    <fullName>Able to identify healthy relationship traits	S.5.MR.3</fullName>
+                    <default>false</default>
+                    <label>Able to identify healthy relationship traits	S.5.MR.3</label>
+                </value>
+                <value>
+                    <fullName>Displays empathy when appropriate	S.5.MR.4</fullName>
+                    <default>false</default>
+                    <label>Displays empathy when appropriate	S.5.MR.4</label>
+                </value>
+                <value>
+                    <fullName>Able to set a good example for peers	S.5.MR.5</fullName>
+                    <default>false</default>
+                    <label>Able to set a good example for peers	S.5.MR.5</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates conflict resolution skills	S.5.MR.6</fullName>
+                    <default>false</default>
+                    <label>Demonstrates conflict resolution skills	S.5.MR.6</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates trustworthiness	S.5.MR.7</fullName>
+                    <default>false</default>
+                    <label>Demonstrates trustworthiness	S.5.MR.7</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates inclusion	S.5.MR.8</fullName>
+                    <default>false</default>
+                    <label>Demonstrates inclusion	S.5.MR.8</label>
+                </value>
+                <value>
+                    <fullName>Able to anticipate the consequences of unsafe behavior	S.6.IC.1</fullName>
+                    <default>false</default>
+                    <label>Able to anticipate the consequences of unsafe behavior	S.6.IC.1</label>
+                </value>
+                <value>
+                    <fullName>Accepts responsibility for actions	S.6.IC.2</fullName>
+                    <default>false</default>
+                    <label>Accepts responsibility for actions	S.6.IC.2</label>
+                </value>
+                <value>
+                    <fullName>Able to identify the consequences of choices	S.6.IC.3</fullName>
+                    <default>false</default>
+                    <label>Able to identify the consequences of choices	S.6.IC.3</label>
+                </value>
+                <value>
+                    <fullName>Stops action to consider consequences	S.6.IC.4</fullName>
+                    <default>false</default>
+                    <label>Stops action to consider consequences	S.6.IC.4</label>
+                </value>
+                <value>
+                    <fullName>Follows established safety rules	S.6.BM.1</fullName>
+                    <default>false</default>
+                    <label>Follows established safety rules	S.6.BM.1</label>
+                </value>
+                <value>
+                    <fullName>Able to wait with minimal maladaptive reactions	S.6.BM.2</fullName>
+                    <default>false</default>
+                    <label>Able to wait with minimal maladaptive reactions	S.6.BM.2</label>
+                </value>
+                <value>
+                    <fullName>Plans for possible outcomes	S.7.BM.3</fullName>
+                    <default>false</default>
+                    <label>Plans for possible outcomes	S.7.BM.3</label>
+                </value>
+                <value>
+                    <fullName>Decreased negative-attention seeking behaviors	S.7.NS.1</fullName>
+                    <default>false</default>
+                    <label>Decreased negative-attention seeking behaviors	S.7.NS.1</label>
+                </value>
+                <value>
+                    <fullName>Able to function in an environment where the participant&apos;s challenges are not the focus	S.7.NS.2</fullName>
+                    <default>false</default>
+                    <label>Able to function in an environment where the participant&apos;s challenges are not the focus	S.7.NS.2</label>
+                </value>
+                <value>
+                    <fullName>Increased positive engagement with authority figures	S.7.NS.3</fullName>
+                    <default>false</default>
+                    <label>Increased positive engagement with authority figures	S.7.NS.3</label>
+                </value>
+                <value>
+                    <fullName>Increased compliance when asked to perform tasks	S.7.CP.1</fullName>
+                    <default>false</default>
+                    <label>Increased compliance when asked to perform tasks	S.7.CP.1</label>
+                </value>
+                <value>
+                    <fullName>Increased compliance with authority figures	S.7.CP.2</fullName>
+                    <default>false</default>
+                    <label>Increased compliance with authority figures	S.7.CP.2</label>
+                </value>
+                <value>
+                    <fullName>Increased compliance with peers	S.7.CP.3</fullName>
+                    <default>false</default>
+                    <label>Increased compliance with peers	S.7.CP.3</label>
+                </value>
+                <value>
+                    <fullName>Able to identify the consequences of choices	S.8.AB.1</fullName>
+                    <default>false</default>
+                    <label>Able to identify the consequences of choices	S.8.AB.1</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates good decision making skills	S.8.AB.2</fullName>
+                    <default>false</default>
+                    <label>Demonstrates good decision making skills	S.8.AB.2</label>
+                </value>
+                <value>
+                    <fullName>Able to set appropriate goals	S.8.AB.3</fullName>
+                    <default>false</default>
+                    <label>Able to set appropriate goals	S.8.AB.3</label>
+                </value>
+                <value>
+                    <fullName>Able to independently apply appropriate coping mechanisms when escalated	S.8.AB.4</fullName>
+                    <default>false</default>
+                    <label>Able to independently apply appropriate coping mechanisms when escalated	S.8.AB.4</label>
+                </value>
+                <value>
+                    <fullName>Follows established safety rules	S.8.AB.5</fullName>
+                    <default>false</default>
+                    <label>Follows established safety rules	S.8.AB.5</label>
+                </value>
+                <value>
+                    <fullName>Able to learn new skills with increased autonomy	S.8.AB.6</fullName>
+                    <default>false</default>
+                    <label>Able to learn new skills with increased autonomy	S.8.AB.6</label>
+                </value>
+                <value>
+                    <fullName>Able to generalize skills to the home/work/school environment	S.8.AB.7</fullName>
+                    <default>false</default>
+                    <label>Able to generalize skills to the home/work/school environment	S.8.AB.7</label>
+                </value>
+                <value>
+                    <fullName>Able to adjust to a new environment	S.8.AB.8</fullName>
+                    <default>false</default>
+                    <label>Able to adjust to a new environment	S.8.AB.8</label>
+                </value>
+                <value>
+                    <fullName>Self- identifies when emotions are escalating	E.1.EI.1</fullName>
+                    <default>false</default>
+                    <label>Self- identifies when emotions are escalating	E.1.EI.1</label>
+                </value>
+                <value>
+                    <fullName>Is able to identify and communicate current emotions	E.1.EI.2</fullName>
+                    <default>false</default>
+                    <label>Is able to identify and communicate current emotions	E.1.EI.2</label>
+                </value>
+                <value>
+                    <fullName>Is able to recognize the emotions of other individuals	E.1.EI.3</fullName>
+                    <default>false</default>
+                    <label>Is able to recognize the emotions of other individuals	E.1.EI.3</label>
+                </value>
+                <value>
+                    <fullName>Is able to identify the emotional state of others based on non-verbal communication	E.1.EI.4</fullName>
+                    <default>false</default>
+                    <label>Is able to identify the emotional state of others based on non-verbal communication	E.1.EI.4</label>
+                </value>
+                <value>
+                    <fullName>Is able to identify emotions on the Incredible Five scale	E.1.EI.5</fullName>
+                    <default>false</default>
+                    <label>Is able to identify emotions on the Incredible Five scale	E.1.EI.5</label>
+                </value>
+                <value>
+                    <fullName>Able to stop the escalation of emotion using coping skills	E.1.EI.6</fullName>
+                    <default>false</default>
+                    <label>Able to stop the escalation of emotion using coping skills	E.1.EI.6</label>
+                </value>
+                <value>
+                    <fullName>Able to implement replacement behaviors to cope with change	E.2.AC.1</fullName>
+                    <default>false</default>
+                    <label>Able to implement replacement behaviors to cope with change	E.2.AC.1</label>
+                </value>
+                <value>
+                    <fullName>Able to change mounts without behavioral disruption	E.2.AC.2</fullName>
+                    <default>false</default>
+                    <label>Able to change mounts without behavioral disruption	E.2.AC.2</label>
+                </value>
+                <value>
+                    <fullName>Able to tolerate simple schedule changes without behavioral disruption	E.2.AC.3</fullName>
+                    <default>false</default>
+                    <label>Able to tolerate simple schedule changes without behavioral disruption	E.2.AC.3</label>
+                </value>
+                <value>
+                    <fullName>Decreased recovery time required after meltdowns	E.2.AC.4</fullName>
+                    <default>false</default>
+                    <label>Decreased recovery time required after meltdowns	E.2.AC.4</label>
+                </value>
+                <value>
+                    <fullName>Is able to identify triggers 	E.3.ER.1</fullName>
+                    <default>false</default>
+                    <label>Is able to identify triggers 	E.3.ER.1</label>
+                </value>
+                <value>
+                    <fullName>Self-regulates unhealthy thought patterns	E.3.ER.2</fullName>
+                    <default>false</default>
+                    <label>Self-regulates unhealthy thought patterns	E.3.ER.2</label>
+                </value>
+                <value>
+                    <fullName>Independently identifies and uses self-coping mechanisms	E.3.ER.3</fullName>
+                    <default>false</default>
+                    <label>Independently identifies and uses self-coping mechanisms	E.3.ER.3</label>
+                </value>
+                <value>
+                    <fullName>Able to recognize the need for emotional regulation through coping skills	E.3.ER.4</fullName>
+                    <default>false</default>
+                    <label>Able to recognize the need for emotional regulation through coping skills	E.3.ER.4</label>
+                </value>
+                <value>
+                    <fullName>Able to identify possible solutions	E.3.ER.5</fullName>
+                    <default>false</default>
+                    <label>Able to identify possible solutions	E.3.ER.5</label>
+                </value>
+                <value>
+                    <fullName>Recognizes the need for assistance	E.3.ER.6</fullName>
+                    <default>false</default>
+                    <label>Recognizes the need for assistance	E.3.ER.6</label>
+                </value>
+                <value>
+                    <fullName>Does not leave class without permission	E.3.AB.1</fullName>
+                    <default>false</default>
+                    <label>Does not leave class without permission	E.3.AB.1</label>
+                </value>
+                <value>
+                    <fullName>Able to implement replacement behaviors	E.3.AB.2</fullName>
+                    <default>false</default>
+                    <label>Able to implement replacement behaviors	E.3.AB.2</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates tolerance	E.3.AB.3</fullName>
+                    <default>false</default>
+                    <label>Demonstrates tolerance	E.3.AB.3</label>
+                </value>
+                <value>
+                    <fullName>Maintains appropriate tone when frustrated or anxious	E.3.AB.4</fullName>
+                    <default>false</default>
+                    <label>Maintains appropriate tone when frustrated or anxious	E.3.AB.4</label>
+                </value>
+                <value>
+                    <fullName>Appropriately requests assistance when needed	E.3.AB.5</fullName>
+                    <default>false</default>
+                    <label>Appropriately requests assistance when needed	E.3.AB.5</label>
+                </value>
+                <value>
+                    <fullName>Able to demonstrate confidence/assertiveness when under stress	E.4.CF.1</fullName>
+                    <default>false</default>
+                    <label>Able to demonstrate confidence/assertiveness when under stress	E.4.CF.1</label>
+                </value>
+                <value>
+                    <fullName>Initiates tasks independently	E.4.CF.2</fullName>
+                    <default>false</default>
+                    <label>Initiates tasks independently	E.4.CF.2</label>
+                </value>
+                <value>
+                    <fullName>Reduced hesitation when performing tasks	E.4.CF.3</fullName>
+                    <default>false</default>
+                    <label>Reduced hesitation when performing tasks	E.4.CF.3</label>
+                </value>
+                <value>
+                    <fullName>Able to encourage others to succeed	E.4.CF.4</fullName>
+                    <default>false</default>
+                    <label>Able to encourage others to succeed	E.4.CF.4</label>
+                </value>
+                <value>
+                    <fullName>Responds positively to prompts	E.4.CF.5</fullName>
+                    <default>false</default>
+                    <label>Responds positively to prompts	E.4.CF.5</label>
+                </value>
+                <value>
+                    <fullName>Reduced meltdowns when asked to perform a new task	E.4.CF.6</fullName>
+                    <default>false</default>
+                    <label>Reduced meltdowns when asked to perform a new task	E.4.CF.6</label>
+                </value>
+                <value>
+                    <fullName>Able to demonstrate skills for other riders	E.4.CF.7</fullName>
+                    <default>false</default>
+                    <label>Able to demonstrate skills for other riders	E.4.CF.7</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates appropriate level of trust when interacting with others	E.5.TR.1</fullName>
+                    <default>false</default>
+                    <label>Demonstrates appropriate level of trust when interacting with others	E.5.TR.1</label>
+                </value>
+                <value>
+                    <fullName>Seeks to be trusted by others by demonstrating trustworthy behaviors	E.5.TR.2</fullName>
+                    <default>false</default>
+                    <label>Seeks to be trusted by others by demonstrating trustworthy behaviors	E.5.TR.2</label>
+                </value>
+                <value>
+                    <fullName>Is able to identify the character traits associated with trustworthiness	E.5.TR.3</fullName>
+                    <default>false</default>
+                    <label>Is able to identify the character traits associated with trustworthiness	E.5.TR.3</label>
+                </value>
+                <value>
+                    <fullName>Communicates honestly with others	E.5.TR.4</fullName>
+                    <default>false</default>
+                    <label>Communicates honestly with others	E.5.TR.4</label>
+                </value>
+                <value>
+                    <fullName>Minimal resistance to instructions for new activities	E.5.TR.5</fullName>
+                    <default>false</default>
+                    <label>Minimal resistance to instructions for new activities	E.5.TR.5</label>
+                </value>
+                <value>
+                    <fullName>Words and actions correspond appropriately	E.5.TR.6</fullName>
+                    <default>false</default>
+                    <label>Words and actions correspond appropriately	E.5.TR.6</label>
+                </value>
+                <value>
+                    <fullName>Maintains appropriate tone when frustrated 	E.6.EN.1</fullName>
+                    <default>false</default>
+                    <label>Maintains appropriate tone when frustrated 	E.6.EN.1</label>
+                </value>
+                <value>
+                    <fullName>Maintains appropriate tone when seeking assistance	E.6.EN.2</fullName>
+                    <default>false</default>
+                    <label>Maintains appropriate tone when seeking assistance	E.6.EN.2</label>
+                </value>
+                <value>
+                    <fullName>Able to identify when assistance is needed	E.6.EN.3</fullName>
+                    <default>false</default>
+                    <label>Able to identify when assistance is needed	E.6.EN.3</label>
+                </value>
+                <value>
+                    <fullName>Able to verbally articulate the need	E.6.EN.4</fullName>
+                    <default>false</default>
+                    <label>Able to verbally articulate the need	E.6.EN.4</label>
+                </value>
+                <value>
+                    <fullName>Able to use non-verbal gestures to indicate a need	E.6.EN.5</fullName>
+                    <default>false</default>
+                    <label>Able to use non-verbal gestures to indicate a need	E.6.EN.5</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates empathy for peers	E.7.EM.1</fullName>
+                    <default>false</default>
+                    <label>Demonstrates empathy for peers	E.7.EM.1</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates empathy for their horse and other animals	E.7.EM.2</fullName>
+                    <default>false</default>
+                    <label>Demonstrates empathy for their horse and other animals	E.7.EM.2</label>
+                </value>
+                <value>
+                    <fullName>Able to demonstrate remorse for their actions	E.7.EM.3</fullName>
+                    <default>false</default>
+                    <label>Able to demonstrate remorse for their actions	E.7.EM.3</label>
+                </value>
+                <value>
+                    <fullName>Recognizes when their actions have negatively impacted another person 	E.7.EM.4</fullName>
+                    <default>false</default>
+                    <label>Recognizes when their actions have negatively impacted another person 	E.7.EM.4</label>
+                </value>
+                <value>
+                    <fullName>Recognizes when their actions have negatively impacted their horse	E.7.EM.5</fullName>
+                    <default>false</default>
+                    <label>Recognizes when their actions have negatively impacted their horse	E.7.EM.5</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates an awareness of other&apos;s emotions	E.7.EM.6</fullName>
+                    <default>false</default>
+                    <label>Demonstrates an awareness of other&apos;s emotions	E.7.EM.6</label>
+                </value>
+                <value>
+                    <fullName>Able to express gratitude	E.7.EM.7</fullName>
+                    <default>false</default>
+                    <label>Able to express gratitude	E.7.EM.7</label>
+                </value>
+                <value>
+                    <fullName>Can demonstrate compassion for another person 	E.7.EM.8</fullName>
+                    <default>false</default>
+                    <label>Can demonstrate compassion for another person 	E.7.EM.8</label>
+                </value>
+                <value>
+                    <fullName>Can demonstrate compassion for their horse	E.7.EM.9</fullName>
+                    <default>false</default>
+                    <label>Can demonstrate compassion for their horse	E.7.EM.9</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates positive response to failed attempts	E.8.PR.1</fullName>
+                    <default>false</default>
+                    <label>Demonstrates positive response to failed attempts	E.8.PR.1</label>
+                </value>
+                <value>
+                    <fullName>Flexible in considering various ideas and approaches to achieve the desired outcome	E.8.PR.2</fullName>
+                    <default>false</default>
+                    <label>Flexible in considering various ideas and approaches to achieve the desired outcome	E.8.PR.2</label>
+                </value>
+                <value>
+                    <fullName>Able to identify a problem	E.8.PR.3</fullName>
+                    <default>false</default>
+                    <label>Able to identify a problem	E.8.PR.3</label>
+                </value>
+                <value>
+                    <fullName>Able to break down a problem into multiple steps	E.8.PR.4</fullName>
+                    <default>false</default>
+                    <label>Able to break down a problem into multiple steps	E.8.PR.4</label>
+                </value>
+                <value>
+                    <fullName>Able to accept disappointment and move forward	E.8.PR.5</fullName>
+                    <default>false</default>
+                    <label>Able to accept disappointment and move forward	E.8.PR.5</label>
+                </value>
+                <value>
+                    <fullName>Able to learn from failures and apply lessons to the next attempt	E.8.PR.6</fullName>
+                    <default>false</default>
+                    <label>Able to learn from failures and apply lessons to the next attempt	E.8.PR.6</label>
+                </value>
+                <value>
+                    <fullName>Able to establish boundaries appropriate for the relationship	E.9.BD.1</fullName>
+                    <default>false</default>
+                    <label>Able to establish boundaries appropriate for the relationship	E.9.BD.1</label>
+                </value>
+                <value>
+                    <fullName>Able to identify healthy relationship traits	E.9.BD.2</fullName>
+                    <default>false</default>
+                    <label>Able to identify healthy relationship traits	E.9.BD.2</label>
+                </value>
+                <value>
+                    <fullName>Conceptually, understands what boundaries are	E.9.BD.3</fullName>
+                    <default>false</default>
+                    <label>Conceptually, understands what boundaries are	E.9.BD.3</label>
+                </value>
+                <value>
+                    <fullName>Understands when boundaries are necessary	E.9.BD.4</fullName>
+                    <default>false</default>
+                    <label>Understands when boundaries are necessary	E.9.BD.4</label>
+                </value>
+                <value>
+                    <fullName>Understands when boundaries must change	E.9.BD.5</fullName>
+                    <default>false</default>
+                    <label>Understands when boundaries must change	E.9.BD.5</label>
+                </value>
+                <value>
+                    <fullName>Able to differentiate between physical and verbal boundaries	E.9.BD.6</fullName>
+                    <default>false</default>
+                    <label>Able to differentiate between physical and verbal boundaries	E.9.BD.6</label>
+                </value>
+                <value>
+                    <fullName>Able to identify methods for establishing verbal boundaries	E.9.BD.7</fullName>
+                    <default>false</default>
+                    <label>Able to identify methods for establishing verbal boundaries	E.9.BD.7</label>
+                </value>
+                <value>
+                    <fullName>Able to identify methods for establishing physical boundaries	E.9.BD.8</fullName>
+                    <default>false</default>
+                    <label>Able to identify methods for establishing physical boundaries	E.9.BD.8</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates perseverance in maintaining boundaries	E.9.BD.9</fullName>
+                    <default>false</default>
+                    <label>Demonstrates perseverance in maintaining boundaries	E.9.BD.9</label>
+                </value>
+                <value>
+                    <fullName>Self-regulates anxiety, negative thought patterns	E.10.MA.1</fullName>
+                    <default>false</default>
+                    <label>Self-regulates anxiety, negative thought patterns	E.10.MA.1</label>
+                </value>
+                <value>
+                    <fullName>Proactively uses coping mechanisms to relieve anxiety	E.10.MA.2</fullName>
+                    <default>false</default>
+                    <label>Proactively uses coping mechanisms to relieve anxiety	E.10.MA.2</label>
+                </value>
+                <value>
+                    <fullName>Able to implement replacement behaviors for compulsive behaviors	E.10.MA.3</fullName>
+                    <default>false</default>
+                    <label>Able to implement replacement behaviors for compulsive behaviors	E.10.MA.3</label>
+                </value>
+                <value>
+                    <fullName>Maintains appropriate tone when frustrated or anxious	E.10.MA.4</fullName>
+                    <default>false</default>
+                    <label>Maintains appropriate tone when frustrated or anxious	E.10.MA.4</label>
+                </value>
+                <value>
+                    <fullName>Able to identify triggers for anxiety	E.10.MA.5</fullName>
+                    <default>false</default>
+                    <label>Able to identify triggers for anxiety	E.10.MA.5</label>
+                </value>
+                <value>
+                    <fullName>Uses multiple coping methods to alleviate anxiety	E.10.MA.6</fullName>
+                    <default>false</default>
+                    <label>Uses multiple coping methods to alleviate anxiety	E.10.MA.6</label>
+                </value>
+                <value>
+                    <fullName>Is able to sequence steps for tacking their horse	C.1.PS.1</fullName>
+                    <default>false</default>
+                    <label>Is able to sequence steps for tacking their horse	C.1.PS.1</label>
+                </value>
+                <value>
+                    <fullName>Identifies a problem and communicates the need for a solution	C.1.PS.2</fullName>
+                    <default>false</default>
+                    <label>Identifies a problem and communicates the need for a solution	C.1.PS.2</label>
+                </value>
+                <value>
+                    <fullName>Identifies a problem and independently identifies potential solutions	C.1.PS.3</fullName>
+                    <default>false</default>
+                    <label>Identifies a problem and independently identifies potential solutions	C.1.PS.3</label>
+                </value>
+                <value>
+                    <fullName>Is able to sequence steps for grooming their horse	C.1.PS.4</fullName>
+                    <default>false</default>
+                    <label>Is able to sequence steps for grooming their horse	C.1.PS.4</label>
+                </value>
+                <value>
+                    <fullName>Asks questions when directions are unclear	C.1.PS.5</fullName>
+                    <default>false</default>
+                    <label>Asks questions when directions are unclear	C.1.PS.5</label>
+                </value>
+                <value>
+                    <fullName>Able to identify that there is a problem	C.1.PS.6</fullName>
+                    <default>false</default>
+                    <label>Able to identify that there is a problem	C.1.PS.6</label>
+                </value>
+                <value>
+                    <fullName>Able to break a problem down into multiple parts	C.1.PS.7</fullName>
+                    <default>false</default>
+                    <label>Able to break a problem down into multiple parts	C.1.PS.7</label>
+                </value>
+                <value>
+                    <fullName>Incorporates task analysis when problem solving	C.1.PS.8</fullName>
+                    <default>false</default>
+                    <label>Incorporates task analysis when problem solving	C.1.PS.8</label>
+                </value>
+                <value>
+                    <fullName>Able to identify multiple solutions	C.1.PS.9</fullName>
+                    <default>false</default>
+                    <label>Able to identify multiple solutions	C.1.PS.9</label>
+                </value>
+                <value>
+                    <fullName>Is able to follow _____ step written directions without assistance	C.2.FD.1</fullName>
+                    <default>false</default>
+                    <label>Is able to follow _____ step written directions without assistance	C.2.FD.1</label>
+                </value>
+                <value>
+                    <fullName>Requests help when instructions are unclear	C.2.FD.2</fullName>
+                    <default>false</default>
+                    <label>Requests help when instructions are unclear	C.2.FD.2</label>
+                </value>
+                <value>
+                    <fullName>Is able to follow _____ step verbal directions with _____prompts	C.2.FD.3</fullName>
+                    <default>false</default>
+                    <label>Is able to follow _____ step verbal directions with _____prompts	C.2.FD.3</label>
+                </value>
+                <value>
+                    <fullName>Completes (task) without reminders	C.2.FD.4</fullName>
+                    <default>false</default>
+                    <label>Completes (task) without reminders	C.2.FD.4</label>
+                </value>
+                <value>
+                    <fullName>Asks questions when directions are unclear	C.2.FD.5</fullName>
+                    <default>false</default>
+                    <label>Asks questions when directions are unclear	C.2.FD.5</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates listening skills	C.2.FD.6</fullName>
+                    <default>false</default>
+                    <label>Demonstrates listening skills	C.2.FD.6</label>
+                </value>
+                <value>
+                    <fullName>Attends to instructor&apos;s directions	C.2.FD.7</fullName>
+                    <default>false</default>
+                    <label>Attends to instructor&apos;s directions	C.2.FD.7</label>
+                </value>
+                <value>
+                    <fullName>Completes grooming in a thorough manner	C.3.TC.1</fullName>
+                    <default>false</default>
+                    <label>Completes grooming in a thorough manner	C.3.TC.1</label>
+                </value>
+                <value>
+                    <fullName>Able to complete three step patterns without additional verbal prompts	C.3.TC.2</fullName>
+                    <default>false</default>
+                    <label>Able to complete three step patterns without additional verbal prompts	C.3.TC.2</label>
+                </value>
+                <value>
+                    <fullName>Able to complete complex patterns without verbal prompts	C.3.TC.3</fullName>
+                    <default>false</default>
+                    <label>Able to complete complex patterns without verbal prompts	C.3.TC.3</label>
+                </value>
+                <value>
+                    <fullName>Follows through on instructor directions with less than _____ prompts	C.3.TC.4</fullName>
+                    <default>false</default>
+                    <label>Follows through on instructor directions with less than _____ prompts	C.3.TC.4</label>
+                </value>
+                <value>
+                    <fullName>Is able to identify when clarification is needed to complete a task	C.3.TC.5</fullName>
+                    <default>false</default>
+                    <label>Is able to identify when clarification is needed to complete a task	C.3.TC.5</label>
+                </value>
+                <value>
+                    <fullName>Initiates steps to complete a task	C.3.TC.6</fullName>
+                    <default>false</default>
+                    <label>Initiates steps to complete a task	C.3.TC.6</label>
+                </value>
+                <value>
+                    <fullName>Recognizes failure to complete a task	C.3.TC.7</fullName>
+                    <default>false</default>
+                    <label>Recognizes failure to complete a task	C.3.TC.7</label>
+                </value>
+                <value>
+                    <fullName>Able to set appropriate goals	C.4.DM.1</fullName>
+                    <default>false</default>
+                    <label>Able to set appropriate goals	C.4.DM.1</label>
+                </value>
+                <value>
+                    <fullName>Recognizes unsafe situations	C.4.DM.2</fullName>
+                    <default>false</default>
+                    <label>Recognizes unsafe situations	C.4.DM.2</label>
+                </value>
+                <value>
+                    <fullName>Able to identify the consequences of choices	C.4.DM.3</fullName>
+                    <default>false</default>
+                    <label>Able to identify the consequences of choices	C.4.DM.3</label>
+                </value>
+                <value>
+                    <fullName>Able to identify multiple solutions	C.4.DM.4</fullName>
+                    <default>false</default>
+                    <label>Able to identify multiple solutions	C.4.DM.4</label>
+                </value>
+                <value>
+                    <fullName>Able to distinguish right and wrong	C.4.DM.5</fullName>
+                    <default>false</default>
+                    <label>Able to distinguish right and wrong	C.4.DM.5</label>
+                </value>
+                <value>
+                    <fullName>Able to identify risks/temptations to good choices	C.4.DM.6</fullName>
+                    <default>false</default>
+                    <label>Able to identify risks/temptations to good choices	C.4.DM.6</label>
+                </value>
+                <value>
+                    <fullName>Able to evaluate possible outcomes for the best solution	C.4.DM.7</fullName>
+                    <default>false</default>
+                    <label>Able to evaluate possible outcomes for the best solution	C.4.DM.7</label>
+                </value>
+                <value>
+                    <fullName>Able to make objective rather than emotional decisions	C.4.DM.8</fullName>
+                    <default>false</default>
+                    <label>Able to make objective rather than emotional decisions	C.4.DM.8</label>
+                </value>
+                <value>
+                    <fullName>Recognizes unsafe situations	C.5.AC.1</fullName>
+                    <default>false</default>
+                    <label>Recognizes unsafe situations	C.5.AC.1</label>
+                </value>
+                <value>
+                    <fullName>Able to identify outcomes of their actions	C.5.AC.2</fullName>
+                    <default>false</default>
+                    <label>Able to identify outcomes of their actions	C.5.AC.2</label>
+                </value>
+                <value>
+                    <fullName>Able to identify personal impacts of actions	C.5.AC.3</fullName>
+                    <default>false</default>
+                    <label>Able to identify personal impacts of actions	C.5.AC.3</label>
+                </value>
+                <value>
+                    <fullName>Able to identify impacts to others as a result of their actions	C.5.AC.4</fullName>
+                    <default>false</default>
+                    <label>Able to identify impacts to others as a result of their actions	C.5.AC.4</label>
+                </value>
+                <value>
+                    <fullName>Able to plan for potential outcomes	C.5.AC.5</fullName>
+                    <default>false</default>
+                    <label>Able to plan for potential outcomes	C.5.AC.5</label>
+                </value>
+                <value>
+                    <fullName>Is able to create an action plan	C.5.AC.6</fullName>
+                    <default>false</default>
+                    <label>Is able to create an action plan	C.5.AC.6</label>
+                </value>
+                <value>
+                    <fullName>Accepts ownership of their actions	C.5.AC.7</fullName>
+                    <default>false</default>
+                    <label>Accepts ownership of their actions	C.5.AC.7</label>
+                </value>
+                <value>
+                    <fullName>Able to verbalize anticipated consequences when asked	C.5.AC.8</fullName>
+                    <default>false</default>
+                    <label>Able to verbalize anticipated consequences when asked	C.5.AC.8</label>
+                </value>
+                <value>
+                    <fullName>Able to identify sensory triggers	C.6.SP.1</fullName>
+                    <default>false</default>
+                    <label>Able to identify sensory triggers	C.6.SP.1</label>
+                </value>
+                <value>
+                    <fullName>Improved processing of sensory triggers including _____	C.6.SP.2</fullName>
+                    <default>false</default>
+                    <label>Improved processing of sensory triggers including _____	C.6.SP.2</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates emotional understanding	C.6.SP.3</fullName>
+                    <default>false</default>
+                    <label>Demonstrates emotional understanding	C.6.SP.3</label>
+                </value>
+                <value>
+                    <fullName>Able to interpret social cues based on verbal signals	C.6.SP.4</fullName>
+                    <default>false</default>
+                    <label>Able to interpret social cues based on verbal signals	C.6.SP.4</label>
+                </value>
+                <value>
+                    <fullName>Able to interpret social cues based on body language	C.6.SP.5</fullName>
+                    <default>false</default>
+                    <label>Able to interpret social cues based on body language	C.6.SP.5</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates emotional understanding	C.6.SP.6</fullName>
+                    <default>false</default>
+                    <label>Demonstrates emotional understanding	C.6.SP.6</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates appropriate reactions to sensory input	C.6.SP.7</fullName>
+                    <default>false</default>
+                    <label>Demonstrates appropriate reactions to sensory input	C.6.SP.7</label>
+                </value>
+                <value>
+                    <fullName>Able to manage reactions to sensory input	C.6.SP.8</fullName>
+                    <default>false</default>
+                    <label>Able to manage reactions to sensory input	C.6.SP.8</label>
+                </value>
+                <value>
+                    <fullName>Recognizes unsafe situations	C.7.SY.1</fullName>
+                    <default>false</default>
+                    <label>Recognizes unsafe situations	C.7.SY.1</label>
+                </value>
+                <value>
+                    <fullName>Follows basic safety rules	C.7.SY.2</fullName>
+                    <default>false</default>
+                    <label>Follows basic safety rules	C.7.SY.2</label>
+                </value>
+                <value>
+                    <fullName>Wears helmet correctly	C.7.SY.3</fullName>
+                    <default>false</default>
+                    <label>Wears helmet correctly	C.7.SY.3</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates awareness of the horse&apos;s space and movement	C.7.SY.4</fullName>
+                    <default>false</default>
+                    <label>Demonstrates awareness of the horse&apos;s space and movement	C.7.SY.4</label>
+                </value>
+                <value>
+                    <fullName>Recognizes signs of agitation with peers	C.7.SY.5</fullName>
+                    <default>false</default>
+                    <label>Recognizes signs of agitation with peers	C.7.SY.5</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates responsibility for self	C.7.SY.6</fullName>
+                    <default>false</default>
+                    <label>Demonstrates responsibility for self	C.7.SY.6</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates responsibility for others	C.7.SY.7</fullName>
+                    <default>false</default>
+                    <label>Demonstrates responsibility for others	C.7.SY.7</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates care for the safety of their mount	C.7.SY.8</fullName>
+                    <default>false</default>
+                    <label>Demonstrates care for the safety of their mount	C.7.SY.8</label>
+                </value>
+                <value>
+                    <fullName>Recognizes unsafe situations	C.8.LS.1</fullName>
+                    <default>false</default>
+                    <label>Recognizes unsafe situations	C.8.LS.1</label>
+                </value>
+                <value>
+                    <fullName>Follows basic safety rules	C.8.LS.2</fullName>
+                    <default>false</default>
+                    <label>Follows basic safety rules	C.8.LS.2</label>
+                </value>
+                <value>
+                    <fullName>Wears gloves when appropriate	C.8.LS.3</fullName>
+                    <default>false</default>
+                    <label>Wears gloves when appropriate	C.8.LS.3</label>
+                </value>
+                <value>
+                    <fullName>Wears a coat when appropriate	C.8.LS.4</fullName>
+                    <default>false</default>
+                    <label>Wears a coat when appropriate	C.8.LS.4</label>
+                </value>
+                <value>
+                    <fullName>Wears helmet correctly	C.8.LS.5</fullName>
+                    <default>false</default>
+                    <label>Wears helmet correctly	C.8.LS.5</label>
+                </value>
+                <value>
+                    <fullName>Able to prepare for class without prompting	C.8.LS.6</fullName>
+                    <default>false</default>
+                    <label>Able to prepare for class without prompting	C.8.LS.6</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates personal responsibility in caring for their horse	C.8.LS.7</fullName>
+                    <default>false</default>
+                    <label>Demonstrates personal responsibility in caring for their horse	C.8.LS.7</label>
+                </value>
+                <value>
+                    <fullName>Able to initiate activities	C.8.LS.8</fullName>
+                    <default>false</default>
+                    <label>Able to initiate activities	C.8.LS.8</label>
+                </value>
+                <value>
+                    <fullName>Attends to the instructor when receiving directions	C.9.FC.1</fullName>
+                    <default>false</default>
+                    <label>Attends to the instructor when receiving directions	C.9.FC.1</label>
+                </value>
+                <value>
+                    <fullName>Attends to volunteers when in conversation	C.9.FC.2</fullName>
+                    <default>false</default>
+                    <label>Attends to volunteers when in conversation	C.9.FC.2</label>
+                </value>
+                <value>
+                    <fullName>Able to complete complex patterns with less than _____ verbal prompts	C.9.FC.3</fullName>
+                    <default>false</default>
+                    <label>Able to complete complex patterns with less than _____ verbal prompts	C.9.FC.3</label>
+                </value>
+                <value>
+                    <fullName>Follows through on instructor directions with less than _____ prompts	C.9.FC.4</fullName>
+                    <default>false</default>
+                    <label>Follows through on instructor directions with less than _____ prompts	C.9.FC.4</label>
+                </value>
+                <value>
+                    <fullName>Able to focus on the task at hand despite disruptions	C.9.FC.5</fullName>
+                    <default>false</default>
+                    <label>Able to focus on the task at hand despite disruptions	C.9.FC.5</label>
+                </value>
+                <value>
+                    <fullName>Able to attend to multi-step verbal instructions	C.9.FC.6</fullName>
+                    <default>false</default>
+                    <label>Able to attend to multi-step verbal instructions	C.9.FC.6</label>
+                </value>
+                <value>
+                    <fullName>Able to attend to multi-step written instructions	C.9.FC.7</fullName>
+                    <default>false</default>
+                    <label>Able to attend to multi-step written instructions	C.9.FC.7</label>
+                </value>
+                <value>
+                    <fullName>Returns tools to their appropriate location	C.10.OR.1</fullName>
+                    <default>false</default>
+                    <label>Returns tools to their appropriate location	C.10.OR.1</label>
+                </value>
+                <value>
+                    <fullName>Sequences grooming steps in the appropriate order	C.10.OR.2</fullName>
+                    <default>false</default>
+                    <label>Sequences grooming steps in the appropriate order	C.10.OR.2</label>
+                </value>
+                <value>
+                    <fullName>Able to tack their horse using the appropriate sequence	C.10.OR.3</fullName>
+                    <default>false</default>
+                    <label>Able to tack their horse using the appropriate sequence	C.10.OR.3</label>
+                </value>
+                <value>
+                    <fullName>Completes routine tasks without prompting	C.10.OR.4</fullName>
+                    <default>false</default>
+                    <label>Completes routine tasks without prompting	C.10.OR.4</label>
+                </value>
+                <value>
+                    <fullName>Is able to sequence a variety of tasks in the appropriate order	C.10.OR.5</fullName>
+                    <default>false</default>
+                    <label>Is able to sequence a variety of tasks in the appropriate order	C.10.OR.5</label>
+                </value>
+                <value>
+                    <fullName>Able to compensate for areas of physical weakness to complete a task	C.11.AS.1</fullName>
+                    <default>false</default>
+                    <label>Able to compensate for areas of physical weakness to complete a task	C.11.AS.1</label>
+                </value>
+                <value>
+                    <fullName>Improved balance when stationary	P.1.B.1</fullName>
+                    <default>false</default>
+                    <label>Improved balance when stationary	P.1.B.1</label>
+                </value>
+                <value>
+                    <fullName>Improved balance when walking	P.1.B.2</fullName>
+                    <default>false</default>
+                    <label>Improved balance when walking	P.1.B.2</label>
+                </value>
+                <value>
+                    <fullName>Improved ability to balance while mounted and at a walk	P.1.B.3</fullName>
+                    <default>false</default>
+                    <label>Improved ability to balance while mounted and at a walk	P.1.B.3</label>
+                </value>
+                <value>
+                    <fullName>Improved ability to balance while mounted and at a trot	P.1.B.4</fullName>
+                    <default>false</default>
+                    <label>Improved ability to balance while mounted and at a trot	P.1.B.4</label>
+                </value>
+                <value>
+                    <fullName>Improved balance when mounting	P.1.B.5</fullName>
+                    <default>false</default>
+                    <label>Improved balance when mounting	P.1.B.5</label>
+                </value>
+                <value>
+                    <fullName>Improved balance when dismounting	P.1.B.6</fullName>
+                    <default>false</default>
+                    <label>Improved balance when dismounting	P.1.B.6</label>
+                </value>
+                <value>
+                    <fullName>Able to demonstrate proper center	P.1.B.7</fullName>
+                    <default>false</default>
+                    <label>Able to demonstrate proper center	P.1.B.7</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates ability to self-correct balance	P.1.B.8</fullName>
+                    <default>false</default>
+                    <label>Demonstrates ability to self-correct balance	P.1.B.8</label>
+                </value>
+                <value>
+                    <fullName>Able to mount independently	P.2.C.1</fullName>
+                    <default>false</default>
+                    <label>Able to mount independently	P.2.C.1</label>
+                </value>
+                <value>
+                    <fullName>Able to mount with minimal assistance	P.2.C.2</fullName>
+                    <default>false</default>
+                    <label>Able to mount with minimal assistance	P.2.C.2</label>
+                </value>
+                <value>
+                    <fullName>Able to mount with moderate assistance	P.2.C.3</fullName>
+                    <default>false</default>
+                    <label>Able to mount with moderate assistance	P.2.C.3</label>
+                </value>
+                <value>
+                    <fullName>Able to dismount independently	P.2.C.4</fullName>
+                    <default>false</default>
+                    <label>Able to dismount independently	P.2.C.4</label>
+                </value>
+                <value>
+                    <fullName>Able to dismount with minimal assistance	P.2.C.5</fullName>
+                    <default>false</default>
+                    <label>Able to dismount with minimal assistance	P.2.C.5</label>
+                </value>
+                <value>
+                    <fullName>Able to dismount with moderate assistance	P.2.C.6</fullName>
+                    <default>false</default>
+                    <label>Able to dismount with moderate assistance	P.2.C.6</label>
+                </value>
+                <value>
+                    <fullName>Able to combine cues to direct their mount	P.2.C.7</fullName>
+                    <default>false</default>
+                    <label>Able to combine cues to direct their mount	P.2.C.7</label>
+                </value>
+                <value>
+                    <fullName>Able to properly sequence movements to complete a task	P.2.C.8</fullName>
+                    <default>false</default>
+                    <label>Able to properly sequence movements to complete a task	P.2.C.8</label>
+                </value>
+                <value>
+                    <fullName>Able to hold grooming tools appropriately	P.3.FM.1</fullName>
+                    <default>false</default>
+                    <label>Able to hold grooming tools appropriately	P.3.FM.1</label>
+                </value>
+                <value>
+                    <fullName>Able to braid their horse&apos;s mane	P.3.FM.2</fullName>
+                    <default>false</default>
+                    <label>Able to braid their horse&apos;s mane	P.3.FM.2</label>
+                </value>
+                <value>
+                    <fullName>Able to attach reins	P.3.FM.3</fullName>
+                    <default>false</default>
+                    <label>Able to attach reins	P.3.FM.3</label>
+                </value>
+                <value>
+                    <fullName>Able to halter a horse	P.3.FM.4</fullName>
+                    <default>false</default>
+                    <label>Able to halter a horse	P.3.FM.4</label>
+                </value>
+                <value>
+                    <fullName>Able to open and close a gate	P.3.FM.5</fullName>
+                    <default>false</default>
+                    <label>Able to open and close a gate	P.3.FM.5</label>
+                </value>
+                <value>
+                    <fullName>Able to manipulate objects with hands	P.3.FM.6</fullName>
+                    <default>false</default>
+                    <label>Able to manipulate objects with hands	P.3.FM.6</label>
+                </value>
+                <value>
+                    <fullName>Able to manipulate objects with fingers	P.3.FM.7</fullName>
+                    <default>false</default>
+                    <label>Able to manipulate objects with fingers	P.3.FM.7</label>
+                </value>
+                <value>
+                    <fullName>Able to follow hand movements with eyes	P.3.FM.8</fullName>
+                    <default>false</default>
+                    <label>Able to follow hand movements with eyes	P.3.FM.8</label>
+                </value>
+                <value>
+                    <fullName>Is able to steer using direct rein	P.4.GM.1</fullName>
+                    <default>false</default>
+                    <label>Is able to steer using direct rein	P.4.GM.1</label>
+                </value>
+                <value>
+                    <fullName>Is able appropriately saddle their horse	P.4.GM.2</fullName>
+                    <default>false</default>
+                    <label>Is able appropriately saddle their horse	P.4.GM.2</label>
+                </value>
+                <value>
+                    <fullName>Able to use a curry comb appropriately	P.4.GM.3</fullName>
+                    <default>false</default>
+                    <label>Able to use a curry comb appropriately	P.4.GM.3</label>
+                </value>
+                <value>
+                    <fullName>Able to walk with minimal support	P.4.GM.4</fullName>
+                    <default>false</default>
+                    <label>Able to walk with minimal support	P.4.GM.4</label>
+                </value>
+                <value>
+                    <fullName>Able to walk with moderate support	P.4.GM.5</fullName>
+                    <default>false</default>
+                    <label>Able to walk with moderate support	P.4.GM.5</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates coordination of arm movements with leg movement	P.4.GM.6</fullName>
+                    <default>false</default>
+                    <label>Demonstrates coordination of arm movements with leg movement	P.4.GM.6</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates head movement with arm/leg tasks	P.4.GM.7</fullName>
+                    <default>false</default>
+                    <label>Demonstrates head movement with arm/leg tasks	P.4.GM.7</label>
+                </value>
+                <value>
+                    <fullName>Uses head and shoulder movements to assist in steering	P.4.GM.8</fullName>
+                    <default>false</default>
+                    <label>Uses head and shoulder movements to assist in steering	P.4.GM.8</label>
+                </value>
+                <value>
+                    <fullName>Able to use hard and soft brushes appropriately	P.4.GM.9</fullName>
+                    <default>false</default>
+                    <label>Able to use hard and soft brushes appropriately	P.4.GM.9</label>
+                </value>
+                <value>
+                    <fullName>Able to stabilize upper body during movement	P.5.CS.1</fullName>
+                    <default>false</default>
+                    <label>Able to stabilize upper body during movement	P.5.CS.1</label>
+                </value>
+                <value>
+                    <fullName>Able to maintain correct posture throughout the lesson	P.5.CS.2</fullName>
+                    <default>false</default>
+                    <label>Able to maintain correct posture throughout the lesson	P.5.CS.2</label>
+                </value>
+                <value>
+                    <fullName>Able to lean from center to side and then resume center	P.5.CS.3</fullName>
+                    <default>false</default>
+                    <label>Able to lean from center to side and then resume center	P.5.CS.3</label>
+                </value>
+                <value>
+                    <fullName>Able to lean from center to back/front and then resume center	P.5.CS.4</fullName>
+                    <default>false</default>
+                    <label>Able to lean from center to back/front and then resume center	P.5.CS.4</label>
+                </value>
+                <value>
+                    <fullName>Able to sit the trot	P.5.CS.5</fullName>
+                    <default>false</default>
+                    <label>Able to sit the trot	P.5.CS.5</label>
+                </value>
+                <value>
+                    <fullName>Able to ride without stirrups and maintain correct seat at a walk	P.5.CS.6</fullName>
+                    <default>false</default>
+                    <label>Able to ride without stirrups and maintain correct seat at a walk	P.5.CS.6</label>
+                </value>
+                <value>
+                    <fullName>Able to maintain correct position when turning the horse at a walk	P.5.CS.7</fullName>
+                    <default>false</default>
+                    <label>Able to maintain correct position when turning the horse at a walk	P.5.CS.7</label>
+                </value>
+                <value>
+                    <fullName>Able to ride without stirrups and maintain correct seat at the trot	P.5.CS.8</fullName>
+                    <default>false</default>
+                    <label>Able to ride without stirrups and maintain correct seat at the trot	P.5.CS.8</label>
+                </value>
+                <value>
+                    <fullName>Able to maintain correct position when turning the horse at the trot	P.5.CS.9</fullName>
+                    <default>false</default>
+                    <label>Able to maintain correct position when turning the horse at the trot	P.5.CS.9</label>
+                </value>
+                <value>
+                    <fullName>Improved muscle tone and strength in the arms	P.6.MT.1</fullName>
+                    <default>false</default>
+                    <label>Improved muscle tone and strength in the arms	P.6.MT.1</label>
+                </value>
+                <value>
+                    <fullName>Improved muscle tone and strength in the legs	P.6.MT.2</fullName>
+                    <default>false</default>
+                    <label>Improved muscle tone and strength in the legs	P.6.MT.2</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates muscle resistance during stretches	P.6.MT.3</fullName>
+                    <default>false</default>
+                    <label>Demonstrates muscle resistance during stretches	P.6.MT.3</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates muscle flexion during movement	P.6.MT.4</fullName>
+                    <default>false</default>
+                    <label>Demonstrates muscle flexion during movement	P.6.MT.4</label>
+                </value>
+                <value>
+                    <fullName>Is able to sit upright without support	P.7.P.1</fullName>
+                    <default>false</default>
+                    <label>Is able to sit upright without support	P.7.P.1</label>
+                </value>
+                <value>
+                    <fullName>Is able to sit upright with minimal support	P.7.P.2</fullName>
+                    <default>false</default>
+                    <label>Is able to sit upright with minimal support	P.7.P.2</label>
+                </value>
+                <value>
+                    <fullName>Uses posture to assist in cueing their mount	P.7.P.3</fullName>
+                    <default>false</default>
+                    <label>Uses posture to assist in cueing their mount	P.7.P.3</label>
+                </value>
+                <value>
+                    <fullName>Increased ability to hold head upright	P.7.P.4</fullName>
+                    <default>false</default>
+                    <label>Increased ability to hold head upright	P.7.P.4</label>
+                </value>
+                <value>
+                    <fullName>Able to recognize correct posture vs. poor posture	P.7.P.5</fullName>
+                    <default>false</default>
+                    <label>Able to recognize correct posture vs. poor posture	P.7.P.5</label>
+                </value>
+                <value>
+                    <fullName>Is able to self-correct posture	P.7.P.6</fullName>
+                    <default>false</default>
+                    <label>Is able to self-correct posture	P.7.P.6</label>
+                </value>
+                <value>
+                    <fullName>Reduced Hyperactivity	P.8.EL.1</fullName>
+                    <default>false</default>
+                    <label>Reduced Hyperactivity	P.8.EL.1</label>
+                </value>
+                <value>
+                    <fullName>Increased tolerance for physical activity	P.8.EL.2</fullName>
+                    <default>false</default>
+                    <label>Increased tolerance for physical activity	P.8.EL.2</label>
+                </value>
+                <value>
+                    <fullName>Able to identify energy level	P.8.EL.3</fullName>
+                    <default>false</default>
+                    <label>Able to identify energy level	P.8.EL.3</label>
+                </value>
+                <value>
+                    <fullName>Able to communicate energy level as needed	P.8.EL.4</fullName>
+                    <default>false</default>
+                    <label>Able to communicate energy level as needed	P.8.EL.4</label>
+                </value>
+                <value>
+                    <fullName>Demonstrates improved endurance	P.8.EL.5</fullName>
+                    <default>false</default>
+                    <label>Demonstrates improved endurance	P.8.EL.5</label>
+                </value>
+                <value>
+                    <fullName>Reduced self-stimming	P.9.SC.1</fullName>
+                    <default>false</default>
+                    <label>Reduced self-stimming	P.9.SC.1</label>
+                </value>
+                <value>
+                    <fullName>Implements replacement behaviors for compulsive behaviors	P.9.SC.2</fullName>
+                    <default>false</default>
+                    <label>Implements replacement behaviors for compulsive behaviors	P.9.SC.2</label>
+                </value>
+                <value>
+                    <fullName>Stays mounted throughout the lesson	P.9.SC.3</fullName>
+                    <default>false</default>
+                    <label>Stays mounted throughout the lesson	P.9.SC.3</label>
+                </value>
+                <value>
+                    <fullName>Able to complete riding skills as directed	P.9.SC.4</fullName>
+                    <default>false</default>
+                    <label>Able to complete riding skills as directed	P.9.SC.4</label>
+                </value>
+                <value>
+                    <fullName>S.1.CR.4</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>S.1.CR.4</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Confidence (E.4.CF)</controllingFieldValue>
+                <valueName>Able to demonstrate confidence/assertiveness when under stress	E.4.CF.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Confidence (E.4.CF)</controllingFieldValue>
+                <valueName>Initiates tasks independently	E.4.CF.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Confidence (E.4.CF)</controllingFieldValue>
+                <valueName>Reduced hesitation when performing tasks	E.4.CF.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Confidence (E.4.CF)</controllingFieldValue>
+                <valueName>Able to encourage others to succeed	E.4.CF.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Confidence (E.4.CF)</controllingFieldValue>
+                <valueName>Responds positively to prompts	E.4.CF.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Confidence (E.4.CF)</controllingFieldValue>
+                <valueName>Reduced meltdowns when asked to perform a new task	E.4.CF.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Confidence (E.4.CF)</controllingFieldValue>
+                <valueName>Able to demonstrate skills for other riders	E.4.CF.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Posture (P.7.P)</controllingFieldValue>
+                <valueName>Is able to sit upright without support	P.7.P.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Posture (P.7.P)</controllingFieldValue>
+                <valueName>Is able to sit upright with minimal support	P.7.P.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Posture (P.7.P)</controllingFieldValue>
+                <valueName>Uses posture to assist in cueing their mount	P.7.P.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Posture (P.7.P)</controllingFieldValue>
+                <valueName>Increased ability to hold head upright	P.7.P.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Posture (P.7.P)</controllingFieldValue>
+                <valueName>Able to recognize correct posture vs. poor posture	P.7.P.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Posture (P.7.P)</controllingFieldValue>
+                <valueName>Is able to self-correct posture	P.7.P.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Trust (E.5.TR)</controllingFieldValue>
+                <valueName>Demonstrates appropriate level of trust when interacting with others	E.5.TR.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Trust (E.5.TR)</controllingFieldValue>
+                <valueName>Seeks to be trusted by others by demonstrating trustworthy behaviors	E.5.TR.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Trust (E.5.TR)</controllingFieldValue>
+                <valueName>Is able to identify the character traits associated with trustworthiness	E.5.TR.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Trust (E.5.TR)</controllingFieldValue>
+                <valueName>Communicates honestly with others	E.5.TR.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Trust (E.5.TR)</controllingFieldValue>
+                <valueName>Minimal resistance to instructions for new activities	E.5.TR.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Trust (E.5.TR)</controllingFieldValue>
+                <valueName>Words and actions correspond appropriately	E.5.TR.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Energy Level (P.8.EL)</controllingFieldValue>
+                <valueName>Reduced Hyperactivity	P.8.EL.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Energy Level (P.8.EL)</controllingFieldValue>
+                <valueName>Increased tolerance for physical activity	P.8.EL.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Energy Level (P.8.EL)</controllingFieldValue>
+                <valueName>Able to identify energy level	P.8.EL.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Energy Level (P.8.EL)</controllingFieldValue>
+                <valueName>Able to communicate energy level as needed	P.8.EL.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Energy Level (P.8.EL)</controllingFieldValue>
+                <valueName>Demonstrates improved endurance	P.8.EL.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Expressing Needs (E.6.EN)</controllingFieldValue>
+                <valueName>Maintains appropriate tone when frustrated 	E.6.EN.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Expressing Needs (E.6.EN)</controllingFieldValue>
+                <valueName>Maintains appropriate tone when seeking assistance	E.6.EN.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Expressing Needs (E.6.EN)</controllingFieldValue>
+                <valueName>Able to identify when assistance is needed	E.6.EN.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Expressing Needs (E.6.EN)</controllingFieldValue>
+                <valueName>Able to verbally articulate the need	E.6.EN.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Expressing Needs (E.6.EN)</controllingFieldValue>
+                <valueName>Able to use non-verbal gestures to indicate a need	E.6.EN.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Control (P.9.SC)</controllingFieldValue>
+                <valueName>Reduced self-stimming	P.9.SC.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Control (P.9.SC)</controllingFieldValue>
+                <valueName>Implements replacement behaviors for compulsive behaviors	P.9.SC.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Control (P.9.SC)</controllingFieldValue>
+                <valueName>Stays mounted throughout the lesson	P.9.SC.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Control (P.9.SC)</controllingFieldValue>
+                <valueName>Able to complete riding skills as directed	P.9.SC.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Empathy (E.7.EM)</controllingFieldValue>
+                <valueName>Demonstrates empathy for peers	E.7.EM.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Empathy (E.7.EM)</controllingFieldValue>
+                <valueName>Demonstrates empathy for their horse and other animals	E.7.EM.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Empathy (E.7.EM)</controllingFieldValue>
+                <valueName>Able to demonstrate remorse for their actions	E.7.EM.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Empathy (E.7.EM)</controllingFieldValue>
+                <valueName>Recognizes when their actions have negatively impacted another person 	E.7.EM.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Empathy (E.7.EM)</controllingFieldValue>
+                <valueName>Recognizes when their actions have negatively impacted their horse	E.7.EM.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Empathy (E.7.EM)</controllingFieldValue>
+                <valueName>Demonstrates an awareness of other&apos;s emotions	E.7.EM.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Empathy (E.7.EM)</controllingFieldValue>
+                <valueName>Able to express gratitude	E.7.EM.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Empathy (E.7.EM)</controllingFieldValue>
+                <valueName>Can demonstrate compassion for another person 	E.7.EM.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Empathy (E.7.EM)</controllingFieldValue>
+                <valueName>Can demonstrate compassion for their horse	E.7.EM.9</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Boundaries (E.9.BD)</controllingFieldValue>
+                <valueName>Able to establish boundaries appropriate for the relationship	E.9.BD.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Boundaries (E.9.BD)</controllingFieldValue>
+                <valueName>Able to identify healthy relationship traits	E.9.BD.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Boundaries (E.9.BD)</controllingFieldValue>
+                <valueName>Conceptually, understands what boundaries are	E.9.BD.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Boundaries (E.9.BD)</controllingFieldValue>
+                <valueName>Understands when boundaries are necessary	E.9.BD.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Boundaries (E.9.BD)</controllingFieldValue>
+                <valueName>Understands when boundaries must change	E.9.BD.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Boundaries (E.9.BD)</controllingFieldValue>
+                <valueName>Able to differentiate between physical and verbal boundaries	E.9.BD.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Boundaries (E.9.BD)</controllingFieldValue>
+                <valueName>Able to identify methods for establishing verbal boundaries	E.9.BD.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Boundaries (E.9.BD)</controllingFieldValue>
+                <valueName>Able to identify methods for establishing physical boundaries	E.9.BD.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Boundaries (E.9.BD)</controllingFieldValue>
+                <valueName>Demonstrates perseverance in maintaining boundaries	E.9.BD.9</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Perseverance (E.8.PR)</controllingFieldValue>
+                <valueName>Demonstrates positive response to failed attempts	E.8.PR.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Perseverance (E.8.PR)</controllingFieldValue>
+                <valueName>Flexible in considering various ideas and approaches to achieve the desired outcome	E.8.PR.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Perseverance (E.8.PR)</controllingFieldValue>
+                <valueName>Able to identify a problem	E.8.PR.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Perseverance (E.8.PR)</controllingFieldValue>
+                <valueName>Able to break down a problem into multiple steps	E.8.PR.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Perseverance (E.8.PR)</controllingFieldValue>
+                <valueName>Able to accept disappointment and move forward	E.8.PR.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Perseverance (E.8.PR)</controllingFieldValue>
+                <valueName>Able to learn from failures and apply lessons to the next attempt	E.8.PR.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Managing Anxiety (E.10.MA)</controllingFieldValue>
+                <valueName>Self-regulates anxiety, negative thought patterns	E.10.MA.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Managing Anxiety (E.10.MA)</controllingFieldValue>
+                <valueName>Proactively uses coping mechanisms to relieve anxiety	E.10.MA.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Managing Anxiety (E.10.MA)</controllingFieldValue>
+                <valueName>Able to implement replacement behaviors for compulsive behaviors	E.10.MA.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Managing Anxiety (E.10.MA)</controllingFieldValue>
+                <valueName>Maintains appropriate tone when frustrated or anxious	E.10.MA.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Managing Anxiety (E.10.MA)</controllingFieldValue>
+                <valueName>Able to identify triggers for anxiety	E.10.MA.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Managing Anxiety (E.10.MA)</controllingFieldValue>
+                <valueName>Uses multiple coping methods to alleviate anxiety	E.10.MA.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Problem Solving (C.1.PS)</controllingFieldValue>
+                <valueName>Is able to sequence steps for tacking their horse	C.1.PS.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Problem Solving (C.1.PS)</controllingFieldValue>
+                <valueName>Identifies a problem and communicates the need for a solution	C.1.PS.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Problem Solving (C.1.PS)</controllingFieldValue>
+                <valueName>Identifies a problem and independently identifies potential solutions	C.1.PS.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Problem Solving (C.1.PS)</controllingFieldValue>
+                <valueName>Is able to sequence steps for grooming their horse	C.1.PS.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Problem Solving (C.1.PS)</controllingFieldValue>
+                <valueName>Asks questions when directions are unclear	C.1.PS.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Problem Solving (C.1.PS)</controllingFieldValue>
+                <valueName>Able to identify that there is a problem	C.1.PS.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Problem Solving (C.1.PS)</controllingFieldValue>
+                <valueName>Able to break a problem down into multiple parts	C.1.PS.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Problem Solving (C.1.PS)</controllingFieldValue>
+                <valueName>Incorporates task analysis when problem solving	C.1.PS.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Problem Solving (C.1.PS)</controllingFieldValue>
+                <valueName>Able to identify multiple solutions	C.1.PS.9</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Following Directions (C.2.FD)</controllingFieldValue>
+                <valueName>Is able to follow _____ step written directions without assistance	C.2.FD.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Following Directions (C.2.FD)</controllingFieldValue>
+                <valueName>Requests help when instructions are unclear	C.2.FD.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Following Directions (C.2.FD)</controllingFieldValue>
+                <valueName>Is able to follow _____ step verbal directions with _____prompts	C.2.FD.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Following Directions (C.2.FD)</controllingFieldValue>
+                <valueName>Completes (task) without reminders	C.2.FD.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Following Directions (C.2.FD)</controllingFieldValue>
+                <valueName>Asks questions when directions are unclear	C.2.FD.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Following Directions (C.2.FD)</controllingFieldValue>
+                <valueName>Demonstrates listening skills	C.2.FD.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Following Directions (C.2.FD)</controllingFieldValue>
+                <valueName>Attends to instructor&apos;s directions	C.2.FD.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Task Completion (C.3.TC)</controllingFieldValue>
+                <valueName>Completes grooming in a thorough manner	C.3.TC.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Task Completion (C.3.TC)</controllingFieldValue>
+                <valueName>Able to complete three step patterns without additional verbal prompts	C.3.TC.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Task Completion (C.3.TC)</controllingFieldValue>
+                <valueName>Able to complete complex patterns without verbal prompts	C.3.TC.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Task Completion (C.3.TC)</controllingFieldValue>
+                <valueName>Follows through on instructor directions with less than _____ prompts	C.3.TC.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Task Completion (C.3.TC)</controllingFieldValue>
+                <valueName>Is able to identify when clarification is needed to complete a task	C.3.TC.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Task Completion (C.3.TC)</controllingFieldValue>
+                <valueName>Initiates steps to complete a task	C.3.TC.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Task Completion (C.3.TC)</controllingFieldValue>
+                <valueName>Recognizes failure to complete a task	C.3.TC.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision Making (C.4.DM)</controllingFieldValue>
+                <valueName>Able to set appropriate goals	C.4.DM.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision Making (C.4.DM)</controllingFieldValue>
+                <valueName>Recognizes unsafe situations	C.4.DM.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision Making (C.4.DM)</controllingFieldValue>
+                <valueName>Able to identify the consequences of choices	C.4.DM.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision Making (C.4.DM)</controllingFieldValue>
+                <valueName>Able to identify multiple solutions	C.4.DM.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision Making (C.4.DM)</controllingFieldValue>
+                <valueName>Able to distinguish right and wrong	C.4.DM.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision Making (C.4.DM)</controllingFieldValue>
+                <valueName>Able to identify risks/temptations to good choices	C.4.DM.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision Making (C.4.DM)</controllingFieldValue>
+                <valueName>Able to evaluate possible outcomes for the best solution	C.4.DM.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision Making (C.4.DM)</controllingFieldValue>
+                <valueName>Able to make objective rather than emotional decisions	C.4.DM.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Anticipating Consequences (C.5.AC)</controllingFieldValue>
+                <valueName>Recognizes unsafe situations	C.5.AC.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Anticipating Consequences (C.5.AC)</controllingFieldValue>
+                <valueName>Able to identify outcomes of their actions	C.5.AC.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Anticipating Consequences (C.5.AC)</controllingFieldValue>
+                <valueName>Able to identify personal impacts of actions	C.5.AC.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Anticipating Consequences (C.5.AC)</controllingFieldValue>
+                <valueName>Able to identify impacts to others as a result of their actions	C.5.AC.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Anticipating Consequences (C.5.AC)</controllingFieldValue>
+                <valueName>Able to plan for potential outcomes	C.5.AC.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Anticipating Consequences (C.5.AC)</controllingFieldValue>
+                <valueName>Is able to create an action plan	C.5.AC.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Anticipating Consequences (C.5.AC)</controllingFieldValue>
+                <valueName>Accepts ownership of their actions	C.5.AC.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Anticipating Consequences (C.5.AC)</controllingFieldValue>
+                <valueName>Able to verbalize anticipated consequences when asked	C.5.AC.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision Making (S.4.DM)</controllingFieldValue>
+                <valueName>Follows established safety rules	S.4.DM.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision Making (S.4.DM)</controllingFieldValue>
+                <valueName>Understands cause and effect	S.4.DM.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Decision Making (S.4.DM)</controllingFieldValue>
+                <valueName>Able to set appropriate goals	S.4.DM.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sensory Processing (C.6.SP)</controllingFieldValue>
+                <valueName>Able to identify sensory triggers	C.6.SP.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sensory Processing (C.6.SP)</controllingFieldValue>
+                <valueName>Improved processing of sensory triggers including _____	C.6.SP.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sensory Processing (C.6.SP)</controllingFieldValue>
+                <valueName>Demonstrates emotional understanding	C.6.SP.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sensory Processing (C.6.SP)</controllingFieldValue>
+                <valueName>Able to interpret social cues based on verbal signals	C.6.SP.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sensory Processing (C.6.SP)</controllingFieldValue>
+                <valueName>Able to interpret social cues based on body language	C.6.SP.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sensory Processing (C.6.SP)</controllingFieldValue>
+                <valueName>Demonstrates emotional understanding	C.6.SP.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sensory Processing (C.6.SP)</controllingFieldValue>
+                <valueName>Demonstrates appropriate reactions to sensory input	C.6.SP.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sensory Processing (C.6.SP)</controllingFieldValue>
+                <valueName>Able to manage reactions to sensory input	C.6.SP.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Initiating Relationships (S.5.IR)</controllingFieldValue>
+                <valueName>Demonstrates respect when interacting with others	S.5.IR.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Initiating Relationships (S.5.IR)</controllingFieldValue>
+                <valueName>Able to appropriately initiate interactions with others	S.5.IR.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Initiating Relationships (S.5.IR)</controllingFieldValue>
+                <valueName>Acknowledges the presence of others	S.5.IR.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Initiating Relationships (S.5.IR)</controllingFieldValue>
+                <valueName>Expresses an interest in learning about others	S.5.IR.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Safety (C.7.SY)</controllingFieldValue>
+                <valueName>Recognizes unsafe situations	C.7.SY.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Safety (C.7.SY)</controllingFieldValue>
+                <valueName>Follows basic safety rules	C.7.SY.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Safety (C.7.SY)</controllingFieldValue>
+                <valueName>Wears helmet correctly	C.7.SY.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Safety (C.7.SY)</controllingFieldValue>
+                <valueName>Demonstrates awareness of the horse&apos;s space and movement	C.7.SY.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Safety (C.7.SY)</controllingFieldValue>
+                <valueName>Recognizes signs of agitation with peers	C.7.SY.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Safety (C.7.SY)</controllingFieldValue>
+                <valueName>Demonstrates responsibility for self	C.7.SY.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Safety (C.7.SY)</controllingFieldValue>
+                <valueName>Demonstrates responsibility for others	C.7.SY.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Safety (C.7.SY)</controllingFieldValue>
+                <valueName>Demonstrates care for the safety of their mount	C.7.SY.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Maintaining Relationships (S.5.MR)</controllingFieldValue>
+                <valueName>Able to build appropriate relationships outside of a regimented environment	S.5.MR.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Maintaining Relationships (S.5.MR)</controllingFieldValue>
+                <valueName>Asks questions to deepen relationships	S.5.MR.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Maintaining Relationships (S.5.MR)</controllingFieldValue>
+                <valueName>Able to identify healthy relationship traits	S.5.MR.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Maintaining Relationships (S.5.MR)</controllingFieldValue>
+                <valueName>Displays empathy when appropriate	S.5.MR.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Maintaining Relationships (S.5.MR)</controllingFieldValue>
+                <valueName>Able to set a good example for peers	S.5.MR.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Maintaining Relationships (S.5.MR)</controllingFieldValue>
+                <valueName>Demonstrates conflict resolution skills	S.5.MR.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Maintaining Relationships (S.5.MR)</controllingFieldValue>
+                <valueName>Demonstrates trustworthiness	S.5.MR.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Maintaining Relationships (S.5.MR)</controllingFieldValue>
+                <valueName>Demonstrates inclusion	S.5.MR.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Independent Living Skills (C.8.LS)</controllingFieldValue>
+                <valueName>Recognizes unsafe situations	C.8.LS.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Independent Living Skills (C.8.LS)</controllingFieldValue>
+                <valueName>Follows basic safety rules	C.8.LS.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Independent Living Skills (C.8.LS)</controllingFieldValue>
+                <valueName>Wears gloves when appropriate	C.8.LS.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Independent Living Skills (C.8.LS)</controllingFieldValue>
+                <valueName>Wears a coat when appropriate	C.8.LS.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Independent Living Skills (C.8.LS)</controllingFieldValue>
+                <valueName>Wears helmet correctly	C.8.LS.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Independent Living Skills (C.8.LS)</controllingFieldValue>
+                <valueName>Able to prepare for class without prompting	C.8.LS.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Independent Living Skills (C.8.LS)</controllingFieldValue>
+                <valueName>Demonstrates personal responsibility in caring for their horse	C.8.LS.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Independent Living Skills (C.8.LS)</controllingFieldValue>
+                <valueName>Able to initiate activities	C.8.LS.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Identifying Consequences (S.6.IC)</controllingFieldValue>
+                <valueName>Able to anticipate the consequences of unsafe behavior	S.6.IC.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Identifying Consequences (S.6.IC)</controllingFieldValue>
+                <valueName>Accepts responsibility for actions	S.6.IC.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Identifying Consequences (S.6.IC)</controllingFieldValue>
+                <valueName>Able to identify the consequences of choices	S.6.IC.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Identifying Consequences (S.6.IC)</controllingFieldValue>
+                <valueName>Stops action to consider consequences	S.6.IC.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Focus/Concentration (C.9.FC)</controllingFieldValue>
+                <valueName>Attends to the instructor when receiving directions	C.9.FC.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Focus/Concentration (C.9.FC)</controllingFieldValue>
+                <valueName>Attends to volunteers when in conversation	C.9.FC.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Focus/Concentration (C.9.FC)</controllingFieldValue>
+                <valueName>Able to complete complex patterns with less than _____ verbal prompts	C.9.FC.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Focus/Concentration (C.9.FC)</controllingFieldValue>
+                <valueName>Follows through on instructor directions with less than _____ prompts	C.9.FC.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Focus/Concentration (C.9.FC)</controllingFieldValue>
+                <valueName>Able to focus on the task at hand despite disruptions	C.9.FC.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Focus/Concentration (C.9.FC)</controllingFieldValue>
+                <valueName>Able to attend to multi-step verbal instructions	C.9.FC.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Focus/Concentration (C.9.FC)</controllingFieldValue>
+                <valueName>Able to attend to multi-step written instructions	C.9.FC.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Behavior Modification (S.6.BM)</controllingFieldValue>
+                <valueName>Follows established safety rules	S.6.BM.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Behavior Modification (S.6.BM)</controllingFieldValue>
+                <valueName>Able to wait with minimal maladaptive reactions	S.6.BM.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Behavior Modification (S.6.BM)</controllingFieldValue>
+                <valueName>Plans for possible outcomes	S.7.BM.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Organization (C.10.OR)</controllingFieldValue>
+                <valueName>Returns tools to their appropriate location	C.10.OR.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Organization (C.10.OR)</controllingFieldValue>
+                <valueName>Sequences grooming steps in the appropriate order	C.10.OR.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Organization (C.10.OR)</controllingFieldValue>
+                <valueName>Able to tack their horse using the appropriate sequence	C.10.OR.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Organization (C.10.OR)</controllingFieldValue>
+                <valueName>Completes routine tasks without prompting	C.10.OR.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Organization (C.10.OR)</controllingFieldValue>
+                <valueName>Is able to sequence a variety of tasks in the appropriate order	C.10.OR.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Negative-Attention Seeking (S.7.NS)</controllingFieldValue>
+                <valueName>Decreased negative-attention seeking behaviors	S.7.NS.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Negative-Attention Seeking (S.7.NS)</controllingFieldValue>
+                <valueName>Able to function in an environment where the participant&apos;s challenges are not the focus	S.7.NS.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Negative-Attention Seeking (S.7.NS)</controllingFieldValue>
+                <valueName>Increased positive engagement with authority figures	S.7.NS.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Skills (C.11.AS)</controllingFieldValue>
+                <valueName>Able to compensate for areas of physical weakness to complete a task	C.11.AS.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Compliance (S.7.CP)</controllingFieldValue>
+                <valueName>Increased compliance when asked to perform tasks	S.7.CP.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Compliance (S.7.CP)</controllingFieldValue>
+                <valueName>Increased compliance with authority figures	S.7.CP.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Compliance (S.7.CP)</controllingFieldValue>
+                <valueName>Increased compliance with peers	S.7.CP.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Balance (P.1.B)</controllingFieldValue>
+                <valueName>Improved balance when stationary	P.1.B.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Balance (P.1.B)</controllingFieldValue>
+                <valueName>Improved balance when walking	P.1.B.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Balance (P.1.B)</controllingFieldValue>
+                <valueName>Improved ability to balance while mounted and at a walk	P.1.B.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Balance (P.1.B)</controllingFieldValue>
+                <valueName>Improved ability to balance while mounted and at a trot	P.1.B.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Balance (P.1.B)</controllingFieldValue>
+                <valueName>Improved balance when mounting	P.1.B.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Balance (P.1.B)</controllingFieldValue>
+                <valueName>Improved balance when dismounting	P.1.B.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Balance (P.1.B)</controllingFieldValue>
+                <valueName>Able to demonstrate proper center	P.1.B.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Balance (P.1.B)</controllingFieldValue>
+                <valueName>Demonstrates ability to self-correct balance	P.1.B.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (S.8.AB)</controllingFieldValue>
+                <valueName>Able to identify the consequences of choices	S.8.AB.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (S.8.AB)</controllingFieldValue>
+                <valueName>Demonstrates good decision making skills	S.8.AB.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (S.8.AB)</controllingFieldValue>
+                <valueName>Able to set appropriate goals	S.8.AB.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (S.8.AB)</controllingFieldValue>
+                <valueName>Able to independently apply appropriate coping mechanisms when escalated	S.8.AB.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (S.8.AB)</controllingFieldValue>
+                <valueName>Follows established safety rules	S.8.AB.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (S.8.AB)</controllingFieldValue>
+                <valueName>Able to learn new skills with increased autonomy	S.8.AB.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (S.8.AB)</controllingFieldValue>
+                <valueName>Able to generalize skills to the home/work/school environment	S.8.AB.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (S.8.AB)</controllingFieldValue>
+                <valueName>Able to adjust to a new environment	S.8.AB.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coordination (P.2.C)</controllingFieldValue>
+                <valueName>Able to mount independently	P.2.C.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coordination (P.2.C)</controllingFieldValue>
+                <valueName>Able to mount with minimal assistance	P.2.C.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coordination (P.2.C)</controllingFieldValue>
+                <valueName>Able to mount with moderate assistance	P.2.C.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coordination (P.2.C)</controllingFieldValue>
+                <valueName>Able to dismount independently	P.2.C.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coordination (P.2.C)</controllingFieldValue>
+                <valueName>Able to dismount with minimal assistance	P.2.C.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coordination (P.2.C)</controllingFieldValue>
+                <valueName>Able to dismount with moderate assistance	P.2.C.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coordination (P.2.C)</controllingFieldValue>
+                <valueName>Able to combine cues to direct their mount	P.2.C.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coordination (P.2.C)</controllingFieldValue>
+                <valueName>Able to properly sequence movements to complete a task	P.2.C.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotion Identification (E.1.EI)</controllingFieldValue>
+                <valueName>Self- identifies when emotions are escalating	E.1.EI.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotion Identification (E.1.EI)</controllingFieldValue>
+                <valueName>Is able to identify and communicate current emotions	E.1.EI.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotion Identification (E.1.EI)</controllingFieldValue>
+                <valueName>Is able to recognize the emotions of other individuals	E.1.EI.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotion Identification (E.1.EI)</controllingFieldValue>
+                <valueName>Is able to identify the emotional state of others based on non-verbal communication	E.1.EI.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotion Identification (E.1.EI)</controllingFieldValue>
+                <valueName>Is able to identify emotions on the Incredible Five scale	E.1.EI.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotion Identification (E.1.EI)</controllingFieldValue>
+                <valueName>Able to stop the escalation of emotion using coping skills	E.1.EI.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adapting to Change (E.2.AC)</controllingFieldValue>
+                <valueName>Able to implement replacement behaviors to cope with change	E.2.AC.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adapting to Change (E.2.AC)</controllingFieldValue>
+                <valueName>Able to change mounts without behavioral disruption	E.2.AC.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adapting to Change (E.2.AC)</controllingFieldValue>
+                <valueName>Able to tolerate simple schedule changes without behavioral disruption	E.2.AC.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adapting to Change (E.2.AC)</controllingFieldValue>
+                <valueName>Decreased recovery time required after meltdowns	E.2.AC.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conversational Skills (S.1.CS)</controllingFieldValue>
+                <valueName>Takes turns during group discussion	S.1.CS.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conversational Skills (S.1.CS)</controllingFieldValue>
+                <valueName>Able to appropriately initiate conversations	S.1.CS.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conversational Skills (S.1.CS)</controllingFieldValue>
+                <valueName>Able to greet others appropriately	S.1.CS.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conversational Skills (S.1.CS)</controllingFieldValue>
+                <valueName>Listens to others thoughts and ideas and responds appropriately	S.1.CS.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conversational Skills (S.1.CS)</controllingFieldValue>
+                <valueName>Attends to the conversation	S.1.CS.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conversational Skills (S.1.CS)</controllingFieldValue>
+                <valueName>Able to have ____ interchanges during a conversation	S.1.CS.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conversational Skills (S.1.CS)</controllingFieldValue>
+                <valueName>Able to ask appropriate questions	S.1.CS.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conversational Skills (S.1.CS)</controllingFieldValue>
+                <valueName>Reduced echolalia	S.1.CS.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conversational Skills (S.1.CS)</controllingFieldValue>
+                <valueName>Able to appropriately respond to prompts without reminders	S.1.CS.9</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conversational Skills (S.1.CS)</controllingFieldValue>
+                <valueName>Shows verbal signs of understanding (asking clarifying questions etc.)	S.1.CS.10</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conversational Skills (S.1.CS)</controllingFieldValue>
+                <valueName>Verbally responds to prompts with less than _____ reminders	S.1.CS.11</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Communicating Need (S.1.CN)</controllingFieldValue>
+                <valueName>Asks questions when directions are unclear	S.1.CN.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Communicating Need (S.1.CN)</controllingFieldValue>
+                <valueName>Communicates needs in a calm and respectful voice	S.1.CN.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Communicating Need (S.1.CN)</controllingFieldValue>
+                <valueName>Asks for help when appropriate	S.1.CN.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conflict Resolution (S.1.CR)</controllingFieldValue>
+                <valueName>Maintain a calm voice when escalated	 S.1.CR.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conflict Resolution (S.1.CR)</controllingFieldValue>
+                <valueName>Able to verbalize opposing thoughts appropriately	S.1.CR.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Conflict Resolution (S.1.CR)</controllingFieldValue>
+                <valueName>Able to verbally acknowledge the viewpoints of others with appropriate responses	S.1.CR.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sharing Information (S.1.SI)</controllingFieldValue>
+                <valueName>Increases attempts to communicate	S.1.SI.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sharing Information (S.1.SI)</controllingFieldValue>
+                <valueName>Demonstrates &quot;voice and choice&quot;	S.1.SI.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sharing Information (S.1.SI)</controllingFieldValue>
+                <valueName>Successfully communicates instructions to peers.	S.1.SI.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Interpersonal Communication (S.2.IC)</controllingFieldValue>
+                <valueName>Makes eye contact during greetings	S.2.IC.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Interpersonal Communication (S.2.IC)</controllingFieldValue>
+                <valueName>Able to make eye contact when someone is speaking	S.2.IC.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Interpersonal Communication (S.2.IC)</controllingFieldValue>
+                <valueName>Recognizes personal space boundaries	S.2.IC.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Interpersonal Communication (S.2.IC)</controllingFieldValue>
+                <valueName>Shows non-verbal signs of understanding	S.2.IC.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Interpersonal Communication (S.2.IC)</controllingFieldValue>
+                <valueName>Able to use gestures to express a need	S.2.IC.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Interpersonal Communication (S.2.IC)</controllingFieldValue>
+                <valueName>Able to recognize emotional states based on body language	S.2.IC.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Interpersonal Communication (S.2.IC)</controllingFieldValue>
+                <valueName>Able to recognize emotional states based on facial expression	S.2.IC.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equine Interactions (S.2.EI)</controllingFieldValue>
+                <valueName>Able to maintain correct posture despite mood	S.2.EI.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equine Interactions (S.2.EI)</controllingFieldValue>
+                <valueName>Is able to adjust their body language to be more effective with the horse	S.2.EI.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork (S.3.TW)</controllingFieldValue>
+                <valueName>Includes others in activities	S.3.TW.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork (S.3.TW)</controllingFieldValue>
+                <valueName>Encourages others to succeed	S.3.TW.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork (S.3.TW)</controllingFieldValue>
+                <valueName>Listens to others thoughts and ideas and responds appropriately	S.3.TW.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork (S.3.TW)</controllingFieldValue>
+                <valueName>Demonstrates conflict resolution skills	S.3.TW.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork (S.3.TW)</controllingFieldValue>
+                <valueName>Demonstrates decision making skills based on the well-being of others	S.3.TW.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork (S.3.TW)</controllingFieldValue>
+                <valueName>Able to utilize others as resources when appropriate	S.3.TW.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork (S.3.TW)</controllingFieldValue>
+                <valueName>Participates in group activities	S.3.TW.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork (S.3.TW)</controllingFieldValue>
+                <valueName>Able to accept assistance when offered	S.3.TW.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork (S.3.TW)</controllingFieldValue>
+                <valueName>Able to communicate ideas to a group	S.3.TW.9</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork (S.3.TW)</controllingFieldValue>
+                <valueName>Able to follow peer instructions	S.3.TW.10</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork (S.3.TW)</controllingFieldValue>
+                <valueName>Demonstrates tolerance/acceptance of others	S.3.TW.11</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Teamwork (S.3.TW)</controllingFieldValue>
+                <valueName>Able to express disagreement in a positive manner	S.3.TW.12</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Leadership Skills (S.3.LS)</controllingFieldValue>
+                <valueName>Able to identify positive leadership traits	S.3.LS.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Leadership Skills (S.3.LS)</controllingFieldValue>
+                <valueName>Able to assess impacts of leadership decisions	S.3.LS.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Leadership Skills (S.3.LS)</controllingFieldValue>
+                <valueName>Able to express leadership principles to others	S.3.LS.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Leadership Skills (S.3.LS)</controllingFieldValue>
+                <valueName>Able to motivate others	S.3.LS.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Leadership Skills (S.3.LS)</controllingFieldValue>
+                <valueName>Able to learn from failure	S.3.LS.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ownership (S.4.OS)</controllingFieldValue>
+                <valueName>Demonstrates accountability after making an error	S.4.OS.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ownership (S.4.OS)</controllingFieldValue>
+                <valueName>Accepts responsibility for actions	S.4.OS.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ownership (S.4.OS)</controllingFieldValue>
+                <valueName>Works to achieve established goals	S.4.OS.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ownership (S.4.OS)</controllingFieldValue>
+                <valueName>Follows through on assigned tasks	S.4.OS.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ownership (S.4.OS)</controllingFieldValue>
+                <valueName>Demonstrates good effort when completing tasks	S.4.OS.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fine Motor Skills (P.3.FM)</controllingFieldValue>
+                <valueName>Able to hold grooming tools appropriately	P.3.FM.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fine Motor Skills (P.3.FM)</controllingFieldValue>
+                <valueName>Able to braid their horse&apos;s mane	P.3.FM.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fine Motor Skills (P.3.FM)</controllingFieldValue>
+                <valueName>Able to attach reins	P.3.FM.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fine Motor Skills (P.3.FM)</controllingFieldValue>
+                <valueName>Able to halter a horse	P.3.FM.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fine Motor Skills (P.3.FM)</controllingFieldValue>
+                <valueName>Able to open and close a gate	P.3.FM.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fine Motor Skills (P.3.FM)</controllingFieldValue>
+                <valueName>Able to manipulate objects with hands	P.3.FM.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fine Motor Skills (P.3.FM)</controllingFieldValue>
+                <valueName>Able to manipulate objects with fingers	P.3.FM.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fine Motor Skills (P.3.FM)</controllingFieldValue>
+                <valueName>Able to follow hand movements with eyes	P.3.FM.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gross Motor Skills (P.4.GM)</controllingFieldValue>
+                <valueName>Is able to steer using direct rein	P.4.GM.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gross Motor Skills (P.4.GM)</controllingFieldValue>
+                <valueName>Is able appropriately saddle their horse	P.4.GM.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gross Motor Skills (P.4.GM)</controllingFieldValue>
+                <valueName>Able to use a curry comb appropriately	P.4.GM.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gross Motor Skills (P.4.GM)</controllingFieldValue>
+                <valueName>Able to walk with minimal support	P.4.GM.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gross Motor Skills (P.4.GM)</controllingFieldValue>
+                <valueName>Able to walk with moderate support	P.4.GM.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gross Motor Skills (P.4.GM)</controllingFieldValue>
+                <valueName>Demonstrates coordination of arm movements with leg movement	P.4.GM.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gross Motor Skills (P.4.GM)</controllingFieldValue>
+                <valueName>Demonstrates head movement with arm/leg tasks	P.4.GM.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gross Motor Skills (P.4.GM)</controllingFieldValue>
+                <valueName>Uses head and shoulder movements to assist in steering	P.4.GM.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gross Motor Skills (P.4.GM)</controllingFieldValue>
+                <valueName>Able to use hard and soft brushes appropriately	P.4.GM.9</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional Regulation (E.3.ER)</controllingFieldValue>
+                <valueName>Is able to identify triggers 	E.3.ER.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional Regulation (E.3.ER)</controllingFieldValue>
+                <valueName>Self-regulates unhealthy thought patterns	E.3.ER.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional Regulation (E.3.ER)</controllingFieldValue>
+                <valueName>Independently identifies and uses self-coping mechanisms	E.3.ER.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional Regulation (E.3.ER)</controllingFieldValue>
+                <valueName>Able to recognize the need for emotional regulation through coping skills	E.3.ER.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional Regulation (E.3.ER)</controllingFieldValue>
+                <valueName>Able to identify possible solutions	E.3.ER.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Emotional Regulation (E.3.ER)</controllingFieldValue>
+                <valueName>Recognizes the need for assistance	E.3.ER.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Strength (P.5.CS)</controllingFieldValue>
+                <valueName>Able to stabilize upper body during movement	P.5.CS.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Strength (P.5.CS)</controllingFieldValue>
+                <valueName>Able to maintain correct posture throughout the lesson	P.5.CS.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Strength (P.5.CS)</controllingFieldValue>
+                <valueName>Able to lean from center to side and then resume center	P.5.CS.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Strength (P.5.CS)</controllingFieldValue>
+                <valueName>Able to lean from center to back/front and then resume center	P.5.CS.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Strength (P.5.CS)</controllingFieldValue>
+                <valueName>Able to sit the trot	P.5.CS.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Strength (P.5.CS)</controllingFieldValue>
+                <valueName>Able to ride without stirrups and maintain correct seat at a walk	P.5.CS.6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Strength (P.5.CS)</controllingFieldValue>
+                <valueName>Able to maintain correct position when turning the horse at a walk	P.5.CS.7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Strength (P.5.CS)</controllingFieldValue>
+                <valueName>Able to ride without stirrups and maintain correct seat at the trot	P.5.CS.8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Core Strength (P.5.CS)</controllingFieldValue>
+                <valueName>Able to maintain correct position when turning the horse at the trot	P.5.CS.9</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (E.3.AB</controllingFieldValue>
+                <valueName>Does not leave class without permission	E.3.AB.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (E.3.AB</controllingFieldValue>
+                <valueName>Able to implement replacement behaviors	E.3.AB.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (E.3.AB</controllingFieldValue>
+                <valueName>Demonstrates tolerance	E.3.AB.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (E.3.AB</controllingFieldValue>
+                <valueName>Maintains appropriate tone when frustrated or anxious	E.3.AB.4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Adaptive Behaviors (E.3.AB</controllingFieldValue>
+                <valueName>Appropriately requests assistance when needed	E.3.AB.5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Muscle Tone (P.6.MT)</controllingFieldValue>
+                <valueName>Improved muscle tone and strength in the arms	P.6.MT.1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Muscle Tone (P.6.MT)</controllingFieldValue>
+                <valueName>Improved muscle tone and strength in the legs	P.6.MT.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Muscle Tone (P.6.MT)</controllingFieldValue>
+                <valueName>Demonstrates muscle resistance during stretches	P.6.MT.3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Muscle Tone (P.6.MT)</controllingFieldValue>
+                <valueName>Demonstrates muscle flexion during movement	P.6.MT.4</valueName>
+            </valueSettings>
+        </valueSet>
+</fields>
+
     <label>Campaign Goal</label>
     <listViews>
         <fullName>All</fullName>
