@@ -1,0 +1,68 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="Agape_ReportComponentController">
+    <!-- on page load get the report -->
+    <aura:handler name="init" action="{!c.getReport}" value="{!this}"/>    
+
+    <aura:attribute name="groupingLevelToLabel" type="Object" description="Holds grouping hierarchy by level and label"/>
+    <aura:attribute name="reportData" type="Object" description="Holds reporting API JSON structure"/>
+    <aura:attribute name="factMap" type="Object" description="Holds row detail data for easier access in controller"/>
+    <aura:attribute name="reportIdAttribute" type="String" description="Id for the report to display"/>
+    <aura:attribute name="columnLabels" type="String[]" description="Labels of columns, order is assumed"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="recordIdFilterColumn" type="String" description="Field for the specific record id to be filtered by."/>
+    <aura:attribute name="errorMessage" type="String" />
+    
+    <div class="slds-theme--default slds-is-relative">
+        <!-- Show spinner while loading data -->
+        <div aura:id="loading" class="slds-spinner_container">
+            <div role="status" class="slds-spinner slds-spinner--small">
+                <span class="slds-assistive-text">{!$Label.c.RE_Loading}</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+        
+        <div aura:id="report-error" style="height: 4rem;">
+            <div class="slds-notify_container slds-is-static">
+                <div class="slds-notify slds-notify_toast slds-theme_error" role="alert">
+                    <span class="slds-assistive-text">error</span>
+                    
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small">{!v.errorMessage}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- holds report data -->
+        <div aura:id="report" class="report-container slds-hide slds-p-around_small">
+            <!-- display title and button to refresh component -->
+            <h1 class="slds-section__title">
+                <a href="{!'/'+v.reportIdAttribute}" target="_blank">{!v.reportData.reportMetadata.name}</a>
+                &nbsp;&nbsp;&nbsp;<lightning:buttonIcon iconName="utility:refresh" variant="bare" onclick="{!c.getReport}" alternativeText="Refresh Report" />
+            </h1>
+            <table class="slds-table slds-table--bordered">
+                
+                <!-- iterate through and display in header row -->
+                <thead>
+                    <tr class="slds-text-title--caps">
+                        <aura:iteration items="{!v.columnLabels}" var="l">
+                            <th class="slds-text-align_left">{!l}</th>
+                        </aura:iteration>
+                    </tr>
+                </thead>
+
+                <!-- recursively display grouping data -->
+                <tbody>
+                    <aura:if isTrue="{!v.reportData.groupingsDown.groupings != null}">
+                        <!-- if there are groupings, display first grouping -->
+                        <c:Agape_ReportGrouping numColumns="{!v.reportData.reportMetadata.detailColumns.length}" groupings="{!v.reportData.groupingsDown.groupings}" level="0" groupingLevelToLabel="{!v.groupingLevelToLabel}" factMap="{!v.factMap}"/>
+                        <!-- else if there are no groupings, just display row data -->
+                        <aura:set attribute="else">
+                            <c:Agape_ReportGroupingDataCells groupingKey="T" factMap="{!v.factMap}"/>
+                        </aura:set>
+                    </aura:if>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</aura:component>

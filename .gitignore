@@ -18,7 +18,7 @@ test/artifacts
 *.lck
 fflib-common/*.*
 fflib-mocks/*.*
-src/package.xml
+#src/package.xml
 config
 *-app
 sfdx-workspace.json

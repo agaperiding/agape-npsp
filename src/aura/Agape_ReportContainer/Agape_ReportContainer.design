@@ -1,0 +1,4 @@
+<design:component >
+    <design:attribute name="reportIdAttribute" label="Report Id" description="Is the Id of the report that you want to display. Make sure the user has access to it" />
+    <design:attribute name="recordIdFilterColumn" label="Record Id Filter Column" description="Is the report field column for which the id will be entered to filter by" />
+</design:component>
