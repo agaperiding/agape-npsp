@@ -2,28 +2,24 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
  <types>
         <members>Agape_Campaign_Goal__c</members>
-        <members>Agape_Goal__c</members>
         <members>Agape_Program_Outcome_Tracker__c</members>
          <members>Contact</members>
         <name>CustomObject</name>
     </types>
-      <!--  <types>
+       <types>
         <members>Agape_Campaign_Goal__c</members>
-        <members>Agape_Goal__c</members>
         <members>Agape_Program_Outcome_Tracker__c</members>
         <name>CustomTab</name>
     </types>
     <types>
         <members>Agape_Campaign_Goal__c-Campaign Goal Layout</members>
-        <members>Agape_Goal__c-Goal Layout</members>
         <members>Agape_Program_Outcome_Tracker__c-Program Outcome Tracker Layout</members>
         <name>Layout</name>
     </types>
      <types>
         <members>AGAPE</members>
         <name>CustomApplication</name>
-    </types> -->
-   
+    </types>
     <types>
          <members>Agape_ReportContainer</members>
          <members>Agape_ReportGrouping</members>

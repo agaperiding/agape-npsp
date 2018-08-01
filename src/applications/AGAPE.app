@@ -8,9 +8,7 @@
     <navType>Standard</navType>
     <tab>standard-Account</tab>
     <tab>standard-Contact</tab>
-    <tab>Agape_Goal__c</tab>
     <tab>standard-Campaign</tab>
-    <tab>Agape_Campaign_Goal__c</tab>
-    <tab>Agape_Program_Outcome_Tracker__c</tab>
+     <tab>Agape_Program_Outcome_Tracker__c</tab>
     <uiType>Lightning</uiType>
 </CustomApplication>
