@@ -223,6 +223,12 @@
 		<copy todir="${build.temp}/objects" flatten = "true">
             <fileset dir="${home}/src/objects" />
         </copy>
+        
+        <copy todir="${build.temp}/profiles" flatten = "true">
+            <fileset dir="${home}/src/profiles">
+                <include name="**/*.profile" />
+            </fileset>
+        </copy>
 
         <!-- <copy todir="${build.temp}/permissionsets" flatten = "true">
             <fileset dir="${home}/src/permissionsets">

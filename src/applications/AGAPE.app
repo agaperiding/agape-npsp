@@ -9,6 +9,7 @@
     <tab>standard-Account</tab>
     <tab>standard-Contact</tab>
     <tab>standard-Campaign</tab>
-     <tab>Agape_Program_Outcome_Tracker__c</tab>
+    <tab>Agape_Program_Outcome_Tracker__c</tab>
+    <tab>standard-report</tab>
     <uiType>Lightning</uiType>
 </CustomApplication>

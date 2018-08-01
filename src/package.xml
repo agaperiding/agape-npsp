@@ -12,6 +12,8 @@
         <name>CustomTab</name>
     </types>
     <types>
+        <members>Contact-Agape Instructor</members>
+        <members>Contact-Agape Participant Layout</members>
         <members>Agape_Campaign_Goal__c-Campaign Goal Layout</members>
         <members>Agape_Program_Outcome_Tracker__c-Program Outcome Tracker Layout</members>
         <name>Layout</name>
@@ -29,6 +31,10 @@
     <types>
         <members>Agape_ReportComponentController</members>
         <name>ApexClass</name>
+    </types>
+     <types>
+        <members>AGAPE Sys Admin</members>
+        <name>Profile</name>
     </types>
     <version>41.0</version>
 </Package>
